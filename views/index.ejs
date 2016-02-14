@@ -6,6 +6,15 @@
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body ng-app="meanStart" ng-controller="MainCtrl">
+  <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
+     <ul class="nav navbar-nav">
+       <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+       <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+       <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+       <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+     </ul>
+   </nav>
+
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <ui-view></ui-view>
@@ -14,9 +23,38 @@
 
   <script type="text/ng-template" id="/home.html">
     <div class="page-header">
-      <h1>Flapper News</h1>
+      <h1>Learn App</h1>
     </div>
   </script>
+
+  <script type="text/ng-template" id="/register.html">
+  <div class="page-header">
+    <h1>Flapper News</h1>
+  </div>
+
+  <div ng-show="error" class="alert alert-danger row">
+    <span>{{ error.message }}</span>
+  </div>
+
+  <form ng-submit="register()"
+    style="margin-top:30px;">
+    <h3>Register</h3>
+
+    <div class="form-group">
+      <input type="text"
+      class="form-control"
+      placeholder="Username"
+      ng-model="user.username"></input>
+    </div>
+    <div class="form-group">
+      <input type="password"
+      class="form-control"
+      placeholder="Password"
+      ng-model="user.password"></input>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</script>
 
   <script type="text/ng-template" id="/login.html">
   <div class="page-header">
@@ -53,6 +91,7 @@
 
   <script src="js/controllers/MainCtrl.js"></script>
   <script src="js/controllers/AuthCtrl.js"></script>
+  <script src="js/controllers/NavCtrl.js"></script>
   <script src="js/services/authStorage.js"></script>
   <!-- controllers and servics go here -->
 </body>
