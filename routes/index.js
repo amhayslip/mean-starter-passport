@@ -1,22 +1,11 @@
 var express = require('express');
-var mongoose = require('mongoose');
-// var Post = mongoose.model('Post');
 var router = express.Router();
 
-// router.get('/posts', function(req, res, next) {
-//   Post.find(function(err, posts){
-//     if(err){ return next(err); }
+var mongoose = require('mongoose');
 
-//     res.json(posts);
-//   });
-// });
+/* GET home page. */
+router.get('/', function (req, res) {
+  res.render('index');
+});
 
-// router.post('/posts', function(req, res, next) {
-//   var post = new Post(req.body);
-
-//   post.save(function(err, post){
-//     if(err){ return next(err); }
-
-//     res.json(post);
-//   });
-// });
+module.exports = router;

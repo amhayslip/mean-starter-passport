@@ -5,9 +5,7 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/news');
 
-// require('./models/Posts');
-
-// var Post = mongoose.model('Post');
+var routes = require('./routes/index');
 
 var app = express();
 
@@ -21,28 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
-/* GET home page. */
-app.get('/', function (req, res) {
-  res.render('index');
-});
-
-// app.post('/posts', function(req, res, next) {
-//   var post = new Post(req.body);
-
-//   post.save(function(err, post){
-//     if(err){ return next(err); }
-
-//     res.json(post);
-//   });
-// });
-
-// app.get('/posts', function(req, res, next) {
-//   Post.find(function(err, posts){
-//     if(err){ return next(err); }
-
-//     res.json(posts);
-//   });
-// });
+app.use('/', routes);
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
