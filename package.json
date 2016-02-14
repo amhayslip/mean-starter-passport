@@ -12,6 +12,7 @@
     "angular": "^1.4.8",
     "angular-resource": "^1.4.8",
     "angular-route": "^1.4.8",
+    "angular-ui-router": "^0.2.18",
     "body-parser": "^1.14.2",
     "ejs": "^2.3.4",
     "express": "^4.13.3",

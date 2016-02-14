@@ -1,5 +1,7 @@
 var express = require('express');
+var jwt = require('express-jwt');
 var router = express.Router();
+var auth = jwt({secret:'SECRET', userProperty:'payload'});
 
 var mongoose = require('mongoose');
 var passport = require('passport');
