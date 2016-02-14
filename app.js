@@ -27,9 +27,8 @@ app.use(passport.initialize());
 
 app.use('/', routes);
 
-var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+var port = process.env.PORT || 3000;
 
-  console.log('Mean Start listening at http://%s:%s', host, port);
+app.listen(port, function () {
+  console.log('Listening on ' + port);
 });
