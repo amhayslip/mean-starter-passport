@@ -2,10 +2,15 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var passport = require('passport');
 
 mongoose.connect('mongodb://localhost/news');
 
+require('./models/Users');
+require('./config/passport');
+
 var routes = require('./routes/index');
+
 
 var app = express();
 
@@ -18,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use(passport.initialize());
 
 app.use('/', routes);
 
