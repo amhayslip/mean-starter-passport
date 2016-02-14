@@ -8,7 +8,12 @@ app.config([
       .state('home', {
         url: '/home',
         templateUrl: '/home.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        onEnter: ['$state', 'auth', function($state, auth){
+          if(!auth.isLoggedIn()){
+            $state.go('login');
+          }
+        }]
       })
       .state('login', {
         url: '/login',

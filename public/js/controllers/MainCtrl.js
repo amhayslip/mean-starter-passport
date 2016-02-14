@@ -1,4 +1,5 @@
 app.controller('MainCtrl', [
-function(){
-
+'$scope',
+function($scope){
+  $scope.test = 'home';
 }]);

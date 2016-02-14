@@ -3,17 +3,12 @@
   <title>Mean Start</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
   <body ng-app="meanStart" ng-controller="MainCtrl">
-    <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
-       <ul class="nav navbar-nav">
-         <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
-         <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
-         <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
-         <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
-       </ul>
-     </nav>
+  <% include ../views/partials/navbar %>
 
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -32,6 +27,9 @@
     <script type="text/ng-template" id="/login.html">
       <% include ../views/partials/login %>
     </script>
+
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="angular/angular.js"></script>
     <script src="angular-ui-router/release/angular-ui-router.js"></script>
