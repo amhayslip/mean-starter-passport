@@ -20,10 +20,12 @@
     "jsonwebtoken": "^5.5.4",
     "mongoose": "^4.3.3",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
+    "passport-local": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-express": "^0.3.5"
+  },
+
+  "scripts": {
+   "start": "gulp"
   }
 }
