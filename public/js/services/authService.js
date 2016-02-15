@@ -44,6 +44,9 @@ app.factory('auth', ['$http', '$window', function($http, $window){
 
   auth.logOut = function(){
     $window.localStorage.removeItem('ea-learn-app-token');
+
+    // redirect the user home
+    $window.location = '/';
   };
 
   return auth;

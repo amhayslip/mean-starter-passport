@@ -20,7 +20,7 @@ app.config([
         templateUrl: function ($stateParams){
           return '/lessons/' + $stateParams.lesson;
         },
-        controller: 'AuthCtrl',
+        controller: 'MainCtrl',
         onEnter: ['$state', 'auth', function($state, auth){
           if(!auth.isLoggedIn()){
             $state.go('home');
