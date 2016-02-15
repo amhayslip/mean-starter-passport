@@ -13,6 +13,11 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
+
+router.get('/lessons/:lesson', function (req, res) {
+  res.render('lessons/' + req.params.lesson);
+});
+
 router.post('/register', function(req, res, next){
   if(!req.body.username || !req.body.password){
     return res.status(400).json({message: 'Please fill out all fields'});

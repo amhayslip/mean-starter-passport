@@ -15,6 +15,18 @@ app.config([
           }
         }]
       })
+      .state('lessons', {
+        url: '/lessons/:lesson',
+        templateUrl: function ($stateParams){
+          return '/lessons/' + $stateParams.lesson;
+        },
+        controller: 'AuthCtrl',
+        onEnter: ['$state', 'auth', function($state, auth){
+          if(!auth.isLoggedIn()){
+            $state.go('home');
+          }
+        }]
+      })
       .state('login', {
         url: '/login',
         templateUrl: '/login.html',
