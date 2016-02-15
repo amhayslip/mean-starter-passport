@@ -46,7 +46,7 @@ app.config([
             $state.go('home');
           }
         }]
-      });
+      })
 
       $urlRouterProvider.otherwise('home');
   

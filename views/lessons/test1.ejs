@@ -1,1 +1,20 @@
-test!
+<div class="page-header">
+  <h1>Lesson title!</h1>
+</div>
+
+<div class="topic">
+  <h3>Topic 1!</h3>
+</div>
+
+<div class="exercise">
+  <div class="answer" ng-class="{'show': questions[1-1]}">
+    This is the answer!
+  </div>
+
+  <button class="btn btn-success" ng-class="{'btn-success': !questions[1-1]}" 
+  ng-click="toggleAnswer(1-1)">
+    <span ng-hide="questions[1-1]">Show</span>
+    <span ng-show="questions[1-1]">Hide</span>
+    Answer
+  </button>
+</div>
