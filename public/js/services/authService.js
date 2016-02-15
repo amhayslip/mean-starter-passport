@@ -2,11 +2,11 @@ app.factory('auth', ['$http', '$window', function($http, $window){
   var auth = {};
 
   auth.saveToken = function (token){
-    $window.localStorage['mean-start-token'] = token;
+    $window.localStorage['ea-learn-app-token'] = token;
   };
 
   auth.getToken = function (){
-    return $window.localStorage['mean-start-token'];
+    return $window.localStorage['ea-learn-app-token'];
   }
 
   auth.isLoggedIn = function(){
@@ -43,7 +43,7 @@ app.factory('auth', ['$http', '$window', function($http, $window){
   };
 
   auth.logOut = function(){
-    $window.localStorage.removeItem('mean-start-token');
+    $window.localStorage.removeItem('ea-learn-app-token');
   };
 
   return auth;
