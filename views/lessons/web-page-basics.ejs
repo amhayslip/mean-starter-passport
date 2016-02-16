@@ -1,7 +1,187 @@
-<div class="col-sm-10 col-sm-offset-1">
+<div class="col-sm-8 col-sm-offset-2 lesson">
   <div class="page-header">
     <h2>Web Page Basics</h2>
+    <a href="/#/">Back Home</a>
   </div>
+
+
+  <div class="topic">
+    <h3>Intro</h3>
+    <p>By now you've at least spent a million hours in Codecademy coding up HTML. Now it's time we do this from scratch to build real pages. In this lessons we will learn:</p>
+
+    <ul>
+      <li>How to navigate through your computer from the command-line.</li>
+      <li>How to create new files/folders from the command-line.</li>
+      <li>The setup code (boilderplate) required for every website we build.</li>  
+    </ul>
+
+    <p>We'll do this by starting what will be your portfolio. At the end of the week you'll have live website deployed for the world to see!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 1: Folder Structure</h4>
+
+    <p>As you know by now, code is just text that the computer can read. We save this code in normal, eveyday files that are stored in a series of folders. Go ahead and decide where you'll be saving all of our code for our bootcamp. It's a good idea to create a folder called <strong>code</strong> where you store everything and to create sub-folders for more speific work. Here is an example. These are all folders</p>
+
+    <p>-<strong>home</strong></p>
+    <p>--<strong>code</strong></p>
+    <p>---<strong>bootcamp</strong></p>
+    <p>----<strong>week-1</strong></p>
+    <p>----<strong>week-2</strong></p>
+    <p>----<strong>week-3</strong></p>
+    <p>----<strong>week-4</strong></p>
+
+    <p>Go ahead and create you own folder structure now and decide where you'll store the code your write for the bootcamp.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 2: Command Line Navigation</h4>
+
+    <p>Until now, you might have used "finder" or the "start" menu on your computer to navigate through files and folders. As a developer, you'll be using the <strong>command-line</strong> quite a bit, so it will be much easier to navigate folders from there.</p> 
+
+    <p>Go ahead and open your <strong>command-line</strong> now: if you're using a Mac this is called <strong>Terminal</strong> or <strong>iTerm</strong>, and if you're using a Windows Machine it's called <strong>Command Prompt</strong>. It will look something like this:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-12.18.26-PM.png"></img>
+
+    <p>By default, your command-line will open inside of your "home folder". Let's see what's inside. If you're using a <strong>Mac</strong> type in the following, then hit enter:</p>
+
+    <pre style="background:#000;color:#f8f8f8">ls</pre>
+
+    <p>If you're using a <strong>Windows</strong>, type in:</p>
+
+    <pre style="background:#000;color:#f8f8f8">dir</pre>
+
+    <p>Now you should see a list of your files and folders. Something like this:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-12.25.44-PM.png"></img>
+
+    <p>Now to navigate forward into a folder you'll type in "cd" + "folder_name". For example, if I wanted get into my <strong>code</strong> folder, I'd type this:</p>
+
+    <pre style="background:#000;color:#f8f8f8">cd code</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-2.55.14-PM.png"></img>
+
+    <p>Once again I can list all the file/folders in there by typing (mac):</p>
+
+    <pre style="background:#000;color:#f8f8f8">cd code</pre>
+
+    <p>Or (windows):</p>
+
+    <pre style="background:#000;color:#f8f8f8">dir</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-2.59.02-PM.png"></img>
+
+    <p>Now to back-up one, I would type (both mac and windows):</p>
+
+    <pre style="background:#000;color:#f8f8f8">cd ..</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-3.00.35-PM.png"></img>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 3: Creating a New Project</h4>
+
+    <p>Using the commands we learned above, navigate to the folder where you want to create today's project (for example: <strong>code</strong>><strong></strong > <strong>bootcamp</strong> > <strong>week-1</strong>). Once you're there, type in:</p>
+
+    <pre style="background:#000;color:#f8f8f8">mkdir portfolio</pre>
+
+    <p>This will create a new folder called "portfolio". <strong>mkdir</strong> means, "make directory" and is used for creating folders. Now we will create two files inside this folder. First "cd" into it by typing:</p>
+
+    <pre style="background:#000;color:#f8f8f8">cd portfolio</pre>
+
+    <p>Now to create our new files we will type:</p>
+
+    <pre style="background:#000;color:#f8f8f8">touch index.html</pre>
+    <pre style="background:#000;color:#f8f8f8">touch style.css</pre>
+
+    <p>Or if you're using a windows machine:</p>
+
+    <pre style="background:#000;color:#f8f8f8">fsutil file createnew index.html 0</pre>
+    <pre style="background:#000;color:#f8f8f8">fsutil file createnew style.css 0</pre>
+
+    <p>Now if you type <strong>ls</strong>, you should see your new files:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-3.17.19-PM.png"></img>
+
+    <p>Finally, let's open these up inside of sublime by typing in this (for Mac):</p>
+
+    <pre style="background:#000;color:#f8f8f8">subl .</pre>
+
+    <p>Or this for Windows:</p>
+
+    <pre style="background:#000;color:#f8f8f8">subl.exe</pre>
+
+    <p>This will open your project in Sublime. Remember that you must be at the "root" of your project (inside the folder) to open it in Sublime.</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-3.23.53-PM.png"></img>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 4: HTML Setup</h4>
+
+    <p>Okay, now we're ready to write some code! We'll start with our HTML file.</p>
+
+    <p>Most of our projects will have an HTML file named <strong>index.html</strong>. The index file is the main file that get's run in our browser and it's where we connect all our other files (if we have them). Go ahead and copy/paste the following code inside of our <strong>index.html</strong> file:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;!<span style="color:#89bdff"><span style="color:#89bdff">DOCTYPE</span> html</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">html</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">head</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">title</span>>&lt;/<span style="color:#89bdff">title</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">head</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">body</span>></span>
+
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">body</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">html</span>></span>
+</pre>
+  
+    <p>This is our "HTML boilerplate". Boilerplate code is what we call code that we use for set-up.</p>
+
+    <p>If you remember, line 1 is where we delcare that we're using HTML to the browser. The "html tag" wraps our whole HTML document and inside of it we hve our <strong>head</strong> and our <strong>body</strong>. Our <strong>head</strong> is for "logistics", like the title of our page and linking in other files. The <strong>body</strong> is for the actual content of our page. Go ahead and add the following code inside of your <strong>body</strong>:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>Hello World!<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span></pre>
+
+    <p>Lastly, open it up inside of Google Chrome. You can drag the icon at the top (if you're using a Mac) or you can open Google Chrome and type <strong>ctrl</strong> + <strong>o</strong> if you're on a Windows. This is what you should see:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-3.40.37-PM.png"></img>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 5: CSS Setup</h4>
+
+    <p>Nothing too impressive for now, but let's add some color in here. For this we of course need the help of CSS. The first think we need to do is make our HTML file aware of our CSS file. To do, we will add the following HTML inside of the <strong>head</strong> tag:</p>
+
+    <pre style="background:#000;color:#f8f8f8">  <span style="color:#89bdff">&lt;<span style="color:#89bdff">head</span>></span>
+    <span style="color:#e0c589">&lt;<span style="color:#e0c589">link</span> <span style="color:#e0c589">rel</span>=<span style="color:#65b042">"stylesheet"</span> <span style="color:#e0c589">type</span>=<span style="color:#65b042">"text/css"</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"style.css"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">title</span>>&lt;/<span style="color:#89bdff">title</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">head</span>></span>
+</pre>
+
+    <p>We've added a <strong>link</strong> tag with 3 <strong>attributes</strong>: "rel" (relationship), "type" and "href" (hypertext reference). When we're linking CSS files to our HTML file, all of these attributes will have these values, but the value of "href" will always be the filepath from our HTML file to our CSS file. Since both <strong>index.html</strong> and <strong>style.css</strong> are in the same folder, we just write <strong>style.css</strong>.</p>
+
+    <p>Now add the following CSS inside of <strong>style.css</strong>:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">h1</span> {
+  <span style="color:#c5af75">color</span>: <span style="color:#cf6a4c">red</span>;
+
+}
+</pre>
+    <p>Now, our H1 is red!</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-16-at-3.49.09-PM.png"></img>
+  </div>
+
+
+
 </div>
 
 <!-- Lesson Template:
