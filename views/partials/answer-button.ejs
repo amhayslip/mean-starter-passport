@@ -1,0 +1,6 @@
+<button class="btn btn-success" ng-class="{'btn-success': !questions[<%= num %>]}" 
+  ng-click="toggleAnswer(<%= num %>)">
+    <span ng-hide="questions[<%= num %>]">Show</span>
+    <span ng-show="questions[<%= num %>]">Hide</span>
+    Answer
+</button>

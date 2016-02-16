@@ -7,14 +7,20 @@
 </div>
 
 <div class="exercise">
-  <div class="answer" ng-class="{'show': questions[1-1]}">
+  <% var num= '1-1'; %>
+  <div class="answer" ng-class="{'show': questions[<%= num %>]}">
     This is the answer!
   </div>
 
-  <button class="btn btn-success" ng-class="{'btn-success': !questions[1-1]}" 
-  ng-click="toggleAnswer(1-1)">
-    <span ng-hide="questions[1-1]">Show</span>
-    <span ng-show="questions[1-1]">Hide</span>
-    Answer
-  </button>
+  <% include ../partials/answer-button %>
 </div>
+
+<div class="exercise">
+  <% var num= '1-2'; %>
+  <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+    This is the answer!
+  </div>
+
+  <% include ../partials/answer-button %>
+</div>
+
