@@ -12,4 +12,4 @@ gulp.task('install', function () {
   .pipe(install());
 });
 
-gulp.task('default', ['install']);
+gulp.task('default', ['install', 'server']);
