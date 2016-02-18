@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5 {
-  font-family: 'LubalinGraphStd-Book';
+  font-family: 'LubalinGraphStd-Book', sans-serif;
 }
 
 .answer {
@@ -32,7 +32,7 @@ img {
 }
 
 .navbar-default .navbar-brand {
-  font-family: 'LubalinGraphStd-Book';
+  font-family: 'LubalinGraphStd-Book', sans-serif;
   color: black;
   font-size: 24px;
   line-height: 61px;
