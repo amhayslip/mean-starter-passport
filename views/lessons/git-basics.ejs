@@ -1,5 +1,192 @@
-<div class="col-sm-8 col-sm-offset-2">
+<div class="col-sm-8 col-sm-offset-2 lesson">
   <div class="page-header">
     <h2>Intro to Git and Github</h2>
-  </div>    
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    As coders, we shuffle around hundreds of files, full of thousands of lines of code in extremely complex folder systems. But what if you want to undo something you did? Or create two versions of a feature? Or even simultaneously work on an app without your changes affecting someone else’s changes? Luckily for us, some really smart people have already figured this out, and it’s called version control.
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Version Control</h3>
+      <p>Version Control is a cool term used to describe, well, controlling the different “versions” of your application or project. There are many different tools to assist with version control, but by the far the most popular these days is <strong>git</strong> paired with <strong>github</strong>.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>In this lesson we’re going to learn how to:</p>
+      <ul>
+        <li>Create a repo on github</li>
+        <li>Make a project "git" ready</li>
+        <li>Commit our project to our github repo</li>
+        <li>Make changes</li>
+        <li>Revert changes</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Initializing a Local Repository</h3>
+    <p>A repository is just a place that your code lives that keeps track of all the files in it. First, we need to tell git to start keeping track of our files. If you're not already there, on your command-line naviagte inside of your <strong>portfolio</strong> folder. Once your there type in:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git init</pre>
+
+    <p>You should see a message that says something like "Initialized empty Git repository in..."</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-10.45.15-AM.png"></img>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Tracking Files</h3>
+    <p>Now type in</p>
+
+    <pre style="background:#000;color:#f8f8f8">git status</pre>
+
+    <p>You should see a message like this:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-10.50.00-AM.png"></img>
+
+    <p>This is telling us that we have two "untracked files". In other words, git doesn't know about these files and won't know if we make changes inside of them. We to add them. To do that we can add them one by one like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git add index.html</pre>
+    <pre style="background:#000;color:#f8f8f8">git add style.css</pre>
+
+    <p>Or, to add everything at once we can type:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git add .</pre>
+
+    <p>Now, if we again check the status of our repository by typing:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git status</pre>
+
+    <p>We will see two files that are "staged" to be "committed":</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.01.23-AM.png"></img>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Commit</h3>
+    <p>We told git to watch our <strong>portfolio</strong> folder and to track all of our files inside of it. Now we can "commit". A "commit" is a snapshot of our project. It saves a refernce to what our files looked like at the time of the "commit". Now type the following:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git commit -m "Add main project files"</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.08.54-AM.png"></img>
+
+    <p>Above we did a commit with a message. This message is a quick note on the status of our app when this "snapshot" was taken. To look at a log of our all our commits, type:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git log</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.12.34-AM.png"></img>
+
+    <p>Above we can see that I only have 1 commit. It's represented by a unique ID called a "SHA hash" (mine is a7c5ae0c52c036e577167e024b5c5d08a5a5f015). Later, we'll use this ID to reference our commit.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Add to Github</h3>
+    <p>So far our "git" project only lives on our computer. Now, we'll add it to <strong>github.com</strong> so that others can see it (and contribute... more on that later), and to make sure we have it saved somewhere else besides just our computer (in case it dies).</p>
+
+    <p>Go to <a href="https://github.com/" target="_blank">github.com</a> and log in to your account. Go to your profile and click the "Repositories" tab.</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.19.06-AM.png"></img>
+
+    <p>This is (or, will be) a list of all your projects and the different versions of it. Click the big green button that says "New" to create a new repository. On the next page, give your project a name (lets use "portfolio") and click "create repository".</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.22.03-AM.png"></img>
+
+    <p>The next screen has a bunch of instructions, but we'll do that together. For now, copy the url at the top:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.23.24-AM.png"></img>
+
+    <p>Now, head back to your command line and type:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git remote add origin YOUR_URL</pre>
+
+    <p>Mine looked like this:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.26.26-AM.png"></img>
+
+    <p>In the command above we added a "remote repository" to our local repository. Now our local git repository has access to the one on github. Notice that we gave it a name, "origin". This is standard, but we could have called it anything we like.</p>
+
+    <p>Last but not least, let's push it! Type in the following:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git push origin master</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.30.06-AM.png"></img>
+
+    <p>In our command we said, "push our project to the origin repo's master branch". We'll talk more about branches in the future. Now if you go back to github, you will see your files!</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.31.24-AM.png"></img>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Making Changes</h3>
+    <p>Ok, for funsies, let's change something inside of our project. Add your name for the "title" inside of <strong>index.html</strong>:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">title</span>></span>Aaron Hayslip<span style="color:#e0c589">&lt;/<span style="color:#e0c589">title</span>></span>
+</pre>
+
+    <p>Now if you type:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git status</pre>
+
+    <p>...in your command-line, you will see that there are some changes that have not been staged for committing. To see these changes type:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git diff</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.38.47-AM.png"></img>
+
+    <p>You can see what was "deleted" and what was added. To exit this screen type <strong>shift</strong> + <strong>q</strong>.
+
+    <p>Now let's add those changes by typing:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git add index.html</pre>
+
+    <p>Then check the status again:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git status</pre>
+
+    <p>Then let's do a commit</p>
+
+    <pre style="background:#000;color:#f8f8f8">git commit -m "add title"</pre>
+
+    <p>And push again!</p>
+
+    <pre style="background:#000;color:#f8f8f8">git push origin master</pre>
+
+    <p>What if we didn't like that last commit and wanted to revert our project? We can reset it! To do that, we need to get the SHA hash of the commit. To find it, type in:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git log</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-17-at-11.44.52-AM.png"></img>
+
+    <p>Now we have two commits. We want our project to look like it did when we took the first snap shot. Therefore, copy the SHA hash of our first commit and type this in:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git reset YOUR_SHA_HASH</pre>
+
+    <p>This is considered a "soft" reset. It didn't actually change your code, but "uncommitted" and "unstaged" your last commit. In other words, the title is still in the code, but it's as if you didn't do a commit.</p>
+
+    <p>To blow away the last commit and to reset your code back to the way it was, you would type in the same thing, but with <strong>--hard</strong>, like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8">git reset --hard YOUR_SHA_HASH</pre>
+
+    <h4>Done.</h4>
+    <p>Awesome! You'll be using these things every day of your life as a developer, so as you're learning them, remember to refer back to this lesson. We will cover git more in depth as we progress.</p>
+
+
+  </div>
+
 </div>

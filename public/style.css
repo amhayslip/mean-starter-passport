@@ -1,3 +1,7 @@
+h1, h2, h3, h4, h5 {
+  font-family: 'LubalinGraphStd-Book';
+}
+
 .answer {
   display: none;
 }
@@ -16,4 +20,35 @@ img {
 
 .lesson {
   margin-bottom: 200px;
+}
+
+.navbar {
+  background-color: rgba(125,178,225,1);
+  color: black;
+}
+
+.navbar-default .navbar-nav li a {
+  color: black;
+}
+
+.navbar-default .navbar-brand {
+  font-family: 'LubalinGraphStd-Book';
+  color: black;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.navbar-default .navbar-nav>.open>a {
+  background-color: #f1645d;
+  color: black;
+}
+
+.navbar-default .navbar-nav>.open>a:hover {
+  background-color: #f1645d;
+  color: black;
+}
+
+a.list-group-item:hover {
+  background-color: #f1645d;
+  color; black;
 }
