@@ -27,6 +27,11 @@ app.config([
           }
         }]
       })
+      .state('prework', {
+        url: '/prework',
+        templateUrl: '/prework.html',
+        controller: 'MainCtrl'
+      })
       .state('login', {
         url: '/login',
         templateUrl: '/login.html',
@@ -37,16 +42,16 @@ app.config([
           }
         }]
       })
-      .state('register', {
-        url: '/register',
-        templateUrl: '/register.html',
-        controller: 'AuthCtrl',
-        onEnter: ['$state', 'auth', function($state, auth){
-          if(auth.isLoggedIn()){
-            $state.go('home');
-          }
-        }]
-      })
+      // .state('register', {
+      //   url: '/register',
+      //   templateUrl: '/register.html',
+      //   controller: 'AuthCtrl',
+      //   onEnter: ['$state', 'auth', function($state, auth){
+      //     if(auth.isLoggedIn()){
+      //       $state.go('home');
+      //     }
+      //   }]
+      // })
 
       $urlRouterProvider.otherwise('home');
   
