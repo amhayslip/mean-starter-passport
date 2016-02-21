@@ -1,0 +1,59 @@
+h1, h2, h3, h4, h5 {
+  font-family: 'LubalinGraphStd-Book', sans-serif; }
+
+.answer {
+  display: none; }
+
+.show {
+  display: block; }
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  margin: 15px auto 15px auto; }
+
+.lesson {
+  margin-bottom: 200px; }
+
+.navbar {
+  background-color: #7db2e1;
+  color: black; }
+
+.navbar-default .navbar-nav li a {
+  color: black; }
+
+.navbar-default .navbar-brand {
+  font-family: 'LubalinGraphStd-Book', sans-serif;
+  color: black;
+  font-size: 24px;
+  line-height: 50px;
+  padding: 0; }
+
+.navbar-default .navbar-nav > .open > a {
+  background-color: #f1645d;
+  color: black; }
+
+.navbar-default .navbar-nav > .open > a:hover {
+  background-color: #f1645d;
+  color: black; }
+
+a.list-group-item:hover {
+  background-color: #f1645d;
+  color: black; }
+
+a.list-group-item {
+  color: black; }
+
+.logo-img {
+  float: left;
+  padding: 8px; }
+
+.logo-img img {
+  height: 35px;
+  width: 35px;
+  margin: 0; }
+
+.logo-text {
+  float: left; }
