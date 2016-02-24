@@ -72,3 +72,12 @@ img {
   margin: 0 auto;
   display: block;
   margin-bottom: 10px; }
+
+.diagram {
+  max-width: 300px; }
+
+.ex {
+  margin-top: 35px; }
+
+.def {
+  margin-bottom: 0; }
