@@ -1,3 +1,9 @@
+$el-green: #b0d236;
+$el-red: #f1645d;
+$el-blue: rgba(125,178,225,1);
+$light-grey: #D3D3D3;
+
+
 h1, h2, h3, h4, h5 {
   font-family: 'LubalinGraphStd-Book', sans-serif;
 }
@@ -23,7 +29,7 @@ img {
 }
 
 .navbar {
-  background-color: rgba(125,178,225,1);
+  background-color: $el-blue;
   color: black;
 }
 
@@ -40,17 +46,17 @@ img {
 }
 
 .navbar-default .navbar-nav>.open>a {
-  background-color: #f1645d;
+  background-color: $el-red;
   color: black;
 }
 
 .navbar-default .navbar-nav>.open>a:hover {
-  background-color: #f1645d;
+  background-color: $el-red;
   color: black;
 }
 
 a.list-group-item:hover {
-  background-color: #f1645d;
+  background-color: $el-red;
   color: black;
 }
 
@@ -71,4 +77,22 @@ a.list-group-item  {
 
 .logo-text {
   float: left;
+}
+
+.done {
+  background-color: $el-green;
+}
+
+.answer p {
+  background-color: $light-grey;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+img {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
 }

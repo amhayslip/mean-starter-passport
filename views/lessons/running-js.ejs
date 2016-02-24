@@ -1,0 +1,82 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>Running Javascript</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>Before we get into the fun of diving deep with Javascript, let's first go over the different ways in which we can actually interpret and run Javascript. In this lesson we’re going to learn how to:</p>
+      <ul>
+        <li>Construct a single javascript file and run it inside an HTML file.</li>
+        <li>Explain the order in which the browser reads an HTML file.</li>
+        <li>Open the Chrome Developer Tools and run Javascript code.</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Script Tag of HTML file</h4>
+    <p>Go ahead and open up your command-line... yep, I told you we'd be doing this a bunch. Navigate to wherever you're keeping today's files and create a new folder called <strong>run-js</strong>. Inside of <strong>run-js</strong> create one file called <strong>index.html</strong>. Go ahead and set it up with your boilerplate HTML. If you can't remember these steps, refer back to yesterday's lessons.</p>
+
+    <p>Now, in the bottom of the body tag of your HTML add the following:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">body</span>></span>
+
+  &lt;<span style="color:#e0c589">script</span> <span style="color:#e0c589">type</span>=<span style="color:#65b042">"text/javascript"</span>>
+    <span style="color:#dad085">alert</span>(<span style="color:#65b042">'hello world!'</span>);
+  &lt;/<span style="color:#e0c589">script</span>>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">body</span>></span>
+</pre>
+    
+    <p>Once you've done that, open your <strong>index.html</strong> file in your browser. It should alert "hello world!" and if you refresh, it will alert it again. When your HTML file loads, the browser reads it from top to bottom. When it sees the script tag, it charges up it's built in "javascript inerpreter" and runs your Javascript code.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>In a Separate Javascript File</h4>
+    <p>Often times, we'll be writing so much Javasript that it will be neater and cleaner to put it in it's own file. Open your terminal back up, and from the root of your project (<strong>run-js</strong>) create a Javascript file called <strong>script.js</strong>. Write another <strong>alert</strong> statment inside (just to make sure it's working).</p>
+
+    <p>Now, in the same place that we put our "script" tag a moment ago (inside of <strong>index.html</strong>), add the following:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">body</span>></span>
+
+  &lt;<span style="color:#e0c589">script</span> <span style="color:#e0c589">type</span>=<span style="color:#65b042">"text/javascript"</span>>
+    <span style="color:#dad085">alert</span>(<span style="color:#65b042">'hello world!'</span>);
+  &lt;/<span style="color:#e0c589">script</span>>
+
+  &lt;<span style="color:#e0c589">script</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"script.js"</span>>&lt;/<span style="color:#e0c589">script</span>>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">body</span>></span>
+</pre>
+
+    <p>Once again, open it in your browser. You should have seen two alert messages run. Which one went first? Why? Why did we put our script tags at the bottom of the <strong>body</strong> as opposed to inside the <strong>head?</strong></p>
+
+    <div class="exercise">
+      <% var num= '1-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>Sometimes we need our Javascript to "know about" the HTML that lives in our body. If we include our Javascript in the head, then the Javascript runs first, then our HTML. To our Javasript, it's as if our HTML doesn't exist.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Running our Javascript in the "Dev Console"</h4>
+    <p>Since our browser is the one doing the work of "interpreting" our Javascript, we can just as well run Javascript directly in the browser using Google's Chrome Developer Tools. We'll get to know these more intimately in a moment, but for now, open them by heading to your Google Chrome browser and typing in <strong>command</strong> + <strong>options</strong> + <strong>j</strong> (mac) or <strong>control</strong> + <strong>shift</strong> + <strong>j</strong> (windows).</p>
+
+    <p>A window should pop up that looks like this:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-23-at-3.56.56-PM.png">
+
+    <p>Now inside of that text box, you can write Javascript! Give it a shot.</p>
+  </div>
+
+  <hr>
+    <h4>Done.</h4>
+    <p>Awesome! Pretty simple. Keep your <strong>run-js</strong> folder open as we'll use it for the next lesson. Take a quick break, and jump into it.</p>
+  </div>
+</div>

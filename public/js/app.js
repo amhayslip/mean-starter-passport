@@ -11,7 +11,7 @@ app.config([
         controller: 'MainCtrl',
         onEnter: ['$state', 'auth', function($state, auth){
           if(!auth.isLoggedIn()){
-            $state.go('login');
+            $state.go('setup');
           }
         }]
       })
@@ -30,6 +30,11 @@ app.config([
       .state('prework', {
         url: '/prework',
         templateUrl: '/prework.html',
+        controller: 'MainCtrl'
+      })
+      .state('setup', {
+        url: '/setup',
+        templateUrl: '/setup.html',
         controller: 'MainCtrl'
       })
       .state('login', {

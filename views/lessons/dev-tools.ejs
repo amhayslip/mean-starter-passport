@@ -1,0 +1,84 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>Chrome Developer Tools</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>You may think it pre-mature, but any good craftsman knows his tools. In this lesson we’re going to learn how to use the Chrome Developer Tools to debug our Javascript. Specifically, we'll:</p>
+      <ul>
+        <li>Debug our Javascript by pausing using "debugger" statements.</li>
+        <li>Debug our Javascript by adding "breakpoints".</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Interacting with our Javascript</h4>
+      <p>Go ahead and open your <strong>run-js</strong> project in Sublime if you don't already have it open. Inside of your <strong>script.js</strong> file, write the following:</p>
+
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> frontEnd <span style="color:#e28964">=</span> [<span style="color:#65b042">'HTML'</span>, <span style="color:#65b042">'CSS'</span>, <span style="color:#65b042">'Javascript'</span>];</pre>
+
+      <p>Now, open <strong>run-js</strong>'s <strong>index.html</strong> file in Chrome, then open your Chrome Developer Console <strong>command</strong> + <strong>options</strong> + <strong>j</strong> (mac) or <strong>control</strong> + <strong>shift</strong> + <strong>j</strong> (windows).</p>
+
+      <p>Inside the console type:</p>
+
+      <pre style="background:#000;color:#f8f8f8">frontEnd</pre>
+
+      <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-23-at-4.28.35-PM.png">
+
+      <p>What happened? We were able to look at the code we've written inside of <strong>script.js</strong> and interact with it. We could change things too (like add more items to our frontEnd array) and these changes would of course not change the file itself. This is great for testing code.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Debugger</h4>
+      <p>Change the code inside of <strong>script.js</strong> to look like this:</p>
+
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> frontEnd <span style="color:#e28964">=</span> [<span style="color:#65b042">'HTML'</span>, <span style="color:#65b042">'CSS'</span>, <span style="color:#65b042">'Javascript'</span>];
+<span style="color:#99cf50">var</span> frontEndLangages <span style="color:#e28964">=</span> frontEnd;
+</pre>
+
+      <p>What does the variable <strong>frontEndLangages</strong> point to? Our array. Cool. Now change it to look like this:</p>
+
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> frontEnd <span style="color:#e28964">=</span> [<span style="color:#65b042">'HTML'</span>, <span style="color:#65b042">'CSS'</span>, <span style="color:#65b042">'Javascript'</span>];
+<span style="color:#e28964">debugger</span>;
+<span style="color:#99cf50">var</span> frontEndLangages <span style="color:#e28964">=</span> frontEnd;
+</pre>
+
+      <p>We added the debugger statement to pause our code at that point. Go back to your Chrome Developer Tools and refresh your browser. If you type <strong>frontEndLanguages</strong> into your console, it will come up as <strong>undefined</strong> because that part of the code has not run yet.</p>
+
+      <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-23-at-4.38.55-PM.png">
+
+      <p>In the future, debugger will become one of your best friends.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Breakpoints</h4>
+      <p>There is a less obtrusive way to pause our Javascript than the "debugger" statment. Go ahead and close the browser tab that is running your <strong>index.html</strong> file and remove the <strong>debugger</strong> statement from your <strong>script.js</strong> file.</p>
+
+      <p>After you've done that, open your <strong>index.html</strong> file back up in Google Chrome and open the Developer Tools. At the top, click the tab that says "sources".</p>
+
+      <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-23-at-4.47.28-PM.png">
+
+      <p>If you don't see your <strong>script.js</strong> file, you may need to refresh again. Then, click the tab below that says <strong>script.js</strong>. You're now looking inside your Javascript file.</p>
+
+      <p>On the left of the file you will see line-numbers. Click the number 2 and notice that it will highlight blue. Now, refresh your page.</p>
+
+      <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-24-at-7.15.23-AM.png">
+
+      <p>At this point it should pause your page in "debugger" at the highlighted point - this is a breakpoint and works just like the "debugger" statment. To continue, press the highlighted play button below.</p>
+
+      <img style="max-width: 100px" src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-24-at-7.19.26-AM.png">
+  </div>
+
+  <hr>
+    <h4>Done.</h4>
+    <p>You will use these tools every day as a Javascript developer, so remember to refer back to this lesson until you memorize these steps. As our Javascript code grows and becomes more complex, these tools will be your best friend.</p>
+  </div>
+</div>
