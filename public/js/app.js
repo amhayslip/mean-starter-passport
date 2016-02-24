@@ -11,7 +11,7 @@ app.config([
         controller: 'MainCtrl',
         onEnter: ['$state', 'auth', function($state, auth){
           if(!auth.isLoggedIn()){
-            $state.go('setup');
+            $state.go('home');
           }
         }]
       })
