@@ -228,7 +228,16 @@ y <span style="color:#e28964">=</span> other;
 
   <div class="topic">
     <h4>Equality</h4>
-    <p>Let's talk abot </p>
+    <p>Two of these may be confusing. The triple equals (===) and the double equals (==). First of all, you should pretty much always use the triple, but let's talk about why. Copy/paste the following in your console. What were the results? What did you expect? WHY!?</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">0</span> <span style="color:#e28964">===</span> <span style="color:#3387cc">false</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">99</span> <span style="color:#e28964">===</span> <span style="color:#65b042">"99"</span>);
+
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">0</span> <span style="color:#e28964">==</span> <span style="color:#3387cc">false</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">99</span> <span style="color:#e28964">==</span> <span style="color:#65b042">"99"</span>);
+</pre>
+
+    <p>The Strict Equal operator (===) checks for type AND value, whereas the Equal operator (==) tries to convert values of different type before comparison. In the example above, "99" was converted to 99 when compared using the ==.</p>
 
   </div>
 
