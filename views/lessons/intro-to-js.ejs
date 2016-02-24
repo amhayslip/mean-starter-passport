@@ -1,0 +1,241 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>Intro to Javascript</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>Depending on how well you absorbed the prework, this may be review to you. In this section we will:</p>
+      <ul>
+        <li>Look inside at how JS variables work using diagrams.</li>
+        <li>Learn a few of Javsacript's "types".</li>
+        <li>Learn how to "concatenate strings".</li>
+        <li>Learn to use conditionals.</li>
+      </ul>
+      <p>With that, go ahead and partner up. For this first part, just use one computer and work through the lesson together.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Variables and Types</h4>
+    <p>In Javascript we create <strong>variables</strong> to reference different <strong>types</strong>. A <strong>type</strong> (or data-type) refers to the identity of a given "thing" in Javascript. For example, below we're creating a variable <strong>dog</strong> that points to a <strong>string</strong>, "ralph". <strong>String</strong> is a type.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> dog <span style="color:#e28964">=</span> <span style="color:#65b042">"ralph"</span>;
+</pre>
+
+    <p>Another "type" is an integer (a fancy word for number). Below, 96 is an integer.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> age <span style="color:#e28964">=</span> <span style="color:#3387cc">96</span>;
+</pre>
+
+    <p>What about now, is 96 an integer?</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> age <span style="color:#e28964">=</span> <span style="color:#65b042">"96"</span>;
+</pre>
+
+    <div class="exercise">
+      <% var num= '2-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>Nope! It's a string!</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Reference</h4>
+    <p>Like we said, varaibles "reference" things, they don't actually become those things. In other words, they just point to whatever they were assigned to (any time we see the single equals "=" it means assignment). Let's practice this a bit.</p>
+
+    <p class="ex"><strong>Exercise 1.</strong> With your partner, draw a diagram of the following code:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> person <span style="color:#e28964">=</span> <span style="color:#65b042">"Bob"</span>;
+<span style="color:#99cf50">var</span> job <span style="color:#e28964">=</span> <span style="color:#65b042">"Circus Clown"</span>;
+</pre>
+
+    <div class="exercise">
+      <% var num= '2-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <img class="diagram" src="http://www.elevationacademy.co/wp-content/uploads/2016/02/d1.jpeg">
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Exercise 2.</strong> With your partner, draw a diagram of the following code:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> person <span style="color:#e28964">=</span> <span style="color:#65b042">"Bob"</span>;
+<span style="color:#99cf50">var</span> job <span style="color:#e28964">=</span> <span style="color:#65b042">"Circus Clown"</span>;
+<span style="color:#99cf50">var</span> otherJob <span style="color:#e28964">=</span> job;
+</pre>
+    
+    <div class="exercise">
+      <% var num= '2-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <img class="diagram" src="http://www.elevationacademy.co/wp-content/uploads/2016/02/d2.001.jpeg">
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Exercise 3.</strong> With your partner, draw a diagram of the following code:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> president <span style="color:#e28964">=</span> <span style="color:#65b042">"Obama"</span>;
+<span style="color:#99cf50">var</span> potus <span style="color:#e28964">=</span> president;
+president <span style="color:#e28964">=</span> <span style="color:#65b042">"Some new crazy person"</span>;
+</pre>
+
+    <div class="exercise">
+      <% var num= '2-4'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <img class="diagram" src="http://www.elevationacademy.co/wp-content/uploads/2016/02/d3.jpeg">
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Exercise 4.</strong> With your partner, draw a diagram of the following code:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> x <span style="color:#e28964">=</span> <span style="color:#3387cc">11</span>;
+<span style="color:#99cf50">var</span> y <span style="color:#e28964">=</span> <span style="color:#3387cc">22</span>;
+
+<span style="color:#99cf50">var</span> other <span style="color:#e28964">=</span> x;
+x <span style="color:#e28964">=</span> y;
+y <span style="color:#e28964">=</span> other;
+</pre>
+
+    <div class="exercise">
+      <% var num= '2-5'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <img class="diagram" src="http://www.elevationacademy.co/wp-content/uploads/2016/02/d4.jpeg">
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>String Concatenation</h4>
+
+    <p>Using "plus signs", you can build new strings from other strings. For example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> city <span style="color:#e28964">=</span> <span style="color:#65b042">"Tel Aviv"</span>;
+<span style="color:#99cf50">var</span> country <span style="color:#e28964">=</span> <span style="color:#65b042">"Israel"</span>;
+<span style="color:#99cf50">var</span> place <span style="color:#e28964">=</span> city <span style="color:#e28964">+</span> <span style="color:#65b042">", "</span> <span style="color:#e28964">+</span> country;
+</pre>
+
+    <p>The result of this will of course be "Tel Aviv, Israel". Notice that we had to account for every part of our new string, including the space and comma.</p>
+
+    <p>We can also concatenate integers in with numbers. Copy/paste the following in your Dev Console to see the value of <strong>place</strong>.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> city <span style="color:#e28964">=</span> <span style="color:#65b042">"Tel Aviv"</span>;
+<span style="color:#99cf50">var</span> place <span style="color:#e28964">=</span> city <span style="color:#e28964">+</span> <span style="color:#65b042">" has a population of "</span> <span style="color:#e28964">+</span> <span style="color:#3387cc">411800</span> <span style="color:#e28964">+</span> <span style="color:#65b042">" people"</span>;
+</pre>
+
+    <p class="ex"><strong>Exercise 5.</strong> With your partner, draw a diagram of the following code:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> name <span style="color:#e28964">=</span> <span style="color:#65b042">"Jim"</span>;
+<span style="color:#99cf50">var</span> sentence <span style="color:#e28964">=</span> name <span style="color:#e28964">+</span> <span style="color:#65b042">" is "</span> <span style="color:#e28964">+</span> <span style="color:#3387cc">56</span> <span style="color:#e28964">+</span> <span style="color:#65b042">" years old."</span>
+</pre>
+
+    <div class="exercise">
+      <% var num= '2-6'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/d5.jpeg">
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topics">
+    <h4>Input and Output</h4>
+
+    <p>One way to get input from the user through the browser is to use <strong>prompt</strong>. To message the user (output), we can use <strong>alert</strong>. Copy/paste the following example into your console:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> name <span style="color:#e28964">=</span> <span style="color:#dad085">prompt</span>(<span style="color:#65b042">"What's your name?"</span>);
+<span style="color:#dad085">alert</span>(<span style="color:#65b042">"Hey there "</span> <span style="color:#e28964">+</span> name);
+</pre>
+
+    <p>Great, let's take it for a spin.</p>
+
+    <p class="ex"><strong>Exercise 6.</strong> With your partner, write a Javascript program that prompts the user twice: once for a name and once for an age. Then, alert sentence that says combines the information, like "Don is 45 years old".</p>
+
+    <div class="exercise">
+      <% var num= '2-7'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> name <span style="color:#e28964">=</span> <span style="color:#dad085">prompt</span>(<span style="color:#65b042">"Type in your name"</span>);
+<span style="color:#99cf50">var</span> age <span style="color:#e28964">=</span> <span style="color:#dad085">prompt</span>(<span style="color:#65b042">"Type in your age"</span>);
+<span style="color:#dad085">alert</span>(name <span style="color:#e28964">+</span> <span style="color:#65b042">" is "</span> <span style="color:#e28964">+</span> age <span style="color:#e28964">+</span> <span style="color:#65b042">" years old."</span>);
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Conditionals and Operators</h4>
+    <p>Let's add some logic by implementing <strong>conditionals</strong>. Below is a simple if/else statment. What will it alert?</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">if</span> (<span style="color:#3387cc">1</span> <span style="color:#e28964">===</span> <span style="color:#3387cc">1</span>) {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"It's the same!"</span>);
+} <span style="color:#e28964">else</span> {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"It's different..."</span>);
+}
+</pre>
+
+    <p>Of couse it alerted "It's the same!", because 1 is equal to one. We use the triple equals to detect equality. For a moment, let's pause on the conditionals and talk about "compartive operators", because they will be very helpful when it comes to conditionals. Here is a list:</p>
+
+    <strong>Equal (==)</strong>
+    <p>Returns true if the operands are equal.</p>
+
+    <strong>Strict Equal (===)</strong>
+    <p>Returns true if the operands are equal and of the same type.</p>
+
+    <strong>Not equal (!=)</strong>
+    <p>Returns true if the operands are not equal.</p>
+
+    <strong>Strict not equal (!==)</strong>
+    <p>Returns true if the operands are of the same type but not equal, or are of different type.</p>
+
+    <strong>Greater than (&gt;)</strong>
+    <p>Returns true if the left operand is greater than the right operand.</p>
+
+    <strong>Greater than or equal (&gt;=)</strong>
+    <p>Returns true if the left operand is greater than or equal to the right operand.</p>
+
+    <strong>Less than (&lt;)</strong>
+    <p>Returns true if the left operand is less than the right operand.</p>
+
+    <strong>Less than or equal (&lt;=)</strong>
+    <p>Returns true if the left operand is less than or equal to the right operand.</p>
+
+    <p class="ex"><strong>Exercise 6.</strong> With your partner, write 2 or 3 "if statements" using different comparison operator for each.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Equality</h4>
+    <p>Let's talk abot </p>
+
+  </div>
+
+
+
+  <hr>
+    <h4>Done.</h4>
+    <p>Hell yeah.</p>
+  </div>
+</div>
