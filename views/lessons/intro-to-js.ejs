@@ -12,6 +12,8 @@
         <li>Learn a few of Javsacript's "types".</li>
         <li>Learn how to "concatenate strings".</li>
         <li>Learn to use conditionals.</li>
+        <li>Learn comparative operators.</li>
+        <li>Learn logcial operators.</li>
       </ul>
       <p>With that, go ahead and partner up. For this first part, just use one computer and work through the lesson together.</p>
   </div>
@@ -51,7 +53,7 @@
     <h4>Reference</h4>
     <p>Like we said, varaibles "reference" things, they don't actually become those things. In other words, they just point to whatever they were assigned to (any time we see the single equals "=" it means assignment). Let's practice this a bit.</p>
 
-    <p class="ex"><strong>Exercise 1.</strong> With your partner, draw a diagram of the following code:</p>
+    <p class="ex"><strong>Partner Exercise 1.</strong> With your partner, draw a diagram of the following code:</p>
 
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> person <span style="color:#e28964">=</span> <span style="color:#65b042">"Bob"</span>;
 <span style="color:#99cf50">var</span> job <span style="color:#e28964">=</span> <span style="color:#65b042">"Circus Clown"</span>;
@@ -66,7 +68,7 @@
       <% include ../partials/answer-button %>
     </div>
 
-    <p class="ex"><strong>Exercise 2.</strong> With your partner, draw a diagram of the following code:</p>
+    <p class="ex"><strong>Partner Exercise 2.</strong> With your partner, draw a diagram of the following code:</p>
 
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> person <span style="color:#e28964">=</span> <span style="color:#65b042">"Bob"</span>;
 <span style="color:#99cf50">var</span> job <span style="color:#e28964">=</span> <span style="color:#65b042">"Circus Clown"</span>;
@@ -82,7 +84,7 @@
       <% include ../partials/answer-button %>
     </div>
 
-    <p class="ex"><strong>Exercise 3.</strong> With your partner, draw a diagram of the following code:</p>
+    <p class="ex"><strong>Partner Exercise 3.</strong> With your partner, draw a diagram of the following code:</p>
 
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> president <span style="color:#e28964">=</span> <span style="color:#65b042">"Obama"</span>;
 <span style="color:#99cf50">var</span> potus <span style="color:#e28964">=</span> president;
@@ -98,7 +100,7 @@ president <span style="color:#e28964">=</span> <span style="color:#65b042">"Some
       <% include ../partials/answer-button %>
     </div>
 
-    <p class="ex"><strong>Exercise 4.</strong> With your partner, draw a diagram of the following code:</p>
+    <p class="ex"><strong>Partner Exercise 4.</strong> With your partner, draw a diagram of the following code:</p>
 
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> x <span style="color:#e28964">=</span> <span style="color:#3387cc">11</span>;
 <span style="color:#99cf50">var</span> y <span style="color:#e28964">=</span> <span style="color:#3387cc">22</span>;
@@ -138,7 +140,7 @@ y <span style="color:#e28964">=</span> other;
 <span style="color:#99cf50">var</span> place <span style="color:#e28964">=</span> city <span style="color:#e28964">+</span> <span style="color:#65b042">" has a population of "</span> <span style="color:#e28964">+</span> <span style="color:#3387cc">411800</span> <span style="color:#e28964">+</span> <span style="color:#65b042">" people"</span>;
 </pre>
 
-    <p class="ex"><strong>Exercise 5.</strong> With your partner, draw a diagram of the following code:</p>
+    <p class="ex"><strong>Partner Exercise 5.</strong> With your partner, draw a diagram of the following code:</p>
 
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> name <span style="color:#e28964">=</span> <span style="color:#65b042">"Jim"</span>;
 <span style="color:#99cf50">var</span> sentence <span style="color:#e28964">=</span> name <span style="color:#e28964">+</span> <span style="color:#65b042">" is "</span> <span style="color:#e28964">+</span> <span style="color:#3387cc">56</span> <span style="color:#e28964">+</span> <span style="color:#65b042">" years old."</span>
@@ -167,7 +169,7 @@ y <span style="color:#e28964">=</span> other;
 
     <p>Great, let's take it for a spin.</p>
 
-    <p class="ex"><strong>Exercise 6.</strong> With your partner, write a Javascript program that prompts the user twice: once for a name and once for an age. Then, alert sentence that says combines the information, like "Don is 45 years old".</p>
+    <p class="ex"><strong>Partner Exercise 6.</strong> With your partner, write a Javascript program that prompts the user twice: once for a name and once for an age. Then, alert sentence that says combines the information, like "Don is 45 years old".</p>
 
     <div class="exercise">
       <% var num= '2-7'; %>
@@ -197,28 +199,28 @@ y <span style="color:#e28964">=</span> other;
 
     <p>Of couse it alerted "It's the same!", because 1 is equal to one. We use the triple equals to detect equality. For a moment, let's pause on the conditionals and talk about "compartive operators", because they will be very helpful when it comes to conditionals. Here is a list:</p>
 
-    <strong>Equal (==)</strong>
+    <strong>Equal ==</strong>
     <p>Returns true if the operands are equal.</p>
 
-    <strong>Strict Equal (===)</strong>
+    <strong>Strict Equal ===</strong>
     <p>Returns true if the operands are equal and of the same type.</p>
 
-    <strong>Not equal (!=)</strong>
+    <strong>Not equal !=</strong>
     <p>Returns true if the operands are not equal.</p>
 
-    <strong>Strict not equal (!==)</strong>
+    <strong>Strict not equal !==</strong>
     <p>Returns true if the operands are of the same type but not equal, or are of different type.</p>
 
-    <strong>Greater than (&gt;)</strong>
+    <strong>Greater than &gt;</strong>
     <p>Returns true if the left operand is greater than the right operand.</p>
 
-    <strong>Greater than or equal (&gt;=)</strong>
+    <strong>Greater than or equal &gt;=</strong>
     <p>Returns true if the left operand is greater than or equal to the right operand.</p>
 
-    <strong>Less than (&lt;)</strong>
+    <strong>Less than &lt;</strong>
     <p>Returns true if the left operand is less than the right operand.</p>
 
-    <strong>Less than or equal (&lt;=)</strong>
+    <strong>Less than or equal &lt;=</strong>
     <p>Returns true if the left operand is less than or equal to the right operand.</p>
 
     <p class="ex"><strong>Exercise 6.</strong> With your partner, write 2 or 3 "if statements" using different comparison operator for each.</p>
@@ -238,13 +240,120 @@ y <span style="color:#e28964">=</span> other;
 </pre>
 
     <p>The Strict Equal operator (===) checks for type AND value, whereas the Equal operator (==) tries to convert values of different type before comparison. In the example above, "99" was converted to 99 when compared using the ==.</p>
+  </div>
 
+  <hr>
+
+  <div class="topic">
+    <h4> Logical Operators</h4>
+    <p>Logical operators check the "truthiness" or "falsiness" of two values. It's easier to demonstrate than explan. There are 3 of them, here they are:</p>
+
+    <strong>Logical AND &&</strong>
+    <p>Checks to see if BOTH operands are true. For example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">if</span> (<span style="color:#3387cc">10</span> <span style="color:#e28964">></span> <span style="color:#3387cc">9</span> <span style="color:#e28964">&amp;</span><span style="color:#e28964">&amp;</span> <span style="color:#3387cc">10</span> <span style="color:#e28964">&lt;</span> <span style="color:#3387cc">11</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"true!"</span>);
+} <span style="color:#e28964">else</span> {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"false!"</span>);
+}
+</pre>
+    <p>This console logs "true!" because 10 is BOTH greater than 9 AND less than 11.</p>
+
+    <strong>Logical OR ||</strong>
+    <p>Checks to see if ONE of the operands is true. For example:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">if</span> (<span style="color:#3387cc">10</span> <span style="color:#e28964">></span> <span style="color:#3387cc">9</span> <span style="color:#e28964">||</span> <span style="color:#3387cc">10</span> <span style="color:#e28964">></span> <span style="color:#3387cc">11</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"true!"</span>);
+} <span style="color:#e28964">else</span> {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"false!"</span>);
+}
+</pre>
+    <p>This console logs "true!" because even though 10 is NOT greater than 11, 10 is greater than 9. At least one of the operands is true.</p> 
+
+    <strong>Logical NOT !</strong>
+    <p>Returns false if its single operand can be converted to true; otherwise, returns true. In other words, it checks for the opposite.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">if</span> (<span style="color:#e28964">!</span><span style="color:#3387cc">true</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"true!"</span>);
+} <span style="color:#e28964">else</span> {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"false!"</span>);
+}
+</pre>
+
+    <p>This console logs "false!" because it's saying, "if NOT true" and since the opposite of true is false, it evaluates to false.</p> 
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Putting it All Together</h4>
+    <p>Let's practice some of this. Do the following exercises in your <strong>run-js</strong> file or in your Chrome Developer Console.</p>
+
+    <p class="ex"><strong>Individual Exercise 1.</strong> You're a bartender serving drinks, but you have to make sure your customers are at least 18 years old. Write a program that promtpts the user for their age. If it's less than 18, alert them that they can't have a drink, but if it's 18 and above, alert them that they can drink!</p>
+
+    <div class="exercise">
+      <% var num= '2-8'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> age <span style="color:#e28964">=</span> <span style="color:#dad085">prompt</span>(<span style="color:#65b042">"How old are you?"</span>);
+
+<span style="color:#e28964">if</span> (age <span style="color:#e28964">>=</span> <span style="color:#3387cc">18</span>) {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"Have a drink!"</span>);
+} <span style="color:#e28964">else</span> {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"Sorry youngster, no drinks for you!"</span>);
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Individual Exercise 2.</strong> Now pretend you're controlling the border of Isreal. Write a program that prompts the user for their citizenship. If it's "Israeli", alert that they can pass, otherwise alert that they cannot.</p>
+
+    <div class="exercise">
+      <% var num= '2-9'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> citizenship <span style="color:#e28964">=</span> <span style="color:#dad085">prompt</span>(<span style="color:#65b042">"What country are you from?"</span>);
+
+<span style="color:#e28964">if</span> (citizenship <span style="color:#e28964">===</span> <span style="color:#65b042">"Israeli"</span>) {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"Welcome!"</span>);
+} <span style="color:#e28964">else</span> {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"Sorry, we can't let you in."</span>);
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Individual Exercise 3.</strong> Okay, you're a bartender again. Tonight is ladies night at the bar and all the girls drink for free. Write a program that prompts the user twice: once for their gender and once for their age. If they're female and above 18, alert them they get a free drink. If they're under 18, alert them that they can't drink anything. If they're above 18 and male, tell them they can drink but they must pay.</p>
+
+    <div class="exercise">
+      <% var num= '2-10'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#3387cc">var</span> <span style="color:#3387cc">gender</span> <span style="color:#e28964">=</span> <span style="color:#89bdff">prompt</span>(<span style="color:#65b042">"Whats your gender?"</span>);
+<span style="color:#3387cc">var</span> <span style="color:#3387cc">age</span> <span style="color:#e28964">=</span> <span style="color:#89bdff">prompt</span>(<span style="color:#65b042">"Whats your age?"</span>);
+
+<span style="color:#89bdff">if</span> (<span style="color:#3387cc">gender</span> <span style="color:#e28964">==</span><span style="color:#e28964">=</span> <span style="color:#65b042">"female"</span> &amp;&amp; <span style="color:#3387cc">age</span> <span style="color:#e28964">>=</span> <span style="color:#3387cc">18</span>) {
+  <span style="color:#89bdff">alert</span>(<span style="color:#65b042">"You get a free drink!"</span>);
+} <span style="color:#3387cc">else</span> <span style="color:#e28964">if</span> (<span style="color:#3387cc">age</span> <span style="color:#e28964">>=</span> <span style="color:#3387cc">18</span>) {
+  <span style="color:#89bdff">alert</span>(<span style="color:#65b042">"You can drink, but you must pay!"</span>);
+} <span style="color:#3387cc">else</span> {
+  <span style="color:#89bdff">alert</span>(<span style="color:#65b042">"No drink for you young one!"</span>);
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+    
   </div>
 
 
 
   <hr>
     <h4>Done.</h4>
-    <p>Hell yeah.</p>
+    <p>Awesome.</p>
   </div>
 </div>
+
+
+
