@@ -4,5 +4,218 @@
     <a href="/#/">Back Home</a>
   </div>
 
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>In this lesson we will cover</p>
+      <ul>
+        <li>CSS Selectors</li>
+        <li>Specificity</li>
+        <li>CSS Box Model</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Setup</h3>
+      <p>Go ahead and partner up again and pick the first driver and navigator. Open your <strong>secret-tel-aviv</strong> project in sublime and your browser. We'll get to it in a moment.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>CSS Selectors</h4>
+    <p>With CSS, we "select" certain HTML elements and give them "style" (color, size, position, etc.).  Let's review a few ways we can select elements with CSS.</p>
+
+    <h5>Element Selectors</h5>
+    <p>One selects elements in HTML is by selecting the element itself:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">div</span> {
+  <span style="color:#c5af75">width</span>: <span style="color:#cf6a4c">50%</span>;
+}
+</pre>
+
+    <h5>Class Selectors</h5>
+    <p>Use the "class attribute" in an element to assign the element to a named class. It is up to you what name you choose for the class. Multiple elements in a document can have the same class value. For this, we use a dot:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.title-area</span> {
+  <span style="color:#c5af75">color</span>: <span style="color:#cf6a4c">red</span>;
+}
+</pre>
+
+    <h5>ID Selectors</h5>
+    <p>Just like the class selector, but the ID in your page MUST be unique.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">#about-me</span> {
+  <span style="color:#c5af75">font-family</span>: <span style="color:#cf6a4c">sans-serif</span>;
+}
+</pre>
+
+    <h5>Psudeo Selectors</h5>
+    <p>A CSS pseudo-class is a keyword added to selectors that specifies a special state of the element to be selected. For example :hover will apply a style when the user hovers over the element specified by the selector.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">button:hover</span> {
+  <span style="color:#c5af75">back-color</span>: <span style="color:#cf6a4c">blue</span>;
+}
+</pre>
+
+    <p>Check out this example of using <a href="http://codepen.io/amhayslip/pen/OMOzyg" target="_blank">psuedo selectors to select elements by order.</a>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Try it Out</h4>
+    <p>With your partner, answer to exercises below. Using the HTML below, how would you add the following CSS properties?</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;!<span style="color:#89bdff"><span style="color:#89bdff">DOCTYPE</span> html</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">html</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">head</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">link</span> <span style="color:#e0c589">rel</span>=<span style="color:#65b042">"stylesheet"</span> <span style="color:#e0c589">type</span>=<span style="color:#65b042">"text/css"</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"style.css"</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">title</span>></span>Secret Tel Aviv<span style="color:#e0c589">&lt;/<span style="color:#e0c589">title</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">head</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">body</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">nav</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">ul</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span>></span><span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#food"</span>></span>Food<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span><span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span>></span><span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#night-life"</span>></span>Night Life<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span><span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span>></span><span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#jobs"</span>></span>Jobs<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span><span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span>></span><span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#apartments"</span>></span>Apartments<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span><span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">ul</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">nav</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"hero"</span>></span>
+    <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">class</span>=<span style="color:#65b042">"hero-image"</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/logo_after_effect.png"</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">body</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">html</span>></span>
+</pre>
+  
+    <h5 class="ex">Partner Exercise 1:</h5>
+    <p>Give the body element a background color of #ddd.</p>
+
+    <div class="exercise">
+      <% var num= '3-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">body</span> {
+  <span style="color:#c5af75">background-color</span>: <span style="color:#dd7b3b">#ddd</span>;
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <h5 class="ex">Partner Exercise 2:</h5>
+    <p>Give the nav element a background color of rgb(51, 51, 51).</p>
+
+    <div class="exercise">
+      <% var num= '3-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">nav</span> {
+  <span style="color:#c5af75">background-color</span>: <span style="color:#dad085">rgb</span>(<span style="color:#dd7b3b">51, 51, 51</span>);
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <h5 class="ex">Partner Exercise 3:</h5>
+    <p>Give the "hero-image" element a width of 100%.</p>
+
+    <div class="exercise">
+      <% var num= '3-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.hero-image</span> {
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">100<span style="color:#e28964">%</span></span>;
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <h5 class="ex">Partner Exercise 4:</h5>
+    <p>Using a psudeo selector, make the first "li" green.</p>
+
+    <div class="exercise">
+      <% var num= '3-4'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">li</span><span style="color:#89bdff">:first-child</span> {
+  <span style="color:#c5af75">color</span>: <span style="color:#cf6a4c">green</span>;
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Specificity</h3>
+      <p>There are several levels of "specificity" in CSS. Specificity is the means by which browsers decide which CSS property values are the most relevant to an element and therefore will be applied. Specificity is based on the matching rules which are composed of CSS selectors of different sorts.</p>
+
+      <p>Here are the levels of specificity starting at the least specific:</p>
+
+      <h5 class="ex">1. Element Selectors - Least Specific</h5>
+      <p>If we select an element without being specific to it's "class", "id" or other attributes, this is the least specific. This selector will be easily overriden.
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">div</span> {
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">200<span style="color:#e28964">px</span></span>;
+  <span style="color:#c5af75">height</span>: <span style="color:#dd7b3b">200<span style="color:#e28964">px</span></span>;
+  <span style="color:#c5af75">background-color</span>: <span style="color:#cf6a4c">red</span> <span style="color:#e28964">!important</span>;
+  <span style="color:#c5af75">border</span>: <span style="color:#dd7b3b">5<span style="color:#e28964">px</span></span> <span style="color:#f9ee98">solid</span> <span style="color:#fd5ff1;">magenta</span>;
+}
+</pre>
+
+
+      <h5>2. Class and Attribute Selectors</h5>
+      <p>If we were styling the div above, this selector would override it's styles because it's more specific.</p>
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.songs-container</span> {
+  <span style="color:#c5af75">background-color</span>: <span style="color:#cf6a4c">green</span>;
+  <span style="color:#c5af75">border</span>: <span style="color:#dd7b3b">25<span style="color:#e28964">px</span></span> <span style="color:#f9ee98">solid</span> <span style="color:#cf6a4c">red</span>;
+}
+</pre>
+
+      <h5>3. ID Selectors</h5>
+      <p>If the same div had an id, the following would override the above styles. This is because id's must be unique and are therefore more specific.</p>
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#8b98ab">#rock-songs</span> {
+  <span style="color:#c5af75">background-color</span>: <span style="color:#cf6a4c">orange</span>;
+  <span style="color:#c5af75">border</span>: <span style="color:#dd7b3b">10<span style="color:#e28964">px</span></span> <span style="color:#f9ee98">solid</span> <span style="color:#cf6a4c">blue</span>;
+}
+</pre>
+
+      <h5>4. Inline Styles</h5>
+      <p>This is where you use the HTML "style" attribute to add CSS. The following would override the background color for our div example:</p>
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">style</span>=<span style="color:#65b042">"background-color: pink;"</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">"rock-songs"</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"songs-container"</span>></span>
+  
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+      <h5>5. Using !important</h5>
+      <p>Using the keyword "!important" in your CSS overrides all styles regardless. This should be use very sparingly if at all. The following would override the background color for our previous styles:</p>
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">div</span> {
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">200<span style="color:#e28964">px</span></span>;
+  <span style="color:#c5af75">height</span>: <span style="color:#dd7b3b">200<span style="color:#e28964">px</span></span>;
+  <span style="color:#c5af75">background-color</span>: <span style="color:#cf6a4c">red</span> <span style="color:#e28964">!important</span>;
+  <span style="color:#c5af75">border</span>: <span style="color:#dd7b3b">5<span style="color:#e28964">px</span></span> <span style="color:#f9ee98">solid</span> <span style="color:#fd5ff1;">magenta</span>;
+}
+
+</pre>
+  </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

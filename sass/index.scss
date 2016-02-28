@@ -4,8 +4,14 @@ $el-blue: rgba(125,178,225,1);
 $light-grey: #D3D3D3;
 
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4 {
   font-family: 'LubalinGraphStd-Book', sans-serif;
+  font-weight: bold;
+}
+
+h5 {
+  margin-bottom: 0;
+  font-weight: bold;
 }
 
 .answer {
