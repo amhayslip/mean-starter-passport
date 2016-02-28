@@ -1,0 +1,187 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>HTML Refresher</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>Depending on how well you absorbed the prework, this may be review to you. In this section we will:</p>
+      <ul>
+        <li>Talk about the difference between HTML "tags" and "elements".</li>
+        <li>Learn to user our Chrome Developer tools to "inspect the element".</li>
+        <li>Distinguish between "block" and "inline" elements.</li>
+        <li>Look at a few HTML attributes.</li>
+        <li>Look at some of the most common HTML tags.</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partnering</h4>
+    <p>Go ahead and partner up for this one. Choose a "driver" a "navigator" and whose computer you will you to type, and whose you will you use to follow along with the lesson. Whenever you see this icon:</p>
+    <i class="fa fa-refresh"></i>
+    <p>...switch partners.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Setup</h4>
+    <p>Create a new folder called <strong>html-practice-website</strong> and inside of it create and <strong>index.html</strong> file and a <strong>style.css</strong> file. Add your boilerplate HTML and link your CSS file.</p>
+
+    <p>Do this from the command line. Then, set up a Github Repo withe the same name and do an initial commit. Again, refer to previous lessons if you and your partner are unsure of how to do this. Any time you see this icon:</p>
+    <i class="fa fa-github commit"></i>
+    <p>...do a git commit.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>HTML Tags and Elements</h4>
+    <p>HTML is made up of HTML "attributes". Each "attribute" is made up of an "opening tag" and a "closing tag". Below is an example of the tags that make up a "paragraph" or "p" element.</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-25-at-1.18.12-PM.png">
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-25-at-1.18.29-PM.png">
+
+    <p>Below we have a "paragraph element". The element is made up of the opening tag, the text in the middle and the closing tag.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span>></span>Hey I'm a paragraph element!<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+</pre>
+
+    <p>How many elements are in the code below? What are their tags?</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>All About HTML<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span>></span>I'm in a div and it's great.<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <div class="exercise">
+      <% var num= '3-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>These are 3 elements. A "div", and inside of it is an "h1" element and a "p" element.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Structure</h4>
+    <p>HTML elements build both the content structure of a webpage.</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-25-at-1.29.36-PM.png">
+
+    <p>Copy and paste the code below inside of the <strong>body</strong> of your <strong>index.html</strong> file and then open it in your browser.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>This is the Main Heading<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span>></span>This text might be an introduction to the ret of the page. And if the page is a long one it might be split up into several sub-headings.<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">h2</span>></span>This is a Sub-Heading<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h2</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span>></span>Many long articles have sub-headings so to help you follow the structure of what is being written. There may even be sub-sub-headings (or lower-level headings).<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">h2</span>></span>Another Sub-Heading<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h2</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span>></span>Here you can see another sub-heading.<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+</pre>
+
+    <p>Notice how each element takes up the entire width of the page. This is heading tags and paragraph tags are both "block-level" elements. In other words they take up the entire width of their parent elements (in this case, their parent is the body tag).</p>
+
+    <p>Now change your HTML to look like this and open it in your browser:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>This is the Main Heading<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span>></span>This text might be an introduction to the ret of the page. And if the page is a long one it might be split up into several sub-headings.<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">h2</span>></span>This is a Sub-Heading<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h2</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span>></span>Many long articles have sub-headings so to help you follow the structure of what is being written. There may even be sub-sub-headings (or lower-level headings).<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">h2</span>></span>Another Sub-Heading<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h2</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span>></span>Here you can see another sub-heading. <span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span>></span>Span tags are inline as you can see.<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span><span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+</pre>
+
+    <p>Notice that our span tag did not take up the width of it's parent. This is because span tags are "inline" and are... well, in line.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>HTML Attributes</h4>
+    <p>HTML elements can take different "attributes" depending on the element. Here is the "anatomy" of an attribute.</p>
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-25-at-2.30.38-PM.png">
+
+    <p class="def"><strong>Class and ID</strong></p>
+    <p>All HTML elements can be given "classes" and "id's". There are ways in which we identify elements with some speificity. For example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"container"</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">"top-section"</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <p class="def"><strong>Element Specific Attributes</strong></p>
+    <p>Some attributes go with specific elements. Below is an "image" element and an "a" element (which is for links). Each of the attributes they take is specific:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://bit.ly/1QKVrpD"</span>></span>
+<span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"http://www.google.com"</span>></span>Click Here for Google!<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span>
+</pre>
+
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>The Most Common HTML Tags</h4>
+    <i class="fa fa-refresh"></i>
+    <p>Let's build a simple website using some of the most common HTML. Let's make a website about Tel Aviv, much like <a href="https://www.secrettelaviv.com" target="_blank">Secret Tel Aviv</a>. This is what the landing page will look like when we're done over the next couple of days:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-27-at-8.27.54-PM.png">
+
+
+    First, clear away all the HTML inside your body tag so we can start fresh.</p>
+
+    <p class="def"><strong>The Nav</strong></p>
+    <p>First let's start by building the HTML for our nav. We'll do this by using the "nav" tag.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">nav</span>>&lt;/<span style="color:#89bdff">nav</span>></span></pre>
+
+    <p>Navs work like any other "div" (generic divider), but it's used specifically for the page's naviation.</p>
+
+    <p>Inside of the nav, let's used an unordered list for the links to our pages. Add the following HTML to your page inside the body:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">nav</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">ul</span>></span>
+    <span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span>></span><span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#food"</span>></span>Food<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span><span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+    <span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span>></span><span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#night-life"</span>></span>Night Life<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span><span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+    <span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span>></span><span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#jobs"</span>></span>Jobs<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span><span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+    <span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span>></span><span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#apartments"</span>></span>Apartments<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span><span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">ul</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">nav</span>></span>
+</pre>
+
+    <i class="fa fa-github commit"></i>
+
+    <p>The <strong>ul</strong> stands for "unordered list" and each <strong>li</strong> is a "list item". Inside each list item we have a link to a different section of our website. We used the <strong>a</strong> tag which takes one attribute, <strong>href</strong> followed by the destination of the link. Here we'll link to another part of our page. We'll go over that later.</p>
+
+    <hr>
+    
+    <p class="def"><strong>Sections</strong></p>
+    <p>We'll add some style later. Let's move on. Below the "nav" we see a large are with our title and a cool background image. This is a significant "section" of our page, so we'll use a <strong>section</strong> tag. The <strong>section</strong> tag also works just like any ordinary "div", but is more specific in it's use.</p>
+
+    <p>Add the following HTML below your nav:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"hero"</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">class</span>=<span style="color:#65b042">"hero-image"</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/logo_after_effect.png"</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+
+    <i class="fa fa-github commit"></i>
+
+    <p>We gave our section a class of "hero" becuase it contains our <a href="https://en.wikipedia.org/wiki/Hero_image" target="_blank">"hero image"</a>. Then, inside our section we used an "image tag". The "image tag" takes one attribute, "src" (source) with a URL or filepath of where the image is stored. Additionally, we gave it a class of "hero-image" the reference it later when we add CSS.</p>
+
+  <hr>
+    <h4>Done.</h4>
+    <p>Awesome! Make sure you commit and push your work. Only one of you will have it, but don't worry for now. We'll go over how to "clone" our work tomorrow and you'll be able to copy it then if you want. For now, get started on <a href="/#/lessons/portfolio-2.ejs">the project</a>.</p>
+
+  </div>
+
+</div>
