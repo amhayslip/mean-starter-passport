@@ -1,0 +1,199 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>CSS Floats, Display and Fluid Width</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  Notes: Finish the 3 column grid
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>Today we're going to continue on with our Secret Tel Aviv site and in the process cover:</p>
+      <ul>
+        <li>CSS Floats and Display</li>
+        <li>Display</li>
+        <li>Fluid/Flexible Widths</li>
+      </ul>
+
+      <p>We'll do this by adding a section with Tel Aviv's best restraunts. The 6 best to be exact. It will look like this:</p>
+
+      <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-29-at-3.58.04-PM.png">
+
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Setup</h3>
+    <p>We'll pair up again for this one. Go ahead and pick a driver a navigator! Driver, cd into your <strong>secret-tel-aviv</strong> folder and open it up in Sublime.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 1. Adding some HTML</h4>
+    <p>First, let's add another section below our "hero" section. The HTML should look like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"food"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>THE BEST RESTAURANTS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+ 
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 2. Make it Pretty</h4>
+    <p>Now here's some quick CSS just to make what we have a bit prettier:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">h1</span> {
+  <span style="color:#c5af75">margin</span>: <span style="color:#dd7b3b">0</span>;
+  <span style="color:#c5af75">font-family</span>: <span style="color:#65b042">'Open Sans'</span>;
+  <span style="color:#c5af75">text-align</span>: <span style="color:#f9ee98">center</span>;
+  <span style="color:#c5af75">font-weight</span>: <span style="color:#f9ee98">bold</span>;
+  <span style="color:#c5af75">padding</span>: <span style="color:#dd7b3b">25<span style="color:#e28964">px</span></span>;
+}
+
+<span style="color:#cda869">h3</span> {
+  <span style="color:#c5af75">text-align</span>: <span style="color:#f9ee98">center</span>;
+  <span style="color:#c5af75">font-weight</span>: <span style="color:#f9ee98">bold</span>;
+  <span style="color:#c5af75">font-family</span>: <span style="color:#65b042">'Open Sans'</span>;
+  <span style="color:#c5af75">margin-bottom</span>: <span style="color:#dd7b3b">5<span style="color:#e28964">px</span></span>;
+  <span style="color:#c5af75">font-size</span>: <span style="color:#dd7b3b">18<span style="color:#e28964">px</span></span>;
+}
+
+<span style="color:#cda869">section</span> {
+  <span style="color:#c5af75">background-color</span>: <span style="color:#dd7b3b">#ddd</span>;
+}
+</pre>
+
+    <p>Make sure you know what all of this CSS is doing with your partner before moving on.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 3. Side-by-Side</h4>
+    <p>Now we've embarked on the hardest part. Getting this neat grid put together and placing our images inside of it. Let's start by just adding the first 3 restaurants. Change your section HTML to look like this:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"food"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>THE BEST RESTAURANTS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>A BRUNCH OF FRIENDS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/10644232_776018015803128_241833433554381633_o-620x414.jpg"</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SHAKSHUKA DUKA<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2014/05/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-P1.jpg"</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SMALL PLATE LARGE PRICE<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://chiccollection.com/wp-content/uploads/2015/05/where-to-eat-in-tel-aviv1.jpg"</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+
+    <p>Before we move on, check out a similar example <a href="http://codepen.io/amhayslip/pen/PZEYPa">here</a>. How would we get all the rest boxes to line up side-by-side? Give it a try with your parntner before moving on.</p>
+
+    <p>The main reason that all of our boxes are starting on a new line is becuase "divs" are by default displayed as "block" elements, which means they take up the entire row their parent. Okay, then why not just to change their display to inline? Try that now. Add the following CSS to the ".small-box"</p>
+
+    <p>Oh crap. They disappeared. This is becuase our "divs" have no content inside of them and inline elements must always have some kind of contant. Strange, right? Instead, change the display to this:</p>
+
+    <pre style="background:#000;color:#f8f8f8">display: inline-block;</pre>
+
+    <p>Hooray! The display, <strong>inline-block</strong> is the best of both worlds. It behaves as a block level element on the inside, but allows content to flow around it like an inline element.</p>
+
+    <p>Now remove that CSS you just added and instead write:</p>
+
+    <pre style="background:#000;color:#f8f8f8">float: left;</pre>
+
+    <p>Float gave us a similar result, but with some undesired side-effects. Notice that the big blue box is just awkwardly hanging out bebind the red ones. This is because the blue box is now "ignoring" the red ones. This is becuase the float CSS property specifies that an element should be taken from the normal flow and placed along the left or right side of its container (depending), where text and inline elements will wrap around it.”</p>
+
+    <p>Because of this, it's best to use avoid using float unless your plan is the <strong>float all it's siblings as well</strong>.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 4. The Grid</h4>
+    <p>Back to our restaurants. We know conceptually know how to get them side-by-side. But let's take it a step further and think it thorugh. We want 3 equal, centered, columns and two rows. How would you write this with HTML (ignoring the CSS for now)? Talk it through with your partner before peeking the answer below.</p>
+
+    <div class="exercise">
+      <% var num= '4-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"food"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>THE BEST RESTAURANTS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+  
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>A BRUNCH OF FRIENDS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/10644232_776018015803128_241833433554381633_o-620x414.jpg"</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SHAKSHUKA DUKA<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2014/05/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-P1.jpg"</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>   
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SMALL PLATE LARGE PRICE<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://chiccollection.com/wp-content/uploads/2015/05/where-to-eat-in-tel-aviv1.jpg"</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span> 
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>FRIED BALLZ<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://apartmentstel-aviv.com/blog/wp-content/uploads/2014/03/Tel-Aviv-Foods.jpg"</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SLIME BREAD<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2015/04/sizes/Lumina-Carpaccio-Bruschetta-TelAveat-instaguide-3H_wo_680_382.jpg"</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>   
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>GUACAMOLE OF THE MIDDLE EAST<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://cdn.ibookisrael.com/Admin/Upload/Tours/2473/humous-food-goisrael.com_570.jpg"</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>  
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">Sebaba. We have two "divs" that have the class "row" (because we want two rows) and in each row we create three divs with the class "column" and inside those we placed our headings and images. Proper indenting is really important here to keep our HTML readable.</p>
+
+    <h5>The CSS</h5>
+    <p>Now we want all 3 of our columns to equally cover the width of the page. For that, we'll use a percentage width so that we know no matter how big the screen is, one column will still cover 1/3 of the page. And since we're balsy, let's use float (also, we'll be floating ALL of the "column" class' siblings, which are just columns). Add the following:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.column</span> {
+  <span style="color:#c5af75">float</span>: <span style="color:#f9ee98">left</span>;
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">33.3<span style="color:#e28964">%</span></span>;
+}
+</pre>
+
+    <p>Now for our images, let's set their width to 100% so that we know they will always fill the column, but not more. Add the following CSS:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.food</span> <span style="color:#cda869">img</span> {
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">100<span style="color:#e28964">%</span></span>;
+}
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 5. The Padding Problem</h4>
+    <p>Almost there. Right now it should look like this:</p>
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-29-at-5.36.29-PM.png">
+
+    <p>We need some space between there. What would you do </p>
+  </div>
+
+
+  <hr>
+    <h4>Done.</h4>
+    <p>When you're finished with these three exercises, call the instructor over.</p>
+  </div>
+</div>
