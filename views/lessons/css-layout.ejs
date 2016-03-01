@@ -10,9 +10,80 @@
     <h3>Lesson Overview</h3>
       <p></p>
       <ul>
-        <li>Layout</li>
         <li>Media Queries</li>
+        <li>Layout</li>
       </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Setup</h3>
+      <p>Partner up again and cd into your <strong>secret-tel-aviv</strong> project</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Responsive Design</h4>
+    <p>The term "responsive" has been pretty trendy over the last few years. It basically refers to a webpage's ability to respond to any screen size. We want to make sure all our pages are adaptable at different widths as we build them. Here are a few principles to keep in mind:</p>
+
+    <h5>Fluid Widths</h5>
+    <p>Fluid widths (percentages) mean that our content will always take up as many pixels of the screen that is available (for example, we gave our columns the width of 33.33%).</p>
+
+    <h5>Collapsing Menus</h5>
+    <p>Often times you will see large menus that collapse at certain widths making it easier for the user the navigate on small screens.</p>
+
+    <h5>Media Queries</h5>
+    <p>Media Queries are statements inside CSS that apply styles to our pages depending on the width of the viewport. We'll go over these more in depth now.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Media Queries</h4>
+    <p>The following CSS would hide the img element whenever the screen's width is below 700px.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">@media</span> (<span style="color:#9b859d">max-width</span>: <span style="color:#3387cc">700<span style="color:#e28964">px</span></span>) {
+  <span style="color:#cda869">img</span> {
+    <span style="color:#c5af75">display</span>: <span style="color:#f9ee98">none</span>;
+  }
+}
+</pre>
+
+    <p>Likewise, this code would hide the img element whenever the screen's width is above 700px.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">@media</span> (<span style="color:#9b859d">min-width</span>: <span style="color:#3387cc">700<span style="color:#e28964">px</span></span>) {
+  <span style="color:#cda869">img</span> {
+    <span style="color:#c5af75">display</span>: <span style="color:#f9ee98">none</span>;
+  }
+}
+</pre>
+
+    <p>We can get more specific by adding both a <strong>min</strong> and <strong>max</strong>, but the point we're making here is that anything inside the brackets of the media query is only applied when the media query is true. Let's implement this into our Secret Tel Aviv Project.</p>
+
+    <h5>Device or Content?</h5>
+    <p>There are a few theories of design out there around <em>where</em> we should put media queries. Should it be 786px (the standard for tablets)? Then we have to always keep up with the latest device standards. Another opinion is that they should be whenever the content start to look ugly. Let's go with that one.</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-01-at-3.28.46-PM.png">
+
+    <p>Our images look too small here. This is about 700px, so let's add one here. Instead of have three columns, we'll collapse our layout down to one like this:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-01-at-3.14.09-PM.png">
+
+    <p>Add the following CSS to the bottom of your <strong>style.css</strong> file:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">@media</span> (<span style="color:#9b859d">max-width</span>: <span style="color:#3387cc">700<span style="color:#e28964">px</span></span>) {
+  <span style="color:#9b703f">.column</span> {
+    <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">100<span style="color:#e28964">%</span></span>;
+  }
+}
+</pre>
+    <p>We went with 100% because we know that will be good for however small the screen gets. Now whenever someone visits your page on their phone, they can see the cool restaurant pics!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Night Life</h4>
+    <p>Let's journey forward and build our next page!</p> 
   </div>
 
 

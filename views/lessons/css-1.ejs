@@ -10,17 +10,8 @@
       <ul>
         <li>CSS Selectors</li>
         <li>Specificity</li>
-        <li>CSS Box Model</li>
       </ul>
   </div>
-
-  <hr>
-
-  <div class="topic">
-    <h3>Setup</h3>
-      <p>Go ahead and partner up again and pick the first driver and navigator. Open your <strong>secret-tel-aviv</strong> project in sublime and your browser. We'll get to it in a moment.</p>
-  </div>
-
   <hr>
 
   <div class="topic">
@@ -192,16 +183,26 @@
 </pre>
 
       <h5>5. Using !important</h5>
-      <p>Using the keyword "!important" in your CSS overrides all styles regardless. This should be use very sparingly if at all. The following would override the background color for our previous styles:</p>
+      <p>Using the keyword "!important" in your CSS overrides all styles regardless. This should be used very sparingly if at all. The following would override the background color for our previous styles:</p>
       <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">div</span> {
   <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">200<span style="color:#e28964">px</span></span>;
   <span style="color:#c5af75">height</span>: <span style="color:#dd7b3b">200<span style="color:#e28964">px</span></span>;
   <span style="color:#c5af75">background-color</span>: <span style="color:#cf6a4c">red</span> <span style="color:#e28964">!important</span>;
   <span style="color:#c5af75">border</span>: <span style="color:#dd7b3b">5<span style="color:#e28964">px</span></span> <span style="color:#f9ee98">solid</span> <span style="color:#fd5ff1;">magenta</span>;
 }
-
 </pre>
+
+      <h5>Example</h5>
+      <p>Take a look at <a href="http://codepen.io/amhayslip/pen/MyWBxX" target="_blank">here</a> to see this example action.</p>
+
+      <h5>6. Bottom of the File</h5>
+      <p>Lastly, when two conflicting styles have the same specificity, the one that's defined lower down in your CSS file takes precedent. Take a look at <a href="http://codepen.io/amhayslip/pen/ZWEqrp" target="_blank">this example</a> here. Notice that the div is blue because that is the style that is defined further down in the file.</p>
+
   </div>
+
+  <hr>
+    <h4>Done.</h4>
+    <p>Great, now let's put this to practice! Let's add some CSS to our <a href="/#/lessons/secret-tel-aviv">Secrect Tel Aviv</a> project.</p>
 
 </div>
 

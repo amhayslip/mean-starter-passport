@@ -10,9 +10,9 @@
     <h3>Lesson Overview</h3>
       <p>Today we're going to continue on with our Secret Tel Aviv site and in the process cover:</p>
       <ul>
-        <li>CSS Floats and Display</li>
+        <li>Floats</li>
         <li>Display</li>
-        <li>Fluid/Flexible Widths</li>
+        <li>Reiterate Box Model Principles</li>
       </ul>
 
       <p>We'll do this by adding a section with Tel Aviv's best restraunts. The 6 best to be exact. It will look like this:</p>
@@ -188,12 +188,84 @@
     <p>Almost there. Right now it should look like this:</p>
     <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-29-at-5.36.29-PM.png">
 
-    <p>We need some space between there. What would you do </p>
-  </div>
+    <p>We need some space between there. What would you do to make this look better? Discuss with your partner for a moment before moving on.</p>
 
+    <p>The answer to this requires some knowledge of the CSS Box Model. If we add our padding or margin to the image itself, it will increase the space the image takes up and throw off our layout. Let's try it to illustrate our point. Change the CSS of our food images to this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.food</span> <span style="color:#cda869">img</span> {
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">100<span style="color:#e28964">%</span></span>;
+  <span style="color:#c5af75">padding</span>: <span style="color:#dd7b3b">20<span style="color:#e28964">px</span></span>;
+}
+</pre>
+
+    <p>Now open it in your browser and inspect it. This is the box-model that represents our images.</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/02/Screen-Shot-2016-02-29-at-8.05.15-PM.png">
+
+    <p>Notice how it adds the padding <em>outside</em> of our image. In order to add it the inside, we need to wrap all our images in another div and add the padding to them. With that, change your HTML to look like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"food"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>THE BEST RESTAURANTS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>A BRUNCH OF FRIENDS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/10644232_776018015803128_241833433554381633_o-620x414.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SHAKSHUKA DUKA<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2014/05/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-P1.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>        
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SMALL PLATE LARGE PRICE<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://chiccollection.com/wp-content/uploads/2015/05/where-to-eat-in-tel-aviv1.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>  
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>FRIED BALLZ<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://apartmentstel-aviv.com/blog/wp-content/uploads/2014/03/Tel-Aviv-Foods.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SLIME BREAD<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2015/04/sizes/Lumina-Carpaccio-Bruschetta-TelAveat-instaguide-3H_wo_680_382.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>       
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>GUACAMOLE OF THE MIDDLE EAST<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://cdn.ibookisrael.com/Admin/Upload/Tours/2473/humous-food-goisrael.com_570.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>  
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+
+    <p>Lastly, let's add 20px of padding to our "column-inner" divs, like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.column-inner</span> {
+  <span style="color:#c5af75">padding</span>: <span style="color:#dd7b3b">20<span style="color:#e28964">px</span></span>;
+}
+</pre>
 
   <hr>
+
     <h4>Done.</h4>
-    <p>When you're finished with these three exercises, call the instructor over.</p>
+    <p>Great! Time to get started on the third iteration of the <a href="/#/lessons/portfolio-3">Portfolio Project</a>.</p>
   </div>
 </div>
