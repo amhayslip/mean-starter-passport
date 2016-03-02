@@ -1,6 +1,6 @@
 <div class="col-sm-8 col-sm-offset-2 lesson">
   <div class="page-header">
-    <h2>CSS Floats, Display and Fluid Width</h2>
+    <h2>Responsive Layout and Media Queries</h2>
     <a href="/#/">Back Home</a>
   </div>
 
@@ -83,10 +83,93 @@
 
   <div class="topic">
     <h4>Night Life</h4>
-    <p>Let's journey forward and build our next page!</p> 
+    <p>Let's journey forward and build our next page! Let's talk about bars and stuff. Here is what we want to build:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-02-at-8.15.40-AM.png"> 
+
+    <p>It looks like we have a two column layout - one for the main bulk of our post about bars, and little side-bar for other stuff. Where to start?</p>
+
+    <h5>Section</h5>
+    <p>Go ahead and add another section called "night-life".</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"night-life"</span>></span>
+
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <h5>Rows</h5>
+    <p>Technically, this time around we only have one row. So Let's add a div with a class of "row":</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"night-life"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+  
+    <h5>Columns</h5>
+    <p>We have two columns. One looks to be about 70% of the page and the other (the side-bar) about 30%. Let's name our column divs accordingly. Add the following HTML (and sneak our header in there):</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"night-life"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>NIGHT LIFE IN TEL AVIV<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-70"</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-30"</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <h5>Style</h5>
+    <p>Time to add our CSS to these columns! Add the following. For now we'll give them a background color and arbitrarty height just to make sure the layout is as desired:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.column-70</span> {
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">70<span style="color:#e28964">%</span></span>;
+  <span style="color:#c5af75">float</span>: <span style="color:#f9ee98">left</span>;
+  <span style="color:#c5af75">height</span>: <span style="color:#dd7b3b">500<span style="color:#e28964">px</span></span>;
+  <span style="color:#c5af75">background-color</span>: <span style="color:#cf6a4c">red</span>;
+}
+
+<span style="color:#9b703f">.column-30</span> {
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">30<span style="color:#e28964">%</span></span>;
+  <span style="color:#c5af75">float</span>: <span style="color:#f9ee98">left</span>;
+  <span style="color:#c5af75">height</span>: <span style="color:#dd7b3b">500<span style="color:#e28964">px</span></span>;
+  <span style="color:#c5af75">background-color</span>: <span style="color:#cf6a4c">blue</span>;
+}
+</pre>
+    
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-02-at-8.38.20-AM.png">
+
+    <p>Oh crapola. What happened!? Our section is off centered and doing all kinds of weird things. Our "top-margin" on our section has collapsed becasue we're using floats. Float wasn't designed for the responsive world (it was made to wrap text around images and stuff) but some smart people have created some hacks to make this work. Add the following CSS:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.container</span><span style="color:#89bdff">:before</span>, <span style="color:#9b703f">.row</span><span style="color:#89bdff">:before</span> {
+  <span style="color:#c5af75">display</span>: table;
+  <span style="color:#c5af75">content</span>: <span style="color:#65b042">""</span>;
+}
+
+<span style="color:#9b703f">.container</span><span style="color:#89bdff">:after</span>, <span style="color:#9b703f">.row</span><span style="color:#89bdff">:after</span> {
+  <span style="color:#c5af75">display</span>: table;
+  <span style="color:#c5af75">content</span>: <span style="color:#65b042">""</span>;
+  <span style="color:#c5af75">clear</span>: <span style="color:#f9ee98">both</span>;
+}
+</pre>
+
+    <p>This is a rather complex hack, but has become widely adopted (it is the EXACT code that Bootstrap uses!). One of the early pioneers of this method (Nicolas Gallagher) explains it like this:</p>
+
+    <p>"This “micro clearfix” generates pseudo-elements and sets their display to table. This creates an anonymous table-cell and a new block formatting context that means the :before pseudo-element prevents top-margin collapse. The :after pseudo-element is used to clear the floats."</p>
   </div>
 
+  <hr>
 
+  <div class="topic">
+    <h4>Partner Exercise #1</h4>
+    <p>Now with your partner, remove the red and blue colors and style this section correctly making use of your CSS Box Model knowledge. Additionally, for the side-bar header your will need a font called "Merriweather". You can find it as a free google font.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise #2</h4>
+    <p>Add a media query to collapse our two column layout down to 1 column when the screen becomes too small.</p>
+  </div>
+  
   <hr>
     <h4>Done.</h4>
     <p>When you're finished with these three exercises, call the instructor over.</p>
