@@ -16,7 +16,326 @@
       <p>With that, go ahead and partner up. For this first part, just use one computer and work through the lesson together.</p>
   </div>
 
+  <hr>
 
+  <div class="topic">
+    <h3>Loops</h3>
+    <p>We already encountered loops in the prework, but let's review:</p>
+    <p>Image we need do one task, but do it over and over, just slightly different each time. For instance, if we wanted to console.log all even numbers from 0 to 20:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">0</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">2</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">4</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">6</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">8</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">10</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">12</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">14</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">16</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">18</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3387cc">20</span>);
+</pre>
+    <p>Wow, 10 lines of code. That's insane.</p>
+
+    <p>A simpler way to write this would be with a "while" loop:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>;
+<span style="color:#e28964">while</span> (number <span style="color:#e28964">&lt;=</span> <span style="color:#3387cc">12</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(number);
+  number <span style="color:#e28964">=</span> number <span style="color:#e28964">+</span> <span style="color:#3387cc">2</span>;
+}
+</pre>
+
+    <p>The syntax is so readable, that it doesn't need to be explained. The code inside the brackets will continue executing so long as <strong>number</strong> is less than or equal to 12. Let's break it down. What would happen if we ommitted the last line? Talk it through with your partner before peaking the answer.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>;
+<span style="color:#e28964">while</span> (number <span style="color:#e28964">&lt;=</span> <span style="color:#3387cc">12</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(number);
+}
+</pre>
+
+    <div class="exercise">
+      <% var num= '5-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>The loop would inifintiely run and crash your browser because <strong>number</strong> would always equal 0 and therefore would always be less than or equal to 12.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">Let's go over each part of the loop:</p>
+
+    <h5>1. Starting Point</h5>
+    <p>We set the variable <strong>number</strong> to 0 as a starting point to say that we'll start the loop at 0. We could have started it wherever we wanted it. For example, how many time would this while loop, loop?</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">6</span>;
+<span style="color:#e28964">while</span> (number <span style="color:#e28964">&lt;</span> <span style="color:#3387cc">12</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(number);
+  number <span style="color:#e28964">=</span> number <span style="color:#e28964">+</span> <span style="color:#3387cc">1</span>;
+}
+</pre>
+
+    <div class="exercise">
+      <% var num= '5-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>The code in the brackets would only run 6 times because we started at 6 and stopped at 12.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <h5>2. Limit Conditional</h5>
+    <p>Inside the paranthesis, we set a condition that MUST be true for the loop to keep running. As soon as it's no longer true, the loop stops.</p>
+
+    <h5>3. Incremnting the Start</h5>
+    <p>At some point the conditional in the paranthesis need to be false so our loop can stop running. For this reason, we change our "starting point" inside the loop. We can increment by whatever we like. There are a few ways to write this. The most readable is:</p>
+    <pre style="background:#000;color:#f8f8f8">number <span style="color:#e28964">=</span> number <span style="color:#e28964">+</span> <span style="color:#3387cc">1</span>;
+</pre>
+    
+    <p>This is quite literally saying, "set the number variable to whatever the number variable is, plus 1". So if number is 1 and we write the above code, the Javascript interpreter says, "set number to equal number (which is 1) + 1". So now it's too. A short hand to write this is like this:</p>
+    <pre style="background:#000;color:#f8f8f8">number <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>;
+</pre>
+
+    <p>And another shorthand (though this only works if you're just incrementing by 1) is:</p>
+
+    <pre style="background:#000;color:#f8f8f8">number <span style="color:#e28964">++</span>;
+</pre>
+  </div>
+
+  <hr>
+
+  <div>
+    <h4>For Loops</h4> 
+    <p>For loops are essentially the same thing, but with all the syntax built in. Instead of defining the start point and incremening within the brackets, we can define it all in the paranthesis:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; number <span style="color:#e28964">&lt;=</span> <span style="color:#3387cc">12</span>; number <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">2</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(number);
+}
+</pre>
+
+    <p>This give us all the even number between 0 and 12. We're doing the same thing we were with the while loop, but in a more concise format.</p>
+
+    <p>Try it with your partner. Write a for loop that loops through all the even numbers, 0 through 1000 and console.logs them:</p>
+
+    <div class="exercise">
+      <% var num= '5-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; number <span style="color:#e28964">&lt;=</span> <span style="color:#3387cc">1000</span>; number <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">2</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(number);
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">Can you think of another way to write this by incrementing by 1 each time?</p>
+
+    <div class="exercise">
+      <% var num= '5-4'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; number <span style="color:#e28964">&lt;=</span> <span style="color:#3387cc">1000</span>; number <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+  <span style="color:#e28964">if</span> (number <span style="color:#e28964">%</span> <span style="color:#3387cc">2</span> <span style="color:#e28964">===</span> <span style="color:#3387cc">0</span>) {
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(number);
+  }
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">Which one is faster?</p>
+
+    <div class="exercise">
+      <% var num= '5-5'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>The first one is faster because it loops half as many times!</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <h5>Fizz Buzz</h5>
+    <p>Remember "fizz buzz"? With your partner, write a for loop that loops through the numbers 0 through 20 and console.logs "fizz" if the number is divisible by 5 and buzz if it's divisible by 2. For this you'll need the <strong>modulo</strong> or <strong>%</strong> operator.</p>
+
+    <div class="exercise">
+      <% var num= '5-6'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; number <span style="color:#e28964">&lt;=</span> <span style="color:#3387cc">20</span>; number <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+  <span style="color:#e28964">if</span> (number <span style="color:#e28964">%</span> <span style="color:#3387cc">2</span> <span style="color:#e28964">===</span> <span style="color:#3387cc">0</span>) {
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"fizz"</span>);
+  } <span style="color:#e28964">else</span> <span style="color:#e28964">if</span> (number <span style="color:#e28964">%</span> <span style="color:#3387cc">5</span> <span style="color:#e28964">===</span> <span style="color:#3387cc">0</span>) {
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"buzz"</span>);
+  }
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Truthy and Falsey</h4>
+    <p>We've already talked about conditionals. They check statments to see if they're "true" or "false" and run code accordingly. Not only do explicit statments like:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#3387cc">10</span> <span style="color:#e28964">></span> <span style="color:#3387cc">5</span>
+</pre>
+    <p>...evaluate to true or false, but do other <strong>types</strong> in Javascript like numbers:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">if</span> (<span style="color:#3387cc">10</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'10 is true!'</span>);
+}
+</pre>
+
+    <p>The code above would console.log "10 is true!" because in Javascript, integers are "truthy". With your partner, copy/paste each line of code one by one into your console and test it out. Guess which will evaluate to "truthy" and which will evaluate to "falsy" first.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">if</span> (<span style="color:#3387cc">true</span>) { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"truthy"</span>) } <span style="color:#e28964">else</span> { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"falsey"</span>) };
+
+<span style="color:#e28964">if</span> (<span style="color:#65b042">'hi'</span>) { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"truthy"</span>) } <span style="color:#e28964">else</span> { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"falsey"</span>) };
+
+<span style="color:#e28964">if</span> (<span style="color:#3387cc">false</span>) { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"truthy"</span>) } <span style="color:#e28964">else</span> { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"falsey"</span>) };
+
+<span style="color:#e28964">if</span> (<span style="color:#3387cc">null</span>) { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"truthy"</span>) } <span style="color:#e28964">else</span> { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"falsey"</span>) };
+
+<span style="color:#e28964">if</span> (<span style="color:#3387cc">undefined</span>) { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"truthy"</span>) } <span style="color:#e28964">else</span> { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"falsey"</span>) };
+
+<span style="color:#e28964">if</span> (<span style="color:#3387cc">0</span>) { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"truthy"</span>) } <span style="color:#e28964">else</span> { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"falsey"</span>) };
+
+<span style="color:#e28964">if</span> (<span style="color:#65b042">''</span>) { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"truthy"</span>) } <span style="color:#e28964">else</span> { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"falsey"</span>) };
+
+<span style="color:#e28964">if</span> (<span style="color:#3387cc">NaN</span>) { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"truthy"</span>) } <span style="color:#e28964">else</span> { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"falsey"</span>) };
+</pre>
+
+      <p>What will the following code do?</p>
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">if</span> (name) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(name);
+}
+</pre>
+
+    <div class="exercise">
+      <% var num= '5-7'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>Nothing. <strong>name</strong> is undefined.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Arrays</h4>
+    <p>Arrays are one of the core data-structues of Javascript. An array is basically a list of anything. It can be a list of strings, numbers, functions or a combination of them all. We define arrays by assigning them to variables like anything else. For example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+</pre>
+
+    <h5>Index</h5>
+    <p>Each item in an array is given an index, starting with 0. So, "Aaron" is 0, "Sarah" is 1 and "Isaiah" is 2. We can access these items by using the array's variable and square brackets like this:</p>
+    <pre style="background:#000;color:#f8f8f8">family[<span style="color:#3387cc">0</span>];
+<span style="color:#aeaeae;font-style:italic">// "Aaron"</span>
+
+family[<span style="color:#3387cc">1</span>];
+<span style="color:#aeaeae;font-style:italic">// "Sarah"</span>
+
+family[<span style="color:#3387cc">2</span>];
+<span style="color:#aeaeae;font-style:italic">// "Isaiah"</span>
+</pre>
+
+    <h5>Adding Items to An Array</h5>
+    <p>Fact is, this family is growing. Come August, there will be a new baby. It doesn't have a name yet, so we'll just call it "baby2". We can add it to the array using the array's "push method":</p>
+
+    <pre style="background:#000;color:#f8f8f8">family.<span style="color:#dad085">push</span>(<span style="color:#65b042">"baby2"</span>);
+</pre>
+
+    <p>Now, <strong>family</strong> looks like this:</p>
+    <pre style="background:#000;color:#f8f8f8">[<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>, <span style="color:#65b042">"baby2"</span>];
+</pre>
+
+    <h5>Remove Items from an Array</h5>
+    <p>To remove an item from an array, we can use the <strong>splice</strong> method. To just remove items using the <strong>splice</strong> method, we pass it 2 arguments. The first is the index of the first item we're removing, and the second is the number of items we want to remove. For instance, if I wanted to remove "Aaron" I would write:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+family.<span style="color:#dad085">splice</span>(<span style="color:#3387cc">0</span>, <span style="color:#3387cc">1</span>);
+</pre>
+
+    <p>To remove Sarah, I would write:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+family.<span style="color:#dad085">splice</span>(<span style="color:#3387cc">1</span>, <span style="color:#3387cc">1</span>);
+</pre>
+
+    <p>To remove Sarah and Isaiah (this is a depressing example), I would write:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+family.<span style="color:#dad085">splice</span>(<span style="color:#3387cc">1</span>, <span style="color:#3387cc">2</span>);
+</pre>
+
+    <p>If we want to add an item in the array in additon to remove an item, we can add it in as a third argument. For example, if "Sarah" wanted a new husband, she could write (Larry is the most non-threatening man's name):</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+family.<span style="color:#dad085">splice</span>(<span style="color:#3387cc">0</span>, <span style="color:#3387cc">1</span>, <span style="color:#65b042">"Larry"</span>);
+</pre>
+
+    <p>Now the new array would look like this:</p>
+    <pre style="background:#000;color:#f8f8f8">[<span style="color:#65b042">"Larry"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>]
+</pre>
+
+    <h5>The Length of Arrays</h5>
+    <p>Arrays have a few built in "properites" that are handy. One of these is the <strong>length</strong> property. To get the lenght of an array, we could write:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+family.<span style="color:#cf6a4c">length</span>; <span style="color:#aeaeae;font-style:italic">// this returns 3!</span>
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Looping Arrays</h4>
+    <p>Looping through an array means combining a few of these concepts together. We're going to use the array's index (how we access a specific item in an array) and a for loop to loop through each item and perform some kind of action.</p>
+
+    <p>This is how we would loop through the family array and console log each member:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+
+<span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; number <span style="color:#e28964">&lt;</span> family.<span style="color:#cf6a4c">length</span>; number <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(family[number]);
+}
+</pre>
+
+    <p>This is a simple an contrite example, but let's look at it's guts to really understand what's going on.</p>
+
+    <p>First of all, this is the same thing as writing:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(family[<span style="color:#3387cc">0</span>]);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(family[<span style="color:#3387cc">1</span>]);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(family[<span style="color:#3387cc">2</span>]);
+</pre>
+
+    <p>Let's write it again, but using variables, like in the for loop:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> family <span style="color:#e28964">=</span> [<span style="color:#65b042">"Aaron"</span>, <span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>];
+
+<span style="color:#99cf50">var</span> number <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; 
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(family[number]);
+
+number <span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>;
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(family[number]);
+
+number <span style="color:#e28964">=</span> <span style="color:#3387cc">2</span>;
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(family[number]);
+</pre>
+
+    <p>This is essentially the same thing we're doing in the for loop. Each time the loop runs, the <strong>number</strong> variable is 0, then 1, then 2. In the for loop, we use <strong>number.length</strong> (which is 3) instead of 3, because there might be situations where we don't know how long the array is and therefore don't want to "hard code" our loop.</p>
+  </div>
+
+  <div class="topic">
+    <h5>Partner Exercise 1</h5>
+    <p>Create an array called <strong>restaurants</strong> with the names of your favorite restaurants in it (at least 5). Then, create a <strong>for loop</strong> that loops through the array and console.logs the name of each restaurant.</p>
+
+    <h5>Partner Exercise 2</h5>
+    <p>Create two new variables</p>
+
+
+
+  </div>
 
   <hr>
     <h4>Done.</h4>
