@@ -1,0 +1,198 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>CSS Frameworks</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>In this lesson we will cover</p>
+      <ul>
+        <li>What are CSS frameworks?</li>
+        <li>How they're built?</li>
+        <li>How can we build our own?</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Setup</h3>
+    <p>Once again, we'll be working in pairs. Start choose your first driver and navigator. Driver, create a new project called <strong>shoestrap</strong>. Add three files <strong>index.html</strong>, <strong>style.css</strong>, and <strong>shoestrap.css</strong>. In your HTML, include <strong>shoestrap.css</strong> first, then <strong>style.css</strong>. Git init, and do an inital commit. We'll get to these in a moment.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>CSS Frameworks</h4>
+    <p>CSS Frameworks are basically a bunch of CSS someone else has written to streamline the process of building web pages. One of the most popular frameworks is <a href="http://getbootstrap.com/" target="_blank">Boostrap</a>. Bootstrap is very large and provides many features (style and design included) but one of the most saught after features of Bootstrap (and frameworks like it) is it's layout.</p>
+
+    <p>As we've seen, one of the hardest parts of building web pages is messing with layout. Today, we will tackle this problem head-first by building our own framework.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Shoestrap!</h4>
+    <p>Remember when we made those columns last week in our Secret Tel Aviv project and we had to add all the tricky CSS to do this floats? Let's build that CSS in such a way that it's reusable. To do this, we'll base our framework on a 12 column, responsive grid. In the end, it will be a beautiful blank canvas like this:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-06-at-2.34.36-PM.png">
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 1: 12 Columns</h4>
+    <p>If we think back to our Secret Tel Aviv project, we built a series of columns and rows. We'll define these columns and rows with CSS classes, and then to use them, we'll just give any ole' div these classes. The first class we'll define is <strong>col-1</strong>, which is "one column".</p>
+
+    <p>If our grid is 12 columns, how wide is 1 column? You might need a calculator for this one:</p>
+
+    <div class="exercise">
+      <% var num= '5-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>8.33333333%; We just divide 100% by 12.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">Great. Now in your <strong>shoestrap.css</strong> file add:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.col-1</span> {
+  <span style="color:#c5af75">float</span>: <span style="color:#f9ee98">left</span>;
+  <span style="color:#c5af75">width</span>: <span style="color:#dd7b3b">8.33333333<span style="color:#e28964">%</span></span>;
+}
+</pre>
+
+    <p>And so we can actually see the columns, add the following in your <strong>style.css</strong> file:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">div</span> {
+  <span style="color:#c5af75">height</span>: <span style="color:#dd7b3b">50<span style="color:#e28964">px</span></span>;
+  <span style="color:#c5af75">border</span>: <span style="color:#dd7b3b">1<span style="color:#e28964">px</span></span> <span style="color:#f9ee98">solid</span> <span style="color:#cf6a4c">red</span>;
+}
+</pre>
+
+    <i class="fa fa-github commit"></i>
+
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Step 2: border-box</h4>
+    <p>Uh oh. It looks like the border threw off our sizing:</p>
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-06-at-2.51.28-PM.png">
+
+    <p>If you remember back to our conversations about the CSS Box Model, you'll remember that the border of an element adds to the elements size. In our example, our div's are now slightly wider than 8.33333333%, making the last column jump to a new row.</p>
+
+    <p>Lucky for us, there's a CSS property to change this behavior: <strong>box-sizing</strong>. Look at the example below that toggles between:</p>
+
+    <pre style="background:#000;color:#f8f8f8">box-sizing: content-box;</pre>
+
+    <p>and</p>
+
+    <pre style="background:#000;color:#f8f8f8">box-sizing: border-box;</pre>
+
+    <iframe id="cp_embed_970f26f621cfa3ae3eec7e2a6b0e8c97" src="//codepen.io/css-tricks/embed/970f26f621cfa3ae3eec7e2a6b0e8c97?height=675&amp;theme-id=1&amp;slug-hash=970f26f621cfa3ae3eec7e2a6b0e8c97&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="675" allowtransparency="true" allowfullscreen="true" name="CodePen Embed" title="CodePen Embed" class="cp_embed_iframe " style="width: 100%; overflow: hidden;"></iframe>
+
+    <p class="ex">With this in mind, add the following CSS to the bottom of our <strong>shoestrap.css</strong> file:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">*</span> {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+</pre>
+
+    <p>Using the "*" selects all elements. The two additional CSS properties are for other browsers (firefox, safari, etc.).</p>
+
+    <i class="fa fa-github commit"></i>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <i class="fa fa-refresh"></i>
+    <h4>Step 3: Float Quirks</h4>
+    <p>Remember the problem we ran into using floats during our Secret Tel Aviv project? We were able to find a world-class hack around it, so let's implement that hack now! Add the following CSS to your <strong>shoestrap.css</strong> file:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.row</span><span style="color:#89bdff">:before</span> {
+  <span style="color:#c5af75">display</span>: table;
+  <span style="color:#c5af75">content</span>: <span style="color:#65b042">""</span>;
+}
+
+<span style="color:#9b703f">.row</span><span style="color:#89bdff">:after</span> {
+  <span style="color:#c5af75">display</span>: table;
+  <span style="color:#c5af75">content</span>: <span style="color:#65b042">""</span>;
+  <span style="color:#c5af75">clear</span>: <span style="color:#f9ee98">both</span>;
+} 
+</pre>
+
+    <i class="fa fa-github commit"></i>
+
+    <p>From now on, we should always wrap our columns in a "row" div. Let's do that now. Change your HTML to look like this:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-1"</span>></span>.col-1<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Parnter Work: Finish it off!</h4>
+    <p>With your partner, implement the rest of the classes to create our 12 column grid. Don't forget to commit along the way!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Git Ignore</h4>
+    <p>If we were going to put this "framework" on github for millions to use, we wouldn't want to include our <strong>index.html</strong> or <strong>style.css</strong> files because they're not curcial to our framework. To avoid pushing these to github, we can create a file called <strong>.gitignore</strong>. Do that now inside of your <strong>shoestrap</strong> folder.</p>
+
+    <p>To tell git which files to ignore, we just add them on a new line at the top of our <strong>.gitignore</strong> file like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8">index.html
+style.css
+</pre>
+
+    <p>Now to remove them from git (becuase you likely already added them), type:</p>
+    <pre style="background:#000;color:#f8f8f8">git rm index.html
+git rm style.css
+</pre>
+
+    <p>Then do a commit and push like normal!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Work: Adding Features</h4>
+    <p>Bootstrap's features go well beyond the grid layout. You're first task is to add a basic, reusable navbar. You can decide if it's fixed at the top, or vertical to the side or whatever.</p>
+
+    <p>Don't forget to commit. Note: you will need to copy or download your partner's file if you didn't "drive" on your computer.</p>
+
+    <p>Lastly, in github, add a README (click the Add a README button) to your repository explaing your project! Then, share it with the world (feel free to rename your framework as it's yours now)!</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-06-at-3.52.21-PM.png">
+
+  </div>
+
+  <hr>
+  
+    <h4>Done.</h4>
+    <p>Great. Feel free to continue adding to your framework! Don't forget to add it as a project on your portfolio site.</p>
+
+</div>
