@@ -1,0 +1,281 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>Javascript Closures</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+
+  <div class="topic">
+    <h3>Intro</h3>
+    <p>In this lesson we will go over:</p>
+
+    <ul>
+      <li></li>
+    </ul>
+
+    <p>Partner up for this one! There will be several exercises along the way, but all you'll need is a pen/paper and somewhere to write Javascript.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>What are Closures?</h4>
+    <p>Again brorrowing from <a href="https://twitter.com/getify?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">Kyle Simpson's</a> definition, a <strong><em>Closure is when a function is able to remember and access its [lexical] scope even when that function is executing outside its lexical scope</em></strong>.</p>
+
+    <p>When a function is finished executing, Javascript's "garbage collection" cleans up the function and removes any variables inside of it. This is to save memory. However, if those variables are being accessed outside the function's scope somewhere else, they will stay around. This is closure. Let's look at an example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">foo</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#99cf50">var</span> x <span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>;
+
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">bar</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(x);
+  }
+
+  <span style="color:#e28964">return</span> bar;
+}
+
+<span style="color:#99cf50">var</span> baz <span style="color:#e28964">=</span> foo();
+baz();
+</pre>
+
+    <p>After compilation is done, the engine is ready to execute. It's starts by setting the variable <strong>baz</strong> to the result of calling the function <strong>foo</strong>. The function <strong>foo</strong> get's called, set's the variable <strong>x</strong> and the function <strong>bar</strong> (in it's scope) and then returns the function <strong>bar</strong> back to <strong>baz</strong>.</p>
+
+    <p>Now <strong>baz</strong> is referencing the function <strong>bar</strong>. When <strong>baz</strong> (bar) get's invoked, since it uses the variable <strong>x</strong>, <strong>foo</strong>'s scope sticks around even though normall it would disappear. Closure observed.</p>
+
+    <p>Let's look at another. Copy/paste the following into your dev console.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">setCounter</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (num) {
+  <span style="color:#99cf50">var</span> counter <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>;
+
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">count</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    counter <span style="color:#e28964">+</span><span style="color:#e28964">=</span> num;
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(counter);
+  }
+
+  <span style="color:#e28964">return</span> count;
+}
+
+<span style="color:#99cf50">var</span> increment <span style="color:#e28964">=</span> setCounter(<span style="color:#3387cc">2</span>);
+increment();
+</pre>
+
+    <p>Now now in the console, type <strong>counter</strong>. What happens? Well, you get an error because <strong>counter</strong> is only available inside the <strong>setCounter</strong> scope <em>execept</em> through our closure.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>More Examples</h4>
+    <p>Closures is a hard concept to nail down. Let's keep looking at some examples.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">setCounter</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (num) {
+  <span style="color:#99cf50">var</span> counter <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>;
+
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">count</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    counter <span style="color:#e28964">+</span><span style="color:#e28964">=</span> num;
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(counter);
+  }
+
+  increment(count);
+}
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">increment</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (fn) {
+  fn();
+}
+
+setCounter(<span style="color:#3387cc">2</span>);
+
+</pre>
+  
+    <p>Can you find the closure here? Whatever facility we use to transport an inner function outside of its scope, it will maintain a scope reference to where it was originally declared, and wherever we execute it, that closure will be exercised.</p>
+
+    <p>In the example above, instead of <strong>returning</strong> count to the global scope (like we did the first time), we're passing it through a function called <strong>increment</strong>.</p>
+
+    <p class="ex"><strong>Partner Exercise 1:</strong> Which people will be listed? Where is the closure?</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> listThemAll;
+<span style="color:#99cf50">var</span> people <span style="color:#e28964">=</span> [<span style="color:#65b042">'Jack'</span>, <span style="color:#65b042">'Jill'</span>, <span style="color:#65b042">'John'</span>];
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">startProgram</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#99cf50">var</span> people <span style="color:#e28964">=</span> [<span style="color:#65b042">'Aaron'</span>, <span style="color:#65b042">'Jasmine'</span>, <span style="color:#65b042">'Jona'</span>];
+
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">listPeople</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    <span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; i <span style="color:#e28964">&lt;</span> people.<span style="color:#cf6a4c">length</span>; i <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+      <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(people[i]);
+    }
+  }
+
+  listThemAll <span style="color:#e28964">=</span> listPeople;
+}
+
+startProgram();
+listThemAll();
+</pre>
+
+    <div class="exercise">
+      <% var num= '7-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>'Aaron', 'Jasmine' and 'Jona' will be listed. Even though <strong>listPeople</strong> was invoked in the global scope, since it was declared inside of <strong>startProgram</strong>, it will retain a reference to inside that scope. That's closure.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Partner Exercise 2:</strong> Is this closure? Why or why not?</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">startProgram</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#99cf50">var</span> people <span style="color:#e28964">=</span> [<span style="color:#65b042">'Aaron'</span>, <span style="color:#65b042">'Jasmine'</span>, <span style="color:#65b042">'Jona'</span>];
+  
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(people);
+
+  <span style="color:#e28964">return</span> people;
+}
+
+<span style="color:#99cf50">var</span> myPeeps <span style="color:#e28964">=</span> startProgram();
+</pre>
+
+    <div class="exercise">
+      <% var num= '7-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>No, this is not actually a closure becuase <strong>startProgram</strong> was not executed outside it's scope, but was executed in the same global scope as it was declared. In other words, this code is obeying the normal rules of scope look-up, but not the exceptional rules of closure.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Partner Exercise 3:</strong> Write your own example of closure. Slack an instructor to check your work when you're finished. Do not move on until you finish this step.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Loops and Closure... crazy!</h4>
+    <p>To deepen our understands, let's observe a tricky example.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>; i <span style="color:#e28964">&lt;</span> <span style="color:#3387cc">5</span>; i <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+  <span style="color:#dad085">setTimeout</span>(<span style="color:#99cf50">function</span> <span style="color:#89bdff">timer</span>(){
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(i);
+  }, i <span style="color:#e28964">*</span> <span style="color:#3387cc">1000</span> );
+}
+</pre>
+    
+    <p>If you're not familiar with the function <strong>setTimeout</strong>, it's a built in function that takes two arguments: a function and mili-seconds.</p>
+
+    <p>Looking at this code, one might be tempted to believe that it would console log each number 1 thorugh 5 with a 1 second pause every second. Try it out. What happens? It just logs 5 a bunch. Why?</p>
+
+    <p>The loop is done running by the time <strong>setTimeout</strong> runs and <strong>i</strong> just equals 5. There's no closure here. Let's try this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>; i <span style="color:#e28964">&lt;=</span> <span style="color:#3387cc">5</span>; i <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">outterFunc</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    <span style="color:#dad085">setTimeout</span>(<span style="color:#99cf50">function</span> <span style="color:#89bdff">timer</span>(){
+      <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(j);
+    }, i <span style="color:#e28964">*</span> <span style="color:#3387cc">1000</span> );
+  }
+
+  outterFunc();
+}
+</pre>
+
+    <p>Did it work? Why not? Discuss with your partner and come up with a solution before peaking the answer.</p>
+
+    <div class="exercise">
+      <% var num= '7-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>Still doesn't work because we're using the same ole <strong>i</strong>. The answer is...</p>
+
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>; i <span style="color:#e28964">&lt;=</span> <span style="color:#3387cc">5</span>; i <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">outterFunc</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    <span style="color:#99cf50">var</span> j <span style="color:#e28964">=</span> i;
+
+    <span style="color:#dad085">setTimeout</span>(<span style="color:#99cf50">function</span> <span style="color:#89bdff">timer</span>(){
+      <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(j);
+    }, i <span style="color:#e28964">*</span> <span style="color:#3387cc">1000</span> );
+  }
+
+  outterFunc();
+}
+</pre>
+        <p>On each iteration, a new scope was created and closed over <strong>j</strong>. Therefore, <strong>j</strong> persisted, because our timeout function was using it.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topics">
+    <h4>Modules: An Example of Closure in the Wild</h4>
+    <p>Where are we likely to encouter closures in the wild? Everywhere! There particular useful for creating modules.</p>
+
+    <p>Modularization is one of the most popular design patterns in Javascript. For now, it's not important for you to know (we'll go in depth with design patterns later), but let's look at some examples in as much as it helps us understand closures.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">UsersModule</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#99cf50">var</span> users <span style="color:#e28964">=</span> [<span style="color:#65b042">'Aaron'</span>, <span style="color:#65b042">'Jona'</span>];
+
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">addUser</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (user) {
+    users.<span style="color:#dad085">push</span>(user);
+  }
+
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">listUsers</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    <span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; i <span style="color:#e28964">&lt;</span> users.<span style="color:#cf6a4c">length</span>; i <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+      <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(users[i]);
+    }
+  }
+
+  <span style="color:#e28964">return</span> {
+    addUser: addUser,
+    listUsers: listUsers
+  }
+}
+
+<span style="color:#99cf50">var</span> usersModule <span style="color:#e28964">=</span> UsersModule();
+
+usersModule.addUser(<span style="color:#65b042">'Sasha'</span>);
+usersModule.listUsers();
+</pre>
+
+    <p>Here we've created a module called <strong>UsersModule</strong>. Inside this module we will keep all of our code related to users. We have two functions called inside (addUser and listUsers) and one private variable (users). We say it's private, becuase it's not accessible outside the module.</p>
+
+    <p>When <strong>UsersModule</strong> is invoked, it returns an object with our two module functions. So now outside of our module we can interact with our "users", but only to the extent that we've allowed (with the addUser and listUsers) funciton. In other words, because of closure, we cannot directly interact with our "users".</p>
+
+    <p>Now, check out the following code:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">UsersModule</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#99cf50">var</span> users <span style="color:#e28964">=</span> [<span style="color:#65b042">'Aaron'</span>, <span style="color:#65b042">'Jona'</span>];
+
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">addUser</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (user) {
+    users.<span style="color:#dad085">push</span>(user);
+  }
+
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">listUsers</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    <span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; i <span style="color:#e28964">&lt;</span> users.<span style="color:#cf6a4c">length</span>; i <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
+      <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(users[i]);
+    }
+  }
+
+  <span style="color:#e28964">return</span> {
+    addUser: addUser,
+    listUsers: listUsers
+  }
+}
+
+<span style="color:#99cf50">var</span> usersModule1 <span style="color:#e28964">=</span> UsersModule();
+<span style="color:#99cf50">var</span> usersModule2 <span style="color:#e28964">=</span> UsersModule();
+
+usersModule1.addUser(<span style="color:#65b042">'Sasha'</span>);
+usersModule2.addUser(<span style="color:#65b042">'John'</span>);
+
+usersModule1.listUsers();
+usersModule2.listUsers();
+</pre>
+
+    <p>Copy/paste it in your console. Notice that we now have 2 instances of our UsersModule and two different lists of "users". This awesome. We can reuse all of this code!</p>
+  </div>
+
+  <hr>
+
+
+  <div class="topic">
+      <h4>Done.</h4>
+      <p>Awesome! What a baller you are.</p>
+  </div>
+</div>
+
