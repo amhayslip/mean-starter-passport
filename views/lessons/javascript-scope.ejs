@@ -1,0 +1,177 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>Javascript Scope</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+
+  <div class="topic">
+    <h3>Intro</h3>
+    <p>Last week was mostly surface-level review of Javacsript. Today we're going to start diving deep to understand how Javascript works under the covers. This will give us a solid, healthy understanding of programming that will produce exponential fruit in the future.</p>
+
+    <p>In this lesson we will go over:</p>
+
+    <ul>
+      <li>A working definition for scope</li>
+      <li>How Javascript is compiled/executed and what it does to scope</li>
+      <li>How to read and define nested scope</li>  
+    </ul>
+
+    <p>Partner up for this one! There will be several exercises along the way, but all you'll need is a pen/paper and somewhere to write Javascript.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>What is Scope?</h4>
+    <p>We'll borrow <a href="https://twitter.com/getify?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">Kyle Simpson's</a> definition for scope. <strong><em>Scope is a well-defined set of rules for storing variables in some location, and for finding those variables at a later time</em></strong>. This is a central concept in programming, so it's important to understand it in depth.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>So, what are the rules? How is scope built?</h4>
+    <p>To understand how scope is created, we have to understand (a little bit) about how Javascript is compiled and executed by the interpreter.</p>
+
+    <p>Javascript is first compiled by it's <em>compiler</em>, then executed by it's <em>engine</em>. Therefore, the following code can be seen as two steps:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> x <span style="color:#e28964">=</span> <span style="color:#3387cc">5</span>;
+</pre>
+
+    <p>1. First, when Javascript is compiling it sees the left-hand side (LHS) of our eqeuals sign and assigns the variable "x" to the current scope. <strong>Scope</strong> can be thought of as a piece of paper where a list of variables are written down.</p>
+
+    <p>2. Then, when it’s time to execute (immediately afterward) our engine will refer to the current scope to find the variable for "x". If it finds it, it assigns it to 2 (a "right-hand side" lookup or LHS). If not, it moves on to the next scope and looks for the variable there (more on that in a moment).</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>LHS and RHS Examples</h4>
+    <p>Let's look at a couple of examples. The following is a LHS look-up:</p>
+    <pre style="background:#000;color:#f8f8f8">x <span style="color:#e28964">=</span> <span style="color:#3387cc">5</span>;
+</pre>
+
+    <p>Here we don't care about, what's being assigned, only <em>who's</em> being assigned to. By contrast, this is a RHS look-up:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(x);
+</pre>
+
+    <p>Here we care only about the <strong>source</strong> of "x". We need to look up what x is.</p>
+
+    <p class="ex"><strong>Partner Exercise 1:</strong> What are the LHS look-ups? What are the RHS look-ups? </p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> name <span style="color:#e28964">=</span> <span style="color:#65b042">"John"</span>;
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(name);
+</pre>
+
+    <div class="exercise">
+      <% var num= '6-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>There is 1 LHS look-up (name) and two RHS look-ups (= "John") and (console.log(name))</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Partner Exercise 2:</strong> What are the LHS look-ups? What are the RHS look-ups? </p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">foo</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (a) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(a);
+}
+
+foo(<span style="color:#3387cc">2</span>);
+</pre>
+
+    <div class="exercise">
+      <% var num= '6-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>This one is a little tricky. There are 2 for LHS (foo =) and (a = 2). Though the second is not explicit, as an arugment, it's an LHS look-up. There are also 2 RHS look-ups: console.log(a) and = functon () {} </p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Partner Exercise 3:</strong> What are the LHS look-ups? What are the RHS look-ups? </p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">foo</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (a) {
+  <span style="color:#99cf50">var</span> b <span style="color:#e28964">=</span> a;
+  <span style="color:#e28964">return</span> a <span style="color:#e28964">+</span> b;
+}
+
+<span style="color:#99cf50">var</span> c <span style="color:#e28964">=</span> foo( <span style="color:#3387cc">2</span> );
+</pre>
+
+    <div class="exercise">
+      <% var num= '6-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>There are 4 LHS look-ups (foo =, c =, a =, b =), and 4 RHS look-ups foo(2.., = a;, a + .. and .. + b.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Nested Scope</h4>
+    <p>Finally, this is the meat of what we want to talk about. Sometimes, there is more than 1 scope. The rules for nested scope are simple: our engine starts at the currently executing Scope, looks for the variable there, then if it's not found, it keeps going up one level continually until it find it. If the outermost global scope is reached, the search stops, whether it finds the variable or not.</p>
+
+    <p>Let's look at an example:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">foo</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (y) {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(y <span style="color:#e28964">+</span> x);
+}
+
+<span style="color:#99cf50">var</span> x <span style="color:#e28964">=</span> <span style="color:#3387cc">2</span>;
+
+foo(<span style="color:#3387cc">4</span>); <span style="color:#aeaeae;font-style:italic">// 6</span>
+</pre>
+
+    <p>Step by step, this is what's going on:</p>
+
+    <ul>
+      <li>First, we start with the executing code, which is inside the scope of our function <strong>foo.</strong></li>
+      <li>Our engine checks our scope to see if it know's what <strong>x</strong> is. Scope doesn't know, because there is no LHS for it in the current scope.</li>
+      <li>Our engine then moves on to the next scope, which is the global scope outside of <strong>foo</strong>.</li>
+      <li>Sure enough, there's <strong>x</strong>, in the global scope. Everyone is happy, no errors!</li>
+
+    </ul>
+
+  </div>
+    <p class="ex"><strong>Partner Exercise 4:</strong> Identify how many scopes there are and what variables are in which scope:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">foo</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (x) {
+  <span style="color:#99cf50">var</span> y <span style="color:#e28964">=</span> <span style="color:#3387cc">5</span>;
+  
+  <span style="color:#99cf50">var</span> <span style="color:#89bdff">bar</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(y <span style="color:#e28964">+</span> x);
+  }
+
+  bar();
+}
+
+<span style="color:#99cf50">var</span> baz <span style="color:#e28964">=</span> foo(<span style="color:#3387cc">7</span>);
+
+</pre>
+
+    <div class="exercise">
+      <% var num= '6-4'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>There are 3 "scopes". The global scope which has <strong>foo</strong> and <strong>baz</strong>, foo's scope, which contains <strong>y</strong> and <strong>bar</strong> and bar's scope which has no LHS look-ups but only RHS look-ups.</p>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <hr>
+
+    <div class="topic">
+      <h4>Individual Exercises</h4>
+
+
+    </div>
+
+    <hr>
+
+    <div class="topic">
+      <h4>Done.</h4>
+      <p>Awesome! What a baller you are.</p>
+</div>
+
