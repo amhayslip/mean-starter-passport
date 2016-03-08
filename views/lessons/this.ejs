@@ -1,0 +1,224 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>this</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Intro</h3>
+    <p>Partner up for this one! There will be several exercises along the way, but all you'll need is a pen/paper and somewhere to write Javascript.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>A Definition</h4>
+    <p>In Javascipt, the keyword <c>this</c> refers to the object that called (or invoked) the function. Copy/paste the following example in your console:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> counter <span style="color:#e28964">=</span> {
+  count: <span style="color:#3387cc">0</span>,
+
+  <span style="color:#89bdff">updateCounts</span>: <span style="color:#99cf50">function</span> () {
+    <span style="color:#3e87e3">this</span>.count <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>;
+  }
+};
+
+counter.updateCounts();
+counter.updateCounts();
+counter.updateCounts();
+
+<span style="color:#dad085">alert</span>(counter.count);
+</pre>
+
+    <p>In this example, <c>counter</c> invoked (or called) the <c>updateCounter</c> function. Therefore, <c>counter</c>'s <c>count</c> property was updated. In this case <c>this.tries</c> is the same as <c>counter.tries</c>.</p>
+
+    <p>Let's look at another:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> cat <span style="color:#e28964">=</span> {
+  <span style="color:#89bdff">makeNoise</span>: <span style="color:#99cf50">function</span> () {
+    <span style="color:#dad085">alert</span>(<span style="color:#3e87e3">this</span>.noise);
+  },
+  noise: <span style="color:#65b042">"Meow!"</span>
+};
+
+<span style="color:#99cf50">var</span> dog <span style="color:#e28964">=</span> {
+  makeNoise: cat.makeNoise,
+  noise: <span style="color:#65b042">"Woof!"</span>
+};
+
+cat.makeNoise();
+dog.makeNoise();
+</pre>
+
+    <p>At first glance, you might be tempted to assume that "Meow!" will alert two time and "Woof!" will not alert at all. But let's break it down:</p>
+
+    <p>When <c>cat.makeNoise( )</c> is called, <c>this.noise</c> is the same thing as <c>cat.noise</c>. Then, when <c>dog.makeNoise( )</c> is called, <c>this</c> changes because it refers to <strong>the object that called the function</strong>. Now it refers to <c>dog</c> instead of <c>cat</c>, therefore <c>this.noise</c> is the same as <c>cat.noise</c>.</p>
+
+    <p>Here's a diagram to illustrate:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Evernote-Snapshot-20160308-150752.png">
+
+    <p>Here's another way to write it with the same result:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">makeNoiseFunction</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#3e87e3">this</span>.noise);
+}
+
+<span style="color:#99cf50">var</span> cat <span style="color:#e28964">=</span> {
+  makeNoise: makeNoiseFunction,
+  noise: <span style="color:#65b042">"Meow!"</span>
+};
+
+<span style="color:#99cf50">var</span> dog <span style="color:#e28964">=</span> {
+  makeNoise: makeNoiseFunction,
+  noise: <span style="color:#65b042">"Woof!"</span>
+};
+
+cat.makeNoise();
+dog.makeNoise();
+</pre>
+
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 1</h4>
+    <p>Copy/paste the following code in your console. Fix the errors to make it work.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> person <span style="color:#e28964">=</span> {
+  hungry: <span style="color:#3387cc">true</span>,
+
+  <span style="color:#89bdff">feed</span>: <span style="color:#99cf50">function</span> () {
+    <span style="color:#e28964">if</span> (hungry) {
+      hungry <span style="color:#e28964">=</span> <span style="color:#3387cc">false</span>;
+      <span style="color:#dad085">alert</span>(<span style="color:#65b042">'Im no longer hungry!'</span>);
+    }
+  }
+}
+
+person.feed();
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 2</h4>
+    <p>Copy/paste the following code in your console. Fix the errors to make it work. There is 1 logic error and 4 syntax errors:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">pump</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (amount) {
+  liters <span style="color:#e28964">+</span><span style="color:#e28964">=</span> amount;
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'You put '</span> <span style="color:#e28964">+</span> amount <span style="color:#e28964">+</span> <span style="color:#65b042">' liters in '</span> <span style="color:#e28964">+</span> <span style="color:#3e87e3">this</span>.<span style="color:#cf6a4c">name</span>);
+};
+
+<span style="color:#99cf50">var</span> garage <span style="color:#e28964">=</span> {
+  car1: {
+    name: <span style="color:#65b042">'Audi'</span>,
+    liters: <span style="color:#3387cc">3</span>,
+    fillTank: pump
+  }
+  car2: {
+    name: <span style="color:#65b042">'Mercedes'</span>,
+    liters: <span style="color:#3387cc">1</span>
+    fillTank: pump
+  }
+};
+
+garage.car1.fillTank(<span style="color:#3387cc">2</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'Audi should have 5 liters: '</span>,  garage.car1.liters);
+
+garage.car2.fillTank(<span style="color:#3387cc">30</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'Mercedes should have 31 liters: '</span>, garage.car2.liters);
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 3</h4>
+    <p>Copy/paste the following code in your console. Fix 2 logic errors:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">pumpFuel</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (plane) {
+  plane.fuel <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>;
+};
+
+<span style="color:#99cf50">var</span> airplane <span style="color:#e28964">=</span> {
+  <span style="color:#89bdff">fly</span>: <span style="color:#99cf50">function</span> () {
+    <span style="color:#e28964">if</span> (fuel <span style="color:#e28964">&lt;</span> <span style="color:#3387cc">2</span>) {
+      <span style="color:#e28964">return</span> <span style="color:#65b042">'on the ground!'</span>;
+    }
+    <span style="color:#e28964">else</span> {
+      <span style="color:#e28964">return</span> <span style="color:#65b042">'flying!'</span>;
+    }
+  }
+};
+
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'The plane should not be able to fly (yet): '</span> <span style="color:#e28964">+</span> airplane.fly());
+
+pumpFuel(airplane);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'The plane should STILL not be able to fly: '</span> <span style="color:#e28964">+</span> airplane.fly());
+
+pumpFuel(airplane);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'Can it fly now? '</span> <span style="color:#e28964">+</span> airplane.fly());
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 4</h4>
+    <p>Create a method called <c>stealCoins</c> that takes a number parameter and decreases the tipJar's coins by that amount:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> tipJar <span style="color:#e28964">=</span> {
+  coinCount: <span style="color:#3387cc">20</span>,
+  <span style="color:#89bdff">tip</span>: <span style="color:#99cf50">function</span> () {
+    <span style="color:#3e87e3">this</span>.coinCount <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>;
+  }
+};
+
+tipJar.tip();
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'Wishing well should have 21 coins: '</span> <span style="color:#e28964">+</span> tipJar.coinCount);
+
+tipJar.stealCoins(<span style="color:#3387cc">3</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'Wishing well should have 18 coins: '</span> <span style="color:#e28964">+</span> tipJar.coinCount);
+
+tipJar.stealCoins(<span style="color:#3387cc">10</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'Wishing well should have 8 coins: '</span> <span style="color:#e28964">+</span> tipJar.coinCount);
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 5</h4>
+    <p>Fix the following 3 syntax errors and 1 logic error. The flow of this is really tricky, so take it slow and write it out if you need to.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">revealSecret</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#e28964">return</span> secret;
+};
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">shoutIt</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (person, func) {
+  person.revealItAll <span style="color:#e28964">=</span> func;
+  <span style="color:#99cf50">var</span> result <span style="color:#e28964">=</span> person.revealItAll();
+  <span style="color:#dad085">alert</span>(person.<span style="color:#cf6a4c">name</span> <span style="color:#e28964">+</span> <span style="color:#65b042">" said: "</span> result);
+};
+
+<span style="color:#99cf50">var</span> avi <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Avi"</span>
+  secret: <span style="color:#65b042">"Im scared of snakes!"</span>
+};
+
+<span style="color:#99cf50">var</span> narkis <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Narkis"</span>
+  secret: <span style="color:#65b042">"I dont have secrets because I'm zen like that."</span>
+};
+
+shoutIt(avi, revealSecret);
+shoutIt(narkis, revealSecret);
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Awesome! What a baller you are.</p>
+  </div>
+</div>
+
