@@ -9,17 +9,13 @@
     <h3>Intro</h3>
     <p>In this lesson we will go over:</p>
 
-    notes:
-    - object syntax
-    - declaring
-    - accessing values
-    - setting values
-    - values as anything
-    - nested objects
-    - values as functions (methods)
-
     <ul>
-      <li></li>
+      <li>Object Syntax</li>
+      <li>Declaring Objects</li>
+      <li>Access Object Values</li>
+      <li>Setting Object Values</li>
+      <li>Nested Objects</li>
+      <li>Methods</li>
     </ul>
 
     <p>Partner up for this one! There will be several exercises along the way, but all you'll need is a pen/paper and somewhere to write Javascript.</p>
@@ -228,13 +224,106 @@ person.greet();
 
   <div class="topic">
     <h4>Nested Objects</h4>
+    <p>Before, we determined that an object's property can have anything as a value. Even other objects!</p>
+    <iframe style="display: block; margin: 0 auto 0;" src="//giphy.com/embed/LpLd2NGvpaiys" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+    <p>Check it!</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> user <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Aaron"</span>,
+  addresses: {
+    home: <span style="color:#65b042">"12345 Hebrew Street"</span>,
+    work: <span style="color:#65b042">"Wework Sarona Street"</span>
+  }
+}
+</pre>
+
+    <p>How would you access "aaron's" home address?</p>
+    <div class="exercise">
+      <% var num= '8-9'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8">user.addresses.home;</pre>
+      </div>
+        <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">In the same way, we can change a nested object value:</p>
+    <pre style="background:#000;color:#f8f8f8">user.addresses.home <span style="color:#e28964">=</span> <span style="color:#65b042">"5545 Cool Road"</span>;</pre>
+
+    <p><strong>Partner Exercse 8:</strong> With your partner, build an object with a nested function. Slack an instructor to check it out before you move on.</p>
+
   </div>
 
   <hr>
 
   <div class="topic">
-      <h4>Done.</h4>
-      <p>Awesome! What a baller you are.</p>
+    <h4>Methods!</h4>
+    <p>Earlier we went through an example where an object property had a function for a value, like this:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">var</span> dog <span style="color:#e28964">=</span> {
+  speak<span style="color:#e28964">:</span> function () {
+    console.<span style="color:#dad085">log</span>(<span style="color:#65b042">"woof!"</span>);
+  }
+}
+</pre>
+
+    <p>In the above object, "speak" is a method. <strong>A JavaScript method is a property containing a function definition</strong>. It's that simple. You can think of objects as nouns (person, place, thing) and methods as their verbs.</p>
+
+    <p><strong>Partner Exercse 8:</strong> With your partner, build an object with a method. Slack an instructor to check it out before you move on.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Putting it All Together</h4>
+    <p><p><strong>Partner Exercse 9:</strong> Clone <a href="https://github.com/Elevationacademy/reservations" target="_blank">this github repo</a> and open the <strong>index.html</strong> file in your browser.</p>
+
+    <p>We have a reservation system where people can claim their reservations when they arrive. Finish the <strong>claimReservation</strong> function. It should:</p>
+
+    <ul>
+      <li>If the reservation exists and is unclaimed, welcome the user (use alert).</li>
+      <li>If the reservation exists and is already claimed, inform the user about the situation (use alert).</li>
+      <li>If there is no reservation, tell the user there is nothing under their name (user alert).</li>
+    </ul>
+
+    <p>Use 'Bob' and 'Ted' to test your code.</p>
+
+    <p>Slack an instructor when you're done!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise 1</h4>
+    <p>It so happens that our restaurant has a bunch of open tables. Therefore, if someone doesn't have a reservation, add it to the <strong>reservations</strong> object and set "claimed" to true for that person. Alert them of their new reservation.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise 2</h4>
+    <p>As of now, 'Ted' and 'ted' are two different names in our system. Change your code so that 'ted' and 'Ted' or even 'TeD' is all the same. Use google and Stack Overflow to help with this.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise Extension 1</h4>
+    <p>Until now we've been using prompt and alert. Instead, add an input field and button in HTML.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise Extension 2</h4>
+    <p>Add the reservations to the HTML as they're made.</p>
+  </div>
+
+
+  <hr>
+
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Awesome! What a baller you are.</p>
   </div>
 </div>
 
