@@ -1,0 +1,329 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>Javascript Objects</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+
+  <div class="topic">
+    <h3>Intro</h3>
+    <p>In this lesson we will go over:</p>
+
+    <ul>
+      <li>Object Syntax</li>
+      <li>Declaring Objects</li>
+      <li>Access Object Values</li>
+      <li>Setting Object Values</li>
+      <li>Nested Objects</li>
+      <li>Methods</li>
+    </ul>
+
+    <p>Partner up for this one! There will be several exercises along the way, but all you'll need is a pen/paper and somewhere to write Javascript.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>What are Objects?</h4>
+    <p>This is a loaded question because just about everything in Javasript is an object (well, almost). However, we will wait to have that conversation. For now, we'll continue on our review of Javascript's basics.</p>
+
+    <p>With that being said, objects are just key/value pairs. For example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> user <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Aaron"</span>,
+  email: <span style="color:#65b042">"amhayslip@gmail.com"</span>
+}
+</pre>
+
+    <p>Here we have an object assigned to the variable <strong>user</strong> with two properties: <strong>name</strong> and <strong>email</strong>. Each property has a string as a value. Additionally, notice how their separated by commas.</p>
+
+    <p>Now you try. With your partner, create an object called <strong>car</strong> that has two properties: <strong>wheels</strong> and <strong>color</strong>. The value of wheels will be a number, and the value of color will be a string.</p>
+
+    <div class="exercise">
+      <% var num= '8-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> car <span style="color:#e28964">=</span> {
+  wheels: <span style="color:#3387cc">4</span>,
+  color: <span style="color:#65b042">"red"</span>
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p>Easy. Also, it's good to know that object properties can be of any value:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> user <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Aaron"</span>,
+  email: <span style="color:#65b042">"amhayslip@gmail.com"</span>,
+  family: [<span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>]
+}
+</pre>
+    <p>Here, "family" is an array. One of the more interesting values is functions.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> user <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Aaron"</span>,
+  email: <span style="color:#65b042">"amhayslip@gmail.com"</span>,
+  family: [<span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>],
+  <span style="color:#89bdff">speak</span>: <span style="color:#99cf50">function</span> () {
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"Hey! I'm Aaron!"</span>);
+  }
+}
+</pre>
+
+    <p>Notice how we added a function to make our user speak.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Access Object Values</h4>
+    <p><strong>Partner Exercise 1:</strong> Now, let's look at how we access these values. If we revert to first example, how would we access our users name? Take a stab at it with your partner now.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> user <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Aaron"</span>,
+  email: <span style="color:#65b042">"amhayslip@gmail.com"</span>,
+}
+</pre>
+
+    <div class="exercise">
+      <% var num= '8-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8">user.<span style="color:#cf6a4c">name</span> <span style="color:#aeaeae;font-style:italic">// returns "Aaron"</span>
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">Copy/paste that last example in your console now to see how it works.</p>
+
+    <p>That last example of accessing our value was using <strong>dot notation</strong>. We can also access our properies with bracket noation, like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8">user[<span style="color:#65b042">"name"</span>] <span style="color:#aeaeae;font-style:italic">// returns "Aaron"</span>
+</pre>
+
+    <p class="ex">Note that we need to include the quotes when using <strong>bracket notation</strong> this.</p>
+
+    <p><strong>Partner Exercise 2:</strong> Copy/pase the example below into your dev console (again). With your partner, figure out how you would access each property.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> user <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Aaron"</span>,
+  email: <span style="color:#65b042">"amhayslip@gmail.com"</span>,
+  family: [<span style="color:#65b042">"Sarah"</span>, <span style="color:#65b042">"Isaiah"</span>],
+  <span style="color:#89bdff">speak</span>: <span style="color:#99cf50">function</span> () {
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"Hey! I'm Aaron!"</span>);
+  }
+}
+</pre>
+
+    <div class="exercise">
+      <% var num= '8-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8">user.<span style="color:#cf6a4c">name</span> <span style="color:#aeaeae;font-style:italic">// returns "Aaron"</span>
+user.email <span style="color:#aeaeae;font-style:italic">// returns "amhayslip@gmail.com"</span>
+user.family <span style="color:#aeaeae;font-style:italic">// returns ["Sarah", "Isaiah"]</span>
+user.speak <span style="color:#aeaeae;font-style:italic">// returns function () {</span>
+    <span style="color:#aeaeae;font-style:italic">// console.log("Hey! I'm Aaron!");</span>
+    <span style="color:#aeaeae;font-style:italic">// }</span>
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Partner Exercise 3:</strong> Now try adding a new item to your <strong>family</strong> array from the console. Try it first before peeking the answer.</p>
+
+    <div class="exercise">
+      <% var num= '8-4'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8">user.family.<span style="color:#dad085">push</span>(<span style="color:#65b042">"me!"</span>);
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Partner Exercise 4:</strong> Now try invoking the <strong>speak</strong> function from the console. Try it first before peeking the answer.</p>
+
+    <div class="exercise">
+      <% var num= '8-5'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8">user.speak();</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topics">
+    <h4>Setting Object Properties and Values</h4>
+    <p>We've already seen one way to set object properites and values... it's to declare the object with those prorties and values from the beginning.</p>
+
+    <p>Just as we can access properties values with <strong>dot notation</strong> or <strong>bracket notation</strong>, we can set them the same way.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> user <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Aaron"</span>,
+  email: <span style="color:#65b042">"amhayslip@gmail.com"</span>,
+}
+</pre>
+
+    <p>If we wanted to change the <strong>name</strong> property here we could do it like this with dot notation:</p>
+
+    <pre style="background:#000;color:#f8f8f8">user.<span style="color:#cf6a4c">name</span> <span style="color:#e28964">=</span> <span style="color:#65b042">"John"</span>;</pre>
+
+    <p>Or like this with bracket notation:</p>
+
+    <pre style="background:#000;color:#f8f8f8">user[<span style="color:#65b042">"name"</span>] <span style="color:#e28964">=</span> <span style="color:#65b042">"John"</span>;</pre>
+
+    <p>If we want to add a new property, we can do the same thing:</p>
+    <pre style="background:#000;color:#f8f8f8">user.age <span style="color:#e28964">=</span> <span style="color:#3387cc">27</span>;</pre>
+    <pre style="background:#000;color:#f8f8f8">user[<span style="color:#65b042">"hometown"</span>] <span style="color:#e28964">=</span> <span style="color:#65b042">"Austin, TX"</span>;</pre>
+
+    <p class="ex"><strong>Partner Exercise 5:</strong> Create an empty object called <strong>person</strong> in the console.</p>
+
+    <div class="exercise">
+      <% var num= '8-6'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> person <span style="color:#e28964">=</span> {};
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Partner Exercise 6:</strong> Add two properties to your object using dot nation: a firstName and a lastName:</p>
+
+    <div class="exercise">
+      <% var num= '8-7'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8">person.firstName <span style="color:#e28964">=</span> <span style="color:#65b042">"yourFirstName"</span>;
+person.lastName <span style="color:#e28964">=</span> <span style="color:#65b042">"yourLastName"</span>;
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex"><strong>Partner Exercise 7:</strong> Add another property called <strong>greet</strong> that is a function which console logs "hey there!". Then invoke the function:</p>
+
+    <div class="exercise">
+      <% var num= '8-8'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#9b859d">person</span>.<span style="color:#89bdff">greet</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () { <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"hey there!"</span>) };
+person.greet();
+</pre>
+      </div>
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Nested Objects</h4>
+    <p>Before, we determined that an object's property can have anything as a value. Even other objects!</p>
+    <iframe style="display: block; margin: 0 auto 0;" src="//giphy.com/embed/LpLd2NGvpaiys" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+    <p>Check it!</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> user <span style="color:#e28964">=</span> {
+  name: <span style="color:#65b042">"Aaron"</span>,
+  addresses: {
+    home: <span style="color:#65b042">"12345 Hebrew Street"</span>,
+    work: <span style="color:#65b042">"Wework Sarona Street"</span>
+  }
+}
+</pre>
+
+    <p>How would you access "aaron's" home address?</p>
+    <div class="exercise">
+      <% var num= '8-9'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8">user.addresses.home;</pre>
+      </div>
+        <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">In the same way, we can change a nested object value:</p>
+    <pre style="background:#000;color:#f8f8f8">user.addresses.home <span style="color:#e28964">=</span> <span style="color:#65b042">"5545 Cool Road"</span>;</pre>
+
+    <p><strong>Partner Exercse 8:</strong> With your partner, build an object with a nested function. Slack an instructor to check it out before you move on.</p>
+
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Methods!</h4>
+    <p>Earlier we went through an example where an object property had a function for a value, like this:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">var</span> dog <span style="color:#e28964">=</span> {
+  speak<span style="color:#e28964">:</span> function () {
+    console.<span style="color:#dad085">log</span>(<span style="color:#65b042">"woof!"</span>);
+  }
+}
+</pre>
+
+    <p>In the above object, "speak" is a method. <strong>A JavaScript method is a property containing a function definition</strong>. It's that simple. You can think of objects as nouns (person, place, thing) and methods as their verbs.</p>
+
+    <p><strong>Partner Exercse 8:</strong> With your partner, build an object with a method. Slack an instructor to check it out before you move on.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Putting it All Together</h4>
+    <p><p><strong>Partner Exercse 9:</strong> Clone <a href="https://github.com/Elevationacademy/reservations" target="_blank">this github repo</a> and open the <strong>index.html</strong> file in your browser.</p>
+
+    <p>We have a reservation system where people can claim their reservations when they arrive. Finish the <strong>claimReservation</strong> function. It should:</p>
+
+    <ul>
+      <li>If the reservation exists and is unclaimed, welcome the user (use alert).</li>
+      <li>If the reservation exists and is already claimed, inform the user about the situation (use alert).</li>
+      <li>If there is no reservation, tell the user there is nothing under their name (user alert).</li>
+    </ul>
+
+    <p>Use 'Bob' and 'Ted' to test your code.</p>
+
+    <p>Slack an instructor when you're done!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise 1</h4>
+    <p>It so happens that our restaurant has a bunch of open tables. Therefore, if someone doesn't have a reservation, add it to the <strong>reservations</strong> object and set "claimed" to true for that person. Alert them of their new reservation.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise 2</h4>
+    <p>As of now, 'Ted' and 'ted' are two different names in our system. Change your code so that 'ted' and 'Ted' or even 'TeD' is all the same. Use google and Stack Overflow to help with this.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise Extension 1</h4>
+    <p>Until now we've been using prompt and alert. Instead, add an input field and button in HTML.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise Extension 2</h4>
+    <p>Add the reservations to the HTML as they're made.</p>
+  </div>
+
+
+  <hr>
+
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Awesome! What a baller you are.</p>
+  </div>
+</div>
+
