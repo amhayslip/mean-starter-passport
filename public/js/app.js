@@ -7,7 +7,13 @@ app.config([
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: '/home.html',
+        templateUrl: function ($stateParams) {
+          if (window.location.port === "3000") {
+            return '/home-dev.html'
+          } else {
+            return '/home.html'
+          }
+        },
         controller: 'MainCtrl',
         onEnter: ['$state', 'auth', function($state, auth){
           if(!auth.isLoggedIn()){
