@@ -65,11 +65,11 @@
 <span style="color:#99cf50">var</span> <span style="color:#89bdff">increment</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
   a <span style="color:#e28964">=</span> a <span style="color:#e28964">+</span> <span style="color:#3387cc">1</span>;
   <span style="color:#e28964">return</span> a;
-}
+};
 
 <span style="color:#99cf50">var</span> <span style="color:#89bdff">decrement</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
   a <span style="color:#e28964">=</span> a <span style="color:#e28964">-</span> a;
-}
+};
 
 <span style="color:#99cf50">var</span> b <span style="color:#e28964">=</span> decrement();
 increment();
@@ -101,15 +101,15 @@ increment();
     <p>Write a for-loop that loops through the array and invokes the item if it's a function, or alerts it if it is not.</p>
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">sayHello</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
   <span style="color:#dad085">alert</span>(<span style="color:#65b042">'Hello!'</span>);
-}
+};
 
 <span style="color:#99cf50">var</span> <span style="color:#89bdff">sayGoodbye</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
   <span style="color:#dad085">alert</span>(<span style="color:#65b042">'Goodbye!'</span>);
-}
+};
 
 <span style="color:#99cf50">var</span> <span style="color:#89bdff">sayWhatever</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (phrase) {
   <span style="color:#dad085">alert</span>(phrase);
-}
+};
 
 <span style="color:#99cf50">var</span> sentence <span style="color:#e28964">=</span> <span style="color:#65b042">'Im not a function but I still want to alert!'</span>;
 
@@ -125,7 +125,7 @@ increment();
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> wework <span style="color:#e28964">=</span> {
   companies: [<span style="color:#65b042">'Elevation'</span>, <span style="color:#65b042">'Aleph'</span>, <span style="color:#65b042">'Dior'</span>],
   location: <span style="color:#65b042">"Sarona"</span>,
-}
+};
 </pre>
   </div>
 
@@ -140,28 +140,15 @@ increment();
   comments: [
     { username: <span style="color:#65b042">"Jona"</span>, text: <span style="color:#65b042">"You can never get enough hummus"</span> },
     { username: <span style="color:#65b042">"Avi"</span>, text: <span style="color:#65b042">"I eat hummus for breakfast"</span> }
-  ]
-}
+  ];
+};
 </pre>
   </div>
 
   <hr>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="topic">
-    <h4>Partner Exercise 7</h4>
+    <h4>Partner Exercise 8</h4>
     <p>Write a for-loop that loops through all the <c>posts</c> inside <c>data</c>. If the post has more than 10 likes, add it to the <c>topPosts</c> array.</p>
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> data <span style="color:#e28964">=</span> {
   posts: [
@@ -171,8 +158,8 @@ increment();
     { username: <span style="color:#65b042">"Narkis"</span>, text: <span style="color:#65b042">"Coding is about what's inside"</span>, likes: <span style="color:#3387cc">12</span> },
     { username: <span style="color:#65b042">"Alex"</span>, text: <span style="color:#65b042">"Coding is rad"</span>, likes: <span style="color:#3387cc">14</span> },
     { username: <span style="color:#65b042">"Avi"</span>, text: <span style="color:#65b042">"I'm in the army."</span>, likes: <span style="color:#3387cc">56</span> }
-  ]
-}
+  ];
+};
 
 <span style="color:#99cf50">var</span> topPosts <span style="color:#e28964">=</span> [];
 </pre>
@@ -181,7 +168,7 @@ increment();
   <hr>
 
   <div class="topic">
-    <h4>Partner Exercise 8</h4>
+    <h4>Partner Exercise 9</h4>
     <p>Creat a function called <c>addPost</c> that takes two arguments: <c>username</c> and <c>text</c>. When the function is called, add a new <c>post</c> object to the <c>posts</c> array inside of the <c>data</c> object. Slack an instructor to check your work when you're done. </p>
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> data <span style="color:#e28964">=</span> {
   posts: [
@@ -191,9 +178,53 @@ increment();
     { username: <span style="color:#65b042">"Narkis"</span>, text: <span style="color:#65b042">"Coding is about what's inside"</span>, likes: <span style="color:#3387cc">12</span> },
     { username: <span style="color:#65b042">"Alex"</span>, text: <span style="color:#65b042">"Coding is rad"</span>, likes: <span style="color:#3387cc">14</span> },
     { username: <span style="color:#65b042">"Avi"</span>, text: <span style="color:#65b042">"I'm in the army."</span>, likes: <span style="color:#3387cc">56</span> }
-  ]
-}
+  ];
+};
 </pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 10</h4>
+    <p>Draw a diagram of the result of following code. Take turns drawing it from scratch.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> investor <span style="color:#e28964">=</span> {
+  cash: <span style="color:#3387cc">500000000</span>,
+  portfolio: [ 
+    { name: <span style="color:#65b042">"Google"</span>, amount: <span style="color:#3387cc">5000000</span> },
+    { name: <span style="color:#65b042">"Twitter"</span>, amount: <span style="color:#3387cc">1000000</span> }
+  ];
+};
+
+<span style="color:#99cf50">var</span> prospectiveCompanies <span style="color:#e28964">=</span> [
+  { name: <span style="color:#65b042">"Git Rich Quick"</span>, amount: <span style="color:#3387cc">1250000</span> },
+  { name: <span style="color:#65b042">"Luz Ur Muni"</span>, amount: <span style="color:#3387cc">2000000</span> },
+  { name: <span style="color:#65b042">"Burn Dat Cash"</span>, amount: <span style="color:#3387cc">40000000</span> }
+];
+</pre>
+    
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 11</h4>
+    <p>Suddenly, you and you're partner are big time investors with $500,000,000 to invest! You already have a couple of comanies like Google and Twitter in your portfolio and you're looking ot add more. Write a method called invest for your <c>investor</c> object that takes one argument, <c>company</c>. Then, invoke the function and pass in one of the companies from the <c>prospectiveCompanies</c> array. Your method should add them to your portfolio and reduce the amount of cash your company has by that amount.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> investor <span style="color:#e28964">=</span> {
+  cash: <span style="color:#3387cc">500000000</span>,
+  portfolio: [ 
+    { name: <span style="color:#65b042">"Google"</span>, amount: <span style="color:#3387cc">5000000</span> },
+    { name: <span style="color:#65b042">"Twitter"</span>, amount: <span style="color:#3387cc">1000000</span> }
+  ];
+};
+
+<span style="color:#99cf50">var</span> prospectiveCompanies <span style="color:#e28964">=</span> [
+  { name: <span style="color:#65b042">"Git Rich Quick"</span>, amount: <span style="color:#3387cc">1250000</span> },
+  { name: <span style="color:#65b042">"Luz Ur Muni"</span>, amount: <span style="color:#3387cc">2000000</span> },
+  { name: <span style="color:#65b042">"Burn Dat Cash"</span>, amount: <span style="color:#3387cc">40000000</span> }
+];
+</pre>
+    
   </div>
 
   <hr>
