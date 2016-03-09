@@ -19,13 +19,181 @@
 
   <div class="topic">
     <h3>Intro</h3>
-    <p>In this lesson we will go over:</p>
+    <p>Okay, everything to this point has mostly been "review". But practice makes perfect, so let's review the review! In this lesson we will review:</p>
 
     <ul>
-      <li></li>
+      <li>Assignment with Variables</li>
+      <li>Functions</li>
+      <li>Conditionals</li>
+      <li>Loops and Arrays</li>
+      <li>Objects</li>
+      <li>Methods</li>
+      <li>this</li>
     </ul>
 
     <p>Partner up for this one! There will be several exercises along the way, but all you'll need is a pen/paper and somewhere to write Javascript.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 1</h4>
+    <p>Draw a diagram of the result of following code. Take turns drawing it from scratch.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> num <span style="color:#e28964">=</span> <span style="color:#3387cc">6</span>;
+<span style="color:#99cf50">var</span> newNum <span style="color:#e28964">=</span> num;
+<span style="color:#99cf50">var</span> sum <span style="color:#e28964">=</span> num <span style="color:#e28964">+</span> newNum;
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 2</h4>
+    <p>Draw a diagram of the result of following code. Take turns drawing it from scratch.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> breakfast <span style="color:#e28964">=</span> [<span style="color:#65b042">'eggs'</span>, <span style="color:#65b042">'bacon'</span>, <span style="color:#65b042">'orange juice'</span>];
+<span style="color:#99cf50">var</span> kosherBreakfast <span style="color:#e28964">=</span> breakfast.<span style="color:#dad085">splice</span>(<span style="color:#3387cc">1</span>, <span style="color:#3387cc">1</span>, <span style="color:#65b042">'fruit'</span>);
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 3</h4>
+    <p>Draw a diagram of the result of following code. Take turns drawing it from scratch.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> a <span style="color:#e28964">=</span> <span style="color:#3387cc">5</span>;
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">increment</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  a <span style="color:#e28964">=</span> a <span style="color:#e28964">+</span> <span style="color:#3387cc">1</span>;
+  <span style="color:#e28964">return</span> a;
+}
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">decrement</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  a <span style="color:#e28964">=</span> a <span style="color:#e28964">-</span> a;
+}
+
+<span style="color:#99cf50">var</span> b <span style="color:#e28964">=</span> decrement();
+increment();
+increment();
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 4</h4>
+    <p>Draw a diagram of the result of following code. Take turns drawing it from scratch.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">yell</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (sentence, func) {
+  <span style="color:#e28964">return</span> func(sentence);
+};
+
+<span style="color:#99cf50">var</span> sentence <span style="color:#e28964">=</span> <span style="color:#65b042">"See, I can yell."</span>;
+
+<span style="color:#99cf50">var</span> result <span style="color:#e28964">=</span> yell(sentence, <span style="color:#99cf50">function</span>(message) {
+  <span style="color:#e28964">return</span> message.<span style="color:#dad085">toUpperCase</span>();
+});
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 5</h4>
+    <p>Write a for-loop that loops through the array and invokes the item if it's a function, or alerts it if it is not.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">sayHello</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'Hello!'</span>);
+}
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">sayGoodbye</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'Goodbye!'</span>);
+}
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">sayWhatever</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (phrase) {
+  <span style="color:#dad085">alert</span>(phrase);
+}
+
+<span style="color:#99cf50">var</span> sentence <span style="color:#e28964">=</span> <span style="color:#65b042">'Im not a function but I still want to alert!'</span>;
+
+<span style="color:#99cf50">var</span> sayings <span style="color:#e28964">=</span> [sayHello, sayGoodbye, sayWhatever, sentence];
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 6</h4>
+    <p>Write a for-loop that loops through all the <c>companies</c> at <c>wework</c> and console log's them.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> wework <span style="color:#e28964">=</span> {
+  companies: [<span style="color:#65b042">'Elevation'</span>, <span style="color:#65b042">'Aleph'</span>, <span style="color:#65b042">'Dior'</span>],
+  location: <span style="color:#65b042">"Sarona"</span>,
+}
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 7</h4>
+    <p>Draw a diagram of the result of following code. Take turns drawing it from scratch.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> post <span style="color:#e28964">=</span> {
+  username: <span style="color:#65b042">"aaronhayslip"</span>,
+  text: <span style="color:#65b042">"I need some hummus!"</span>,
+  comments: [
+    { username: <span style="color:#65b042">"Jona"</span>, text: <span style="color:#65b042">"You can never get enough hummus"</span> },
+    { username: <span style="color:#65b042">"Avi"</span>, text: <span style="color:#65b042">"I eat hummus for breakfast"</span> }
+  ]
+}
+</pre>
+  </div>
+
+  <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="topic">
+    <h4>Partner Exercise 7</h4>
+    <p>Write a for-loop that loops through all the <c>posts</c> inside <c>data</c>. If the post has more than 10 likes, add it to the <c>topPosts</c> array.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> data <span style="color:#e28964">=</span> {
+  posts: [
+    { username: <span style="color:#65b042">"Aaron"</span>, text: <span style="color:#65b042">"Hey man!"</span>, likes: <span style="color:#3387cc">3</span> },
+    { username: <span style="color:#65b042">"Jona"</span>, text: <span style="color:#65b042">"Man, I love coding"</span>, likes: <span style="color:#3387cc">10</span> },
+    { username: <span style="color:#65b042">"Liron"</span>, text: <span style="color:#65b042">"Yeah, coding is great"</span>, likes: <span style="color:#3387cc">30</span> },
+    { username: <span style="color:#65b042">"Narkis"</span>, text: <span style="color:#65b042">"Coding is about what's inside"</span>, likes: <span style="color:#3387cc">12</span> },
+    { username: <span style="color:#65b042">"Alex"</span>, text: <span style="color:#65b042">"Coding is rad"</span>, likes: <span style="color:#3387cc">14</span> },
+    { username: <span style="color:#65b042">"Avi"</span>, text: <span style="color:#65b042">"I'm in the army."</span>, likes: <span style="color:#3387cc">56</span> }
+  ]
+}
+
+<span style="color:#99cf50">var</span> topPosts <span style="color:#e28964">=</span> [];
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 8</h4>
+    <p>Creat a function called <c>addPost</c> that takes two arguments: <c>username</c> and <c>text</c>. When the function is called, add a new <c>post</c> object to the <c>posts</c> array inside of the <c>data</c> object. Slack an instructor to check your work when you're done. </p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> data <span style="color:#e28964">=</span> {
+  posts: [
+    { username: <span style="color:#65b042">"Aaron"</span>, text: <span style="color:#65b042">"Hey man!"</span>, likes: <span style="color:#3387cc">3</span> },
+    { username: <span style="color:#65b042">"Jona"</span>, text: <span style="color:#65b042">"Man, I love coding"</span>, likes: <span style="color:#3387cc">10</span> },
+    { username: <span style="color:#65b042">"Liron"</span>, text: <span style="color:#65b042">"Yeah, coding is great"</span>, likes: <span style="color:#3387cc">30</span> },
+    { username: <span style="color:#65b042">"Narkis"</span>, text: <span style="color:#65b042">"Coding is about what's inside"</span>, likes: <span style="color:#3387cc">12</span> },
+    { username: <span style="color:#65b042">"Alex"</span>, text: <span style="color:#65b042">"Coding is rad"</span>, likes: <span style="color:#3387cc">14</span> },
+    { username: <span style="color:#65b042">"Avi"</span>, text: <span style="color:#65b042">"I'm in the army."</span>, likes: <span style="color:#3387cc">56</span> }
+  ]
+}
+</pre>
   </div>
 
   <hr>

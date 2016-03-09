@@ -63,7 +63,7 @@
 </pre>
 
     <div class="exercise">
-      <% var num= '6-1'; %>
+      <% var num= '8-1'; %>
       <div class="answer" ng-class="{'show': questions[<%= num %>]}">
         <p>There is 1 LHS look-up (name) and two RHS look-ups (= "John") and (console.log(name))</p>
       </div>
@@ -80,7 +80,7 @@ foo(<span style="color:#3387cc">2</span>);
 </pre>
 
     <div class="exercise">
-      <% var num= '6-2'; %>
+      <% var num= '8-2'; %>
       <div class="answer" ng-class="{'show': questions[<%= num %>]}">
         <p>This one is a little tricky. There are 2 for LHS (foo =) and (a = 2). Though the second is not explicit, as an arugment, it's an LHS look-up. There are also 2 RHS look-ups: console.log(a) and = functon () {} </p>
       </div>
@@ -98,7 +98,7 @@ foo(<span style="color:#3387cc">2</span>);
 </pre>
 
     <div class="exercise">
-      <% var num= '6-3'; %>
+      <% var num= '8-3'; %>
       <div class="answer" ng-class="{'show': questions[<%= num %>]}">
         <p>There are 4 LHS look-ups (foo =, c =, a =, b =), and 4 RHS look-ups foo(2.., = a;, a + .. and .. + b.</p>
       </div>
@@ -152,7 +152,7 @@ foo(<span style="color:#3387cc">4</span>); <span style="color:#aeaeae;font-style
 </pre>
 
     <div class="exercise">
-      <% var num= '6-4'; %>
+      <% var num= '8-4'; %>
       <div class="answer" ng-class="{'show': questions[<%= num %>]}">
         <p>There are 3 "scopes". The global scope which has <strong>foo</strong> and <strong>baz</strong>, foo's scope, which contains <strong>y</strong> and <strong>bar</strong> and bar's scope which has no LHS look-ups but only RHS look-ups.</p>
       </div>
