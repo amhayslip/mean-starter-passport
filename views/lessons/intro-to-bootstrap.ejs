@@ -132,7 +132,7 @@
 
     <pre style="background:#000;color:#f8f8f8">&lt;<span style="color:#cda869">button</span> class="btn btn-primary">Tell Me More&lt;/<span style="color:#cda869">button</span>></pre>
 
-    <p>Giving a link or a button the bootstrap class <c>btn</c> will make it look "bootsrappy". By adding additonal classes (<c>btn-primary</c>, <c>btn-success</c>, <c>btn-danger</c>) we can give our buttons more meaning.</p>
+    <p>Giving a link or a button the bootstrap class <c>btn</c> will make it look "bootstrappy". By adding additional classes (<c>btn-primary</c>, <c>btn-success</c>, <c>btn-danger</c>) we can give our buttons more meaning.</p>
   </div>
 
   <hr>
@@ -248,11 +248,72 @@
     <h4>Icons</h4>
     <p>For this part we need those 3 cool little icons:</p>
     <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-09-at-4.26.07-PM.png">
+
+    <p>We can get those from a cool site called <a href="http://fontawesome.io/" target="_blank">font awesome</a>. Just like bootstrap, we can include the Font Awesome library with a <c>link</c> tag. Include the following tag below where you inlcluded the bootstrap link to and above our <c>style.css</c> tag.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">link</span> <span style="color:#e0c589">rel</span>=<span style="color:#65b042">"stylesheet"</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"</span>></span>
+</pre>
+
+    <p>Add the following HTML inside the first column:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span> <span style="color:#e0c589">class</span>=<span style="color:#65b042">"fa-stack fa-4x"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">i</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"fa fa-circle fa-stack-2x"</span>>&lt;/<span style="color:#89bdff">i</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">i</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"fa fa-shopping-cart fa-stack-1x fa-inverse"</span>>&lt;/<span style="color:#89bdff">i</span>></span>
+<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">h4</span></span>></span>E-Commerce<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h4</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"text-muted"</span>></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+</pre>
+
+    <p>And the second...</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span> <span style="color:#e0c589">class</span>=<span style="color:#65b042">"fa-stack fa-4x"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">i</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"fa fa-circle fa-stack-2x"</span>>&lt;/<span style="color:#89bdff">i</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">i</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"fa fa-laptop fa-stack-1x fa-inverse"</span>>&lt;/<span style="color:#89bdff">i</span>></span>
+<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">h4</span></span>></span>Responsive Design<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h4</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"text-muted"</span>></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+</pre>
+    <p>And the third...</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span> <span style="color:#e0c589">class</span>=<span style="color:#65b042">"fa-stack fa-4x"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">i</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"fa fa-circle fa-stack-2x"</span>>&lt;/<span style="color:#89bdff">i</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">i</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"fa fa-lock fa-stack-1x fa-inverse"</span>>&lt;/<span style="color:#89bdff">i</span>></span>
+<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">h4</span></span>></span>Web Security<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h4</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"text-muted"</span>></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+</pre>
+    <p>Almost there, but everything is not centered up right...</p>
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-10-at-12.22.01-PM.png">
+
+    <p>Since our Font Awesome Icons is just text, we can center them and everything else inside our columns. Instead of adding a bunch of CSS for that, we can use some <a href="http://getbootstrap.com/css/#type-alignment" target="_blank">handy bootstrap classes</a>!</p>
+
+    <p>Add the <c>text-center</c> class to our row.</p>
   </div>
 
   <hr>
-  
-    <h4>Done.</h4>
-    <p>Great. Feel free to continue adding to your framework! Don't forget to add it as a project on your portfolio site.</p>
 
+  <div class="topic">
+    <h4>Partner Exercise 1</h4>
+    <p>With your partner add the title of the services page with a subtitle. Refer back to the top for how it should look. Do not add any CSS, just bootstrap classes.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 2</h4>
+    <p>With your partner tackle the navbar. Do not use any of your own CSS but only Bootstrap classes. This will require you to read through the Bootstrap documentation on Navbars.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise</h4>
+    <p>The inspiration for this project come from <a href="http://startbootstrap.com/template-overviews/agency/" target="_blank">here</a>. You can access a live preview <a href="http://blackrockdigital.github.io/startbootstrap-agency/" target="_blank">here</a>, and look at the source code <a href="https://github.com/BlackrockDigital/startbootstrap-agency" target="_blank">here</a>. There is a ton of inspiration to gain from looking at examples like this and see how other write code.</p>
+
+    <p>After looking at this, use bootstrap to re-do or enhance some part of your own site. Take the rest of this time to work on that and ask questions about anything you don't understand.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Great job (probably)! Have fun with Bootstrap!</p>
+  </div>
 </div>
