@@ -1,0 +1,258 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>CSS Bootstrap</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  notes:
+  - downloading bootstrap
+  - bootstrap docs
+  - nav
+  - grid system
+  - pretty stuff
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>In this lesson we will cover</p>
+      <ul>
+        <li></li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Intro</h3>
+      <p>Let's learn bootstrap by building something cool. We will build this one-page site:</p>
+      <a href="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-09-at-4.24.26-PM.png" target="_blank"><img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-09-at-4.24.26-PM.png"></a>
+
+      <a href="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-09-at-4.26.07-PM.png" target="_blank">
+      <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-09-at-4.26.07-PM.png"></a>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h3>Setup</h3>
+      <p>Start by pairing up, picking a driver, navigator and all that jazz. <c>cd</c> into wherever your storing your code and clone <a href="https://github.com/Elevationacademy/start-bootstrap-master.git" target="_blank">this repo</a>. For now, all we have is some CSS that we've already written for you.</p>
+
+      <p>Go ahead and add your boilderplate HTML and link up your <c>style.css</c> file.</p>
+
+      <p>Then, head to github and create a repo. You'll need to do this command to add your remote repo:</p>
+
+      <pre>git remote add NAME NAMEOFREPO</pre>
+
+      <p>Now, do an inital commit with your changes.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Download It! Or not!</h4>
+    <p>First of all, it must be said that since you've already created your own framework, learning bootstrap should be a breeze. Espcially since much of the code you wrote for your framework is actually bootstrap source code.</p>
+
+    <p>In any case, we first have to figure out how to get bootstrap into our app. For that we'll consult Bootstrap's website. Click <a href="http://getbootstrap.com/" target="_blank">here</a> to head to there.</p>
+
+    <p>Head to the <a href="http://getbootstrap.com/getting-started/" target="_blank">getting started</a> page. There are about a million ways to get Bootstrap into your page: everything from downloading all the source code and putting in your, to simply copy/pasting a url or two into your page.</p>
+
+    <p>Let's take the easiest route and just add the link from the CDN (basically cloud hosted). Copy/paste the following link tag and put it inside your <c>head</c> tag below where you included your <c>style.css</c>.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">link</span> <span style="color:#e0c589">rel</span>=<span style="color:#65b042">"stylesheet"</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"</span> <span style="color:#e0c589">integrity</span>=<span style="color:#65b042">"sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"</span> <span style="color:#e0c589">crossorigin</span>=<span style="color:#65b042">"anonymous"</span>></span>
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>The Nav Layout</h4>
+    <p>Awesome, we're now ready to use it. First, let's implement the navbar. Bootstrap provides us with some code for generic navbars so we don't have to mess with it. It's located <a href="http://getbootstrap.com/components/#navbar" target="_blank">here</a> in the docs.</p>
+
+    <p>Here we find several examples. Let's start slow by adding a default navbar. Add the following code to the top of your <c>body</c> tag:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">nav</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"navbar navbar-default"</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">nav</span>></span>
+</pre>
+
+    <p>We want our navbar to be fixed to the top. Luckily, Bootstrap though of that. We can locate examples by looking through the docs:</p>
+    <img style="width: 150px;" src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-09-at-7.16.12-PM.png">
+
+    <p>All we have to do is add another class!</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">nav</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"navbar navbar-default navbar-fixed-top"</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">nav</span>></span>
+</pre>
+    
+    <p>Let's stop there for now and get the rest of the layout going</p>
+    <i class="fa fa-refresh"></i>
+    <i class="fa fa-github commit"></i>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Header</h4>
+    <p>Now we have this large cool header area. This isn't bootstrap specific, but we can use a cool HTML5 <c>header</c> tag here. Add it now. Our html should look like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;!<span style="color:#89bdff"><span style="color:#89bdff">DOCTYPE</span> html</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">html</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">head</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">link</span> <span style="color:#e0c589">rel</span>=<span style="color:#65b042">"stylesheet"</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"</span> <span style="color:#e0c589">integrity</span>=<span style="color:#65b042">"sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"</span> <span style="color:#e0c589">crossorigin</span>=<span style="color:#65b042">"anonymous"</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">link</span> <span style="color:#e0c589">rel</span>=<span style="color:#65b042">"stylesheet"</span> <span style="color:#e0c589">type</span>=<span style="color:#65b042">"text/css"</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"style.css"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">title</span>>&lt;/<span style="color:#89bdff">title</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">head</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">body</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">nav</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"navbar navbar-default navbar-fixed-top"</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">nav</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">header</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">header</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">body</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">html</span>></span>
+</pre>
+
+    <p>By bootstrap conventions, almonst everything is wrapped in a div with the class "container". Their docs says this and want us to "just trust" them, but we know why, because we've built our own CSS framework before.</p>
+
+    <p>The <c>container</c> class (<a href="http://getbootstrap.com/css/#overview-container" target="_blank">talked about here</a>) gives us some great padding on the edges of our page, but it also (along with the <c>row</c> class, which we'll talk about shortly) solves our float problem. We'll cover that in detail momentarily, but for now just know that it's a good idea to use it. Make your header look like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">header</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"container"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"intro-text"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"intro-lead-in"</span>></span>Welcome To My Site!<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"intro-heading"</span>></span>It's Nice To Meet You<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">header</span>></span>
+</pre>
+
+  </div> 
+
+  <hr>
+
+  <div class="topic">
+    <h4>Buttons</h4>
+    <p>A quick word about buttons. Bootstrap offers so great default code for styling buttons. Check it out <a href="http://getbootstrap.com/css/#buttons">here</a>. Add the following HTML under the <c>intro-heading</c> div in your <c>header</c>:</p>
+
+    <pre style="background:#000;color:#f8f8f8">&lt;<span style="color:#cda869">button</span> class="btn btn-primary">Tell Me More&lt;/<span style="color:#cda869">button</span>></pre>
+
+    <p>Giving a link or a button the bootstrap class <c>btn</c> will make it look "bootsrappy". By adding additonal classes (<c>btn-primary</c>, <c>btn-success</c>, <c>btn-danger</c>) we can give our buttons more meaning.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>The Grid System!!!</h4>
+    <p>If we look back up at the "services" page, we notice a 3 column grid. This is possibly Bootstrap's greatest advantage and achievement. Layout is hard, but not with Bootstrap. Take a mintue with your partner to checkout the <a href="http://getbootstrap.com/css/#grid" target="_blank">grid system</a> page here.</p>
+
+    <p>To summarize, Bootstrap built it's grid off a "12-column grid" (like we did with ours). The rest can be summed up by these 3 bullets:</p>
+
+    <ul>
+      <li>Rows must be placed within a <c>.container (fixed-width)</c> or <c>.container-fluid (full-width)</c> for proper alignment and padding.<li>
+      <li>Use rows to create horizontal groups of columns.</li>
+      <li>Content should be placed within columns, and only columns may be immediate children of rows.</li>
+    </ul>
+
+    <p>In english, here are some good and bad examples:</p>
+
+    <p>Good:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"container"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-8"</span>></span>.col-md-8<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4"</span>></span>.col-md-4<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <p>Bad (no container):</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-6"</span>></span>.col-md-6<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-6"</span>></span>.col-md-6<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <p>Bad (no rows):</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4"</span>></span>.col-md-4<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4"</span>></span>.col-md-4<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4"</span>></span>.col-md-4<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-6"</span>></span>.col-md-6<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-6"</span>></span>.col-md-6<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <p>What's wrong with leaving out the rows or containers? Remember our float problem and how we solved it with this code yesterday?</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b703f">.row</span><span style="color:#89bdff">:before</span> {
+  <span style="color:#c5af75">display</span>: table;
+  <span style="color:#c5af75">content</span>: <span style="color:#65b042">""</span>;
+}
+
+<span style="color:#9b703f">.row</span><span style="color:#89bdff">:after</span> {
+  <span style="color:#c5af75">display</span>: table;
+  <span style="color:#c5af75">content</span>: <span style="color:#65b042">""</span>;
+  <span style="color:#c5af75">clear</span>: <span style="color:#f9ee98">both</span>;
+} 
+</pre>
+    
+    <p>This is the <em>exact</em> code the Bootstrap uses to solve the float problem. Without it, we'd have a float problem because our columns are all floated. Whatever floats your boat, right?</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Services</h4>
+    <p>Back to our start-bootstrap site. With your partner, create a <c>section</c> with the id "services" and inside it create a 3 column layout.</p>
+
+    <div class="exercise">
+      <% var num= '9-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">"services"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"container"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">4 * 3 is 12! So we used <c>col-md-4</c>... It looks a whole lot our framework, right? Except for the <c>md</c>. Bootstap has 4 columns tyeps: <c>xs</c>, <c>sm</c>, <c>md</c> and <c>lg</c>. This doesn't refer to the actual size of the columns but to how long the columns will stay side-by-side until they're stacked.</p>
+
+    <p>For example, the <c>xs</c> columns will never stack no matter how small the screen is. But there's a media query at 970px that stacks the <c>md</c> columns so they be seen more easily on smaller screen.</p>
+
+    <p>For example, the following code will produce the following image:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"container"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-sm-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-sm-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-sm-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-10-at-8.22.51-AM.png">
+
+    <p>The "medium" columns have already stacked, but the "small" columns are still in their original side-by-side formation.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Icons</h4>
+    <p>For this part we need those 3 cool little icons:</p>
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-09-at-4.26.07-PM.png">
+  </div>
+
+  <hr>
+  
+    <h4>Done.</h4>
+    <p>Great. Feel free to continue adding to your framework! Don't forget to add it as a project on your portfolio site.</p>
+
+</div>
