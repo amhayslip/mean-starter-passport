@@ -34,9 +34,15 @@
 
   <div class="topic">
     <h3>Setup</h3>
-      <p>Start by pairing up, picking a driver, navigator and all that jazz. Create a new project called <strong>start-bootstrap</strong> and create a github repo with the same name.</p>
+      <p>Start by pairing up, picking a driver, navigator and all that jazz. <c>cd</c> into wherever your storing your code and clone <a href="https://github.com/Elevationacademy/start-bootstrap-master.git" target="_blank">this repo</a>. For now, all we have is some CSS that we've already written for you.</p>
 
-      <p>Create an <c>index.html</c> file and a <c>style.css</c> file. Add your boilder plate HTML, connect your CSS file and do an initial commit. Let's do this thing.</p>
+      <p>Go ahead and add your boilderplate HTML and link up your <c>style.css</c> file.</p>
+
+      <p>Then, head to github and create a repo. You'll need to do this command to add your remote repo:</p>
+
+      <pre>git remote add NAME NAMEOFREPO</pre>
+
+      <p>Now, do an inital commit with your changes.</p>
   </div>
 
   <hr>
@@ -116,40 +122,6 @@
 <span style="color:#89bdff">&lt;/<span style="color:#89bdff">header</span>></span>
 </pre>
 
-      <p>For the sake of time, add the following CSS:</p>
-      <pre style="background:#000;color:#f8f8f8"><span style="color:#cda869">header</span> {
-  <span style="color:#c5af75">background-image</span>: <span style="color:#dad085">url</span>(<span style="color:#65b042">'http://blackrockdigital.github.io/startbootstrap-agency/img/header-bg.jpg'</span>);
-  <span style="color:#c5af75">background-repeat</span>: <span style="color:#f9ee98">none</span>;
-  <span style="color:#c5af75">background-position</span>: <span style="color:#f9ee98">center</span> <span style="color:#f9ee98">center</span>;
-  <span style="color:#c5af75">background</span>-<span style="color:#c5af75">size</span>: cover;
-  <span style="color:#c5af75">text-align</span>: <span style="color:#f9ee98">center</span>;
-  <span style="color:#c5af75">color</span>: <span style="color:#cf6a4c">white</span>;
-}
-
-<span style="color:#9b703f">.intro-text</span> {
-  <span style="color:#c5af75">padding-top</span>: <span style="color:#dd7b3b">300<span style="color:#e28964">px</span></span>;
-  <span style="color:#c5af75">padding-bottom</span>: <span style="color:#dd7b3b">200<span style="color:#e28964">px</span></span>;
-  <span style="color:#c5af75">text-align</span>: <span style="color:#f9ee98">center</span>;
-}
-
-<span style="color:#9b703f">.intro-lead-in</span> {
-  <span style="color:#c5af75">font-family</span>: <span style="color:#65b042">"Droid Serif"</span>, <span style="color:#65b042">"Helvetica Neue"</span>, <span style="color:#cf6a4c">sans-serif</span>;
-  <span style="color:#c5af75">font-style</span>: <span style="color:#f9ee98">italic</span>;
-  <span style="color:#c5af75">font-size</span>: <span style="color:#dd7b3b">40<span style="color:#e28964">px</span></span>;
-  <span style="color:#c5af75">line-height</span>: <span style="color:#dd7b3b">40<span style="color:#e28964">px</span></span>;
-  <span style="color:#c5af75">margin-bottom</span>: <span style="color:#dd7b3b">25<span style="color:#e28964">px</span></span>;
-  <span style="color:#c5af75">text-align</span>: <span style="color:#f9ee98">center</span>;
-}
-
-<span style="color:#9b703f">.intro-heading</span> {
-  <span style="color:#c5af75">font-family</span>: <span style="color:#65b042">"Montserrat"</span>, <span style="color:#65b042">"Helvetica Neue"</span>, <span style="color:#cf6a4c">sans-serif</span>;
-  <span style="color:#c5af75">text-transform</span>: <span style="color:#f9ee98">uppercase</span>;
-  <span style="color:#c5af75">font-weight</span>: <span style="color:#dd7b3b">700</span>;
-  <span style="color:#c5af75">font-size</span>: <span style="color:#dd7b3b">75<span style="color:#e28964">px</span></span>;
-  <span style="color:#c5af75">line-height</span>: <span style="color:#dd7b3b">75<span style="color:#e28964">px</span></span>;
-  <span style="color:#c5af75">margin-bottom</span>: <span style="color:#dd7b3b">50<span style="color:#e28964">px</span></span>;
-}
-</pre>
   </div> 
 
   <hr>
@@ -248,8 +220,35 @@
     <p class="ex">4 * 3 is 12! So we used <c>col-md-4</c>... It looks a whole lot our framework, right? Except for the <c>md</c>. Bootstap has 4 columns tyeps: <c>xs</c>, <c>sm</c>, <c>md</c> and <c>lg</c>. This doesn't refer to the actual size of the columns but to how long the columns will stay side-by-side until they're stacked.</p>
 
     <p>For example, the <c>xs</c> columns will never stack no matter how small the screen is. But there's a media query at 970px that stacks the <c>md</c> columns so they be seen more easily on smaller screen.</p>
+
+    <p>For example, the following code will produce the following image:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"container"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-md-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-sm-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-sm-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"col-sm-4 box"</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-10-at-8.22.51-AM.png">
+
+    <p>The "medium" columns have already stacked, but the "small" columns are still in their original side-by-side formation.</p>
   </div>
 
+  <hr>
+
+  <div class="topic">
+    <h4>Icons</h4>
+    <p>For this part we need those 3 cool little icons:</p>
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-09-at-4.26.07-PM.png">
+  </div>
 
   <hr>
   
