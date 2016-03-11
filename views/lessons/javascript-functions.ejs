@@ -1,0 +1,230 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+	
+	<div class="page-header">
+    	<h2>Javascript Functions</h2>
+    	<a href="/#/">Back Home</a>
+  	</div>
+
+  	<div class="topic">
+    	
+    	<h3>Ctrl+C and Ctrl+V are Not Your Friends</h3>
+      	<p>In programming, you never want to write the same line of code twice. Say you have a website where each page has a greeting that says "Hi, user". If you copied the code for that and pasted it on each page, you'd have quite the headache if you ever wanted to change the greeting to "Hello, user". For this reason, we have functions - you write them once, use them as often as you want, and when you need to change "Hi" to "Hello", you only need to change the code in the function one time.</p>
+  	</div>
+
+  	<hr>
+
+	<div class="topic">
+    	<h3>Lesson Overview</h3>
+      	<p>Depending on how well you absorbed the prework, this may be review to you. In this section we will:</p>
+      	
+      	<ul>
+	        <li>Learn about function syntax.</li>
+	        <li>Introduce function calls.</li>
+	        <li>Cover function parameters and how to use them.</li>
+	        <li>Go over the <strong> return </strong> statement.</li>
+	        <li>Talk about making functions <strong> modular </strong>.</li>
+      	</ul>
+      	
+      	<p>With that, go ahead and partner up. For this first part, just use one computer and work through the lesson together.</p>
+  	</div>
+
+	<hr>
+
+	<div class="topic">
+	    <h3>Syntax</h3>
+	    <p>The syntax for functions is straightforward: you have the <strong>function</strong> keyword, the function's name, parameters (optionally, details later), and an action. It looks like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">function</span> funcName() {
+  <span style="color:#d3d3d3">//do something;</span>
+}	</pre>
+
+	<p>Pretty simple, right? Let's see that a little filled out with the user greeting example from earlier:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">function</span> greetUser() {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>("Hi, user");
+}	</pre>
+
+	Now, if you ever wanted to change "Hi" to "Hello", you would only ever have to change it the one time in the function!
+	<br></br>
+	Great, so we have this function but.. how do we use it? Function call!
+
+	</div>
+	<hr>
+	<div class="topic">
+	    <h3>Function Calls</h3>
+	    <p>Having a function called "greetUser" is great and all - but we need to <strong>call</strong> it for it to do anything. How? </p> 
+
+		Just call it!
+	    <br></br>
+    <pre style="background:#000;color:#f8f8f8"> greetUser();</pre>	    
+
+    Now any time you call the function in your code, you'll print out whatever the message in the function is. 
+
+	</div>
+
+	<hr>
+
+	<div class="topic">
+	    <h3>Function Parameters</h3>
+	    <p>So far so good, and nothing very intricate. But functions become much more interesting when they take <strong> input parameters</strong>. A parameter is an external variable/array/object/anything really that comes from outside the function and is used inside of it.</p>
+
+	    In this example, x and y are parameters and we're using them in the "add" function by, not surprisingly, displaying their sum:
+	    <br></br>
+	    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">function</span> <span style="color:#89bdff">add</span>(x, y){
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(x<span style="color:#e28964">+</span>y);
+}
+</pre>
+	
+	So this is cool, but let's make a more useful function. Remember the pythagorean theorem? With your partner, think of a function that would take certain parameters in, and display the length of the missing leg in a right triangle using pythagorean's theorem.
+	<br></br>
+	Consider the following:
+	<ul>
+	<li>What parameters do I need?</li>
+	<li>What happens inside the function?</li>
+	<li>Are there any conditions that need to be met?</li>	
+	</ul>
+
+
+    <div class="exercise">
+      <% var num= '5-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">function</span> <span style="color:#89bdff">getThirdLeg</span>(leg1, leg2, leg1IsHyp){
+    <span style="color:#e28964">if</span>(leg1IsHyp){
+        <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#9b859d">Math</span>.<span style="color:#dad085">sqrt</span>(<span style="color:#9b859d">Math</span>.<span style="color:#dad085">pow</span>(leg1,<span style="color:#3387cc">2</span>) <span style="color:#e28964">-</span> <span style="color:#9b859d">Math</span>.<span style="color:#dad085">pow</span>(leg2,<span style="color:#3387cc">2</span>)));
+    }<span style="color:#e28964">else</span>{
+        <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#9b859d">Math</span>.<span style="color:#dad085">sqrt</span>(<span style="color:#9b859d">Math</span>.<span style="color:#dad085">pow</span>(leg1,<span style="color:#3387cc">2</span>) <span style="color:#e28964">+</span> <span style="color:#9b859d">Math</span>.<span style="color:#dad085">pow</span>(leg2,<span style="color:#3387cc">2</span>)));
+    }
+}
+</pre>
+
+		To test it, run getThirdLeg(3,4,false) and see if the answer is 5, then run getThirdLeg(5,4,true) and see if the answer is 3
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+	</div>	
+	<br></br>
+    Nice. Now remember, functions can take virtually anything in as a parameter. So with your partner again, write a function that takes in an array of numbers and displays their sum. (Hint: use a loop!)
+
+        <div class="exercise">
+      <% var num= '5-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">function</span> <span style="color:#89bdff">showSum</span>(theArray){
+    <span style="color:#99cf50">var</span> sum <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>;
+    <span style="color:#e28964">for</span>(<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; i <span style="color:#e28964">&lt;</span> theArray.<span style="color:#cf6a4c">length</span>; i<span style="color:#e28964">++</span>){
+        sum <span style="color:#e28964">+</span><span style="color:#e28964">=</span> theArray[i];
+    }
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(sum);
+}
+</pre>
+
+		Now that's useful.
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+	<br></br>
+
+	<hr>
+	<div class="topic">
+	    <h3>Return</h3>
+	    <p>You may be wondering now, if all a function can do is print stuff, that's kind of boring. But that's where the <strong>return</strong> statement comes in to save the day! 
+	    <br><br>
+	    Functions can also return a value to either be used right away or stored in a variable for later use. To return a value from a function, use the return keyword followed by the value to be returned:</p> 
+
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">function</span> <span style="color:#89bdff">add</span>(x, y){
+    <span style="color:#e28964">return</span> x <span style="color:#e28964">+</span> y;
+}
+</pre>
+
+	<br>
+	Now instead of the sum printing out to the console log, nothing happens until you actually use the result, either by storing it in a variable:
+
+<pre style="background:#000;color:#f8f8f8">sum <span style="color:#e28964">=</span> <span style="color:#dad085">add</span>(3, 4);
+</pre>
+
+	<br>
+	Or using it directly:
+
+<pre style="background:#000;color:#f8f8f8"><span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"3 + 4 is "</span> <span style="color:#e28964">+</span> <span style="color:#dad085">add</span>(<span style="color:#3387cc">3</span>, <span style="color:#3387cc">4</span>));
+</pre>
+
+	<br>
+	Taking advantage of the return statement helps us make our code more modular (more on that in a second). For now, experiment by using the return statement to get the the speed of a car in motion in one function, and then use another function to determine whether the speed is "high", "ok", or "low".
+	<br><br>
+	Your steps should be as follows:
+	<ul>
+		<li>Write a speed calculation function, given distance and time</li>
+		<li>Write a function that determines the description of the speed, given the speed</li>
+		<li>Store the speed in a variable </li>
+		<li>Print out the description of the speed in a console.log statement using the speed description function</li>
+	</ul>	
+
+        <div class="exercise">
+      <% var num= '5-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">function</span> <span style="color:#89bdff">getSpeed</span>(dist,time){
+    <span style="color:#e28964">return</span> dist/time;
+}
+
+<span style="color:#99cf50">function</span> <span style="color:#89bdff">getSpeedDescr</span>(speed){
+
+    descr <span style="color:#e28964">=</span> <span style="color:#65b042">""</span>;
+    <span style="color:#e28964">if</span>(speed <span style="color:#e28964">>=</span> <span style="color:#3387cc">100</span>){
+        descr <span style="color:#e28964">=</span> <span style="color:#65b042">"fast"</span>;
+    }
+    <span style="color:#e28964">else</span> <span style="color:#e28964">if</span> (speed <span style="color:#e28964">&lt;</span> <span style="color:#3387cc">30</span>){
+        descr <span style="color:#e28964">=</span> <span style="color:#65b042">"slow"</span>;
+    }
+    <span style="color:#e28964">else</span>{
+        descr <span style="color:#e28964">=</span> <span style="color:#65b042">"ok"</span>;
+    }
+    <span style="color:#e28964">return</span> descr;
+}
+
+<span style="color:#99cf50">var</span> speed <span style="color:#e28964">=</span> getSpeed(<span style="color:#3387cc">100</span>, <span style="color:#3387cc">5</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"Your speed is "</span> <span style="color:#e28964">+</span> getSpeedDescr(speed));
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <br>
+    You may be asking - why not just write a function that spits out the description given the distance and time? Well, that's where modular design comes into play.
+
+	<hr>
+	<div class="topic">
+	    <h3>Modular Design</h3>
+	    <p>Modular design is exactly what it sounds like. A design pattern that advocates keeping blocks of code separate and independent so that they can be re-used freely without care.
+	    <br><br>
+	    Back to the speed/distance/description example. If we made a function that took speed and distance as parameters, and returned the speed description - well that's all that function could do. 
+	    <br><br>
+	    If we, somewhere else in our code, wanted to calculate the speeds of several vehicles given their distance and time parameters, we'd have to re-write our speed calculation function, which defeats the purpose of having a function in the first place. </p>    
+
+	    Keeping modular design in mind, write some code (using functions, of course) that determines whether an animal is dangerous to a human or not. In the end, you should have something like this:
+
+<pre style="background:#000;color:#f8f8f8">isDangerous(<span style="color:#65b042">butterfly</span>);
+
+<span style="color:#aeaeae;font-style:italic">//prints out: "A butterfly is not dangerous to humans"</span>
+</pre>
+		
+		Here is a mock dataset you can use for your work:
+
+<pre style="background:#000;color:#f8f8f8"><span style="color:#aeaeae;font-style:italic">//From left to right, the categories are food, aggressive (Y/N), habitat, weight, poisonous (Y/N), carnivore (Y/N)</span>
+
+horse     <span style="color:#e28964">=</span>   [<span style="color:#65b042">"grass"</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"farm"</span>,<span style="color:#3387cc">200</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"N"</span>];
+snake     <span style="color:#e28964">=</span>   [<span style="color:#65b042">"eggs"</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"grass"</span>,<span style="color:#3387cc">3</span>,<span style="color:#65b042">"Y"</span>,<span style="color:#65b042">"N"</span>];
+hippo     <span style="color:#e28964">=</span>   [<span style="color:#65b042">"reeds"</span>, <span style="color:#65b042">"Y"</span>,<span style="color:#65b042">"savanah"</span>, <span style="color:#3387cc">400</span>, <span style="color:#65b042">"N"</span>, <span style="color:#65b042">"N"</span>];
+tiger     <span style="color:#e28964">=</span>   [<span style="color:#65b042">"meat"</span>,<span style="color:#65b042">"Y"</span>,<span style="color:#65b042">"jungle"</span>,<span style="color:#3387cc">150</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"Y"</span>];
+shark     <span style="color:#e28964">=</span>   [<span style="color:#65b042">"fish"</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"sea"</span>,<span style="color:#3387cc">100</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"Y"</span>];
+ant       <span style="color:#e28964">=</span>   [<span style="color:#65b042">"dirt"</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"anthill"</span>,<span style="color:#3387cc">0.25</span>,<span style="color:#65b042">"Y"</span>,<span style="color:#65b042">"N"</span>];
+butterfly <span style="color:#e28964">=</span>   [<span style="color:#65b042">"flowers"</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"woods"</span>,<span style="color:#3387cc">0.1</span>,<span style="color:#65b042">"N"</span>,<span style="color:#65b042">"N"</span>];
+
+</pre>
+
+		<br>
+		You have free reign here; think of all the ways an animal could be dangerous to a human, and remember - keep the code as modular as possible!
+</div>
