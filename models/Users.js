@@ -34,5 +34,4 @@ UserSchema.methods.generateJWT = function() {
   }, 'SECRET');
 };
 
-
 mongoose.model('User', UserSchema);
