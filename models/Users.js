@@ -34,5 +34,5 @@ UserSchema.methods.generateJWT = function() {
   }, 'SECRET');
 };
 
-
+//liron comment
 mongoose.model('User', UserSchema);
