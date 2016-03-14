@@ -1,0 +1,87 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2></h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  notes:
+  - indenting code
+  - tabs vs. spaces
+  - snippets
+  - short cuts
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p></p>
+      <ul>
+        <li></li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Readable Code</h4>
+    <p>This might seem like a silly topic to have a lesson on early on, but using our text-editor to get into a good habit of writing readable code is essential. Not only should others be able to easily read your code, but <em>you</em> want to be able to read it as well. Compare the following two examples:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">"food"</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"food"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>THE BEST RESTAURANTS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>A BRUNCH OF FRIENDS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/10644232_776018015803128_241833433554381633_o-620x414.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SHAKSHUKA DUKA<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2014/05/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-P1.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>        
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">"food"</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"food"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>THE BEST RESTAURANTS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>A BRUNCH OF FRIENDS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/10644232_776018015803128_241833433554381633_o-620x414.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+   <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SHAKSHUKA DUKA<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2014/05/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-P1.jpg"</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>        
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+
+    <p>Both of the code blocks above are the same HTML and both are valid and will be interpreted the same by browser. However, it's almost impossible to see the heiarchy of elements in the second example. How would anyone ever edit that one?</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Tabs vs Spaces: an epic battle</h4>
+    <p>The "good" example above was made using spaces as tabs (when you git "tab" is produces spaces). If you look at the bottom-right of your sublime, you can choose how many spaces (or tabs) your editor should indent when you hit "tab":</p>
+
+    <img style="width: 40%;" src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-14-at-6.18.49-AM.png">
+
+    <p>Believe it or not, whether to indent with tabs or space is an epic <a href="https://www.jwz.org/doc/tabs-vs-spaces.html" target="_blank">nerd ward</a> that we'd rather stay out of. For the sake of brevity, in our course we will use 2 spaces with every indentation.</p>
+  </div>
+
+  <hr>
+  
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Great. Feel free to continue adding to your framework! Don't forget to add it as a project on your portfolio site.</p>
+  </div>
+</div>
