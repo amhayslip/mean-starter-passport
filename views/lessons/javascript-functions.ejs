@@ -1,0 +1,215 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+	
+	<div class="page-header">
+    	<h2>Javascript Functions</h2>
+    	<a href="/#/">Back Home</a>
+  	</div>
+
+  	<div class="topic">
+    	
+    	<h3>Ctrl+C and Ctrl+V are Not Your Friends</h3>
+      	<p>In programming, you never want to write the same line of code twice. Say you have a website where each page has a greeting that says "Hi, user". If you copied the code for that and pasted it on each page, you'd have quite the headache if you ever wanted to change the greeting to "Hello, user". For this reason, we have functions - you write them once, use them as often as you want, and when you need to change "Hi" to "Hello", you only need to change the code in the function one time.</p>
+  	</div>
+
+  	<hr>
+
+	<div class="topic">
+    	<h3>Lesson Overview</h3>
+      	<p>Depending on how well you absorbed the prework, this may be review to you. In this section we will:</p>
+      	
+      	<ul>
+	        <li>Learn about function syntax.</li>
+	        <li>Introduce function calls.</li>
+	        <li>Cover function parameters and how to use them.</li>
+	        <li>Go over the <strong> return </strong> statement.</li>
+      	</ul>
+      	
+      	<p>With that, go ahead and partner up. For this first part, just use one computer and work through the lesson together.</p>
+  	</div>
+
+	<hr>
+
+	<div class="topic">
+	    <h3>Syntax</h3>
+	    <p>A JavaScript function is defined with the <strong> function </strong> keyword, followed by a name, followed by parentheses ().Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).</p>
+
+ <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> funcName <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> <span style="color:#89bdff">funcName</span>() {
+  <span style="color:#aeaeae;font-style:italic">//do something;</span>
+}   
+</pre>
+
+	<p>Pretty simple, right? Let's see that a little filled out with the user greeting example from earlier:</p>
+
+   <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> funcName <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> <span style="color:#89bdff">greetUser</span>() {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"Hi, user"</span>);
+}   
+</pre>
+
+	Now, if you ever wanted to change "Hi" to "Hello", you would only ever have to change it the one time in the function!
+	<br></br>
+	Great, so we have this function but.. how do we use it? Function call!
+
+	</div>
+	<hr>
+	<div class="topic">
+	    <h3>Function Invocation</h3>
+	    <p>The code inside the function will execute when "something" invokes (calls) the function:
+<ul>
+<li>When an event occurs (when a user clicks a button)</li>
+<li>When it is invoked (called) from JavaScript code</li>
+<li>Automatically (self invoked)</li>
+</ul>
+
+		Just call it!
+	    <br></br>
+    <pre style="background:#000;color:#f8f8f8"> greetUser();</pre>	    
+
+    Now any time you call the function in your code, you'll print out whatever the message in the function is. 
+
+	</div>
+
+	<hr>
+
+	<div class="topic">
+	    <h3>Function Parameters</h3>
+	    <p>So far so good, and nothing very intricate. But functions become much more interesting when they take <strong> input parameters</strong>. A parameter is an external variable/array/object/anything really that comes from outside the function and is used inside of it.</p>
+
+	    In this example, x and y are parameters and we're using them in the "add" function by, not surprisingly, displaying their sum:
+	    <br></br>
+	   <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> add <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> <span style="color:#89bdff">add</span>(x, y){
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(x<span style="color:#e28964">+</span>y);
+}
+</pre>
+	
+	So this is cool, but let's make a more useful function. Create a function that find return that prints the avrage of two numbers 
+	<br></br>
+	Consider the following:
+	<ul>
+	<li>What parameters do I need?</li>
+	<li>What happens inside the function?</li>
+
+	</ul>
+
+
+    <div class="exercise">
+      <% var num= '5-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> add <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> <span style="color:#89bdff">avg</span>(x, y){
+   <span style="color:#99cf50">var</span> sum <span style="color:#e28964">=</span> x<span style="color:#e28964">+</span>y;
+   <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(x<span style="color:#e28964">+</span>y/<span style="color:#3387cc">2</span>);
+}
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+	</div>	
+	<br></br>
+    Nice. Now remember, functions can take virtually anything in as a parameter. So with your partner again, write a function that takes in an array of numbers and displays their sum. (Hint: use a loop!)
+
+        <div class="exercise">
+      <% var num= '5-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> sum <span style="color:#e28964">=</span><span style="color:#99cf50"> function</span> <span style="color:#89bdff">showSum</span>(theArray){
+    <span style="color:#99cf50">var</span> sum <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>;
+    <span style="color:#e28964">for</span>(<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; i <span style="color:#e28964">&lt;</span> theArray.<span style="color:#cf6a4c">length</span>; i<span style="color:#e28964">++</span>){
+        sum <span style="color:#e28964">+</span><span style="color:#e28964">=</span> theArray[i];
+    }
+    <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(sum);
+}
+</pre>
+
+		Now that's useful.
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+	<br></br>
+
+	<hr>
+	<div class="topic">
+	    <h3>Return</h3>
+	    <p>You may be wondering now, if all a function can do is print stuff, that's kind of boring. But that's where the <strong>return</strong> statement comes in to save the day! 
+	    <br><br>
+	    Functions can also return a value to either be used right away or stored in a variable for later use. To return a value from a function, use the return keyword followed by the value to be returned. When reaching a return statement, the function will stop executing.</p> 
+
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> add <span style="color:#e28964">=</span><span style="color:#99cf50">function</span> <span style="color:#89bdff">add</span>(x, y){
+    <span style="color:#e28964">return</span> x <span style="color:#e28964">+</span> y;
+}
+</pre>
+
+	<br>
+	Now instead of the sum printing out to the console log, nothing happens until you actually use the result, either by storing it in a variable:
+
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> sum <span style="color:#e28964">=</span> <span style="color:#dad085">add</span>(3, 4);
+</pre>
+
+	<br>
+	Or using it directly:
+
+<pre style="background:#000;color:#f8f8f8"><span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"3 + 4 is "</span> <span style="color:#e28964">+</span> <span style="color:#dad085">add</span>(<span style="color:#3387cc">3</span>, <span style="color:#3387cc">4</span>));
+</pre>
+
+	<br>
+	Taking advantage of the return statement helps us make our code more modular (more on that in a second). For now, experiment by using the return statement to get the the speed of a car in motion in one function, and then use another function to determine whether the speed is "high", "ok", or "low".
+	<br><br>
+	Your steps should be as follows:
+	<ul>
+		<li>Write a speed calculation function, given distance and time</li>
+		<li>Write a function that determines the description of the speed, given the speed</li>
+		<li>Store the speed in a variable </li>
+		<li>Print out the description of the speed in a console.log statement using the speed description function</li>
+	</ul>	
+
+        <div class="exercise">
+      <% var num= '5-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">function</span> <span style="color:#89bdff">getSpeed</span>(dist,time){
+    <span style="color:#e28964">return</span> dist/time;
+}
+
+<span style="color:#99cf50">function</span> <span style="color:#89bdff">getSpeedDescr</span>(speed){
+
+    descr <span style="color:#e28964">=</span> <span style="color:#65b042">""</span>;
+    <span style="color:#e28964">if</span>(speed <span style="color:#e28964">>=</span> <span style="color:#3387cc">100</span>){
+        descr <span style="color:#e28964">=</span> <span style="color:#65b042">"fast"</span>;
+    }
+    <span style="color:#e28964">else</span> <span style="color:#e28964">if</span> (speed <span style="color:#e28964">&lt;</span> <span style="color:#3387cc">30</span>){
+        descr <span style="color:#e28964">=</span> <span style="color:#65b042">"slow"</span>;
+    }
+    <span style="color:#e28964">else</span>{
+        descr <span style="color:#e28964">=</span> <span style="color:#65b042">"ok"</span>;
+    }
+    <span style="color:#e28964">return</span> descr;
+}
+
+<span style="color:#99cf50">var</span> speed <span style="color:#e28964">=</span> getSpeed(<span style="color:#3387cc">100</span>, <span style="color:#3387cc">5</span>);
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"Your speed is "</span> <span style="color:#e28964">+</span> getSpeedDescr(speed));
+</pre>
+      </div>
+
+      <% include ../partials/answer-button %>
+    </div>
+
+    <br>
+    You may be asking - why not just write a function that spits out the description given the distance and time? Well, that's where modular design comes into play.
+
+	<hr>
+	<div class="topic">
+	    <h3>Exercises</h3>
+	    <h4>Exercise 1</h4>
+	   <p>Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.
+       Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself. </p>
+       <h4>Exercise 2</h4>
+	   <p>Write a JavaScript function that accepts a Array (int) as a parameter and return the avarage of it.  </p>
+	   <h4>Exercise 3</h4>
+	   <p>Write a JavaScript function that accepts a Array (int) as a parameter and number and return if the number exists in this Array</p>
+	   <h4>Exercise 5</h4>
+	   <p>Write a JavaScript function that accepts a Array (int) as a parameter and number and prints all the number that are smller then it. and return the AVG</p>
+	  <!--  <h4>Exercise 6</h4>
+	   <p>Write a JavaScript function that accepts a Array as a parameter and </p>
+ -->
+
+</div>
