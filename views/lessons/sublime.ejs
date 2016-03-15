@@ -1,0 +1,163 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2></h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  notes:
+  - indenting code
+  - tabs vs. spaces
+  - snippets
+  - short cuts
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>In this lesson, we will walk through:</p>
+      <ul>
+        <li>Write pretty code by indenting</li>
+        <li>Tabs vs. Spaces</li>
+        <li>How to create custom snippets</li>
+        <li>Keyboard Shortcuts</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Readable Code</h4>
+    <p>This might seem like a silly topic to have a lesson on early on, but using our text-editor to get into a good habit of writing readable code is essential. Not only should others be able to easily read your code, but <em>you</em> want to be able to read it as well. Compare the following two examples:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">"food"</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"food"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>THE BEST RESTAURANTS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>A BRUNCH OF FRIENDS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/10644232_776018015803128_241833433554381633_o-620x414.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SHAKSHUKA DUKA<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2014/05/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-P1.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>        
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">section</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">"food"</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"food"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h1</span>></span>THE BEST RESTAURANTS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h1</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"row"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>A BRUNCH OF FRIENDS<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+      <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"http://www.elevationacademy.co/wp-content/uploads/2016/02/10644232_776018015803128_241833433554381633_o-620x414.jpg"</span>></span>
+      <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column"</span>></span>
+      <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"column-inner"</span>></span>
+   <span style="color:#89bdff">&lt;<span style="color:#89bdff">h3</span>></span>SHAKSHUKA DUKA<span style="color:#89bdff">&lt;/<span style="color:#89bdff">h3</span>></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">img</span> <span style="color:#e0c589">src</span>=<span style="color:#65b042">"https://static2.timeout.co.il/media/2014/05/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-P1.jpg"</span>></span>
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>        
+  <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">section</span>></span>
+</pre>
+
+    <p>Both of the code blocks above are the same HTML and both are valid and will be interpreted the same by browser. However, it's almost impossible to see the heiarchy of elements in the second example. How would anyone ever edit that one?</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Tabs vs Spaces: an epic battle</h4>
+    <p>The "good" example above was made using spaces as tabs (when you git "tab" is produces spaces). If you look at the bottom-right of your sublime, you can choose how many spaces (or tabs) your editor should indent when you hit "tab":</p>
+
+    <img style="width: 40%;" src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-14-at-6.18.49-AM.png">
+
+    <p>Believe it or not, whether to indent with tabs or space is an epic <a href="https://www.jwz.org/doc/tabs-vs-spaces.html" target="_blank">nerd war</a> that we'd rather stay out of. For the sake of brevity, in our course we will use 2 spaces with every indentation.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Sublime Settings</h4>
+    <p>Sublime's settings are changed with code... JSON to be exact. With Sublime open, go to <c>Preferences</c> - <c>Settings - Default</c>. You will see a list of options available to you to change your settings. Don't change this page. Instead, head to <c>Preferences</c> <c>Settings - User</c>. Depending, yours may or may not be blank. Go ahead and add the following code to that page and save:</p>
+
+    <pre style="background:#000;color:#f8f8f8">{
+  <span style="color:#65b042">"font_size"</span>: <span style="color:#3387cc">14</span>,
+  <span style="color:#65b042">"save_on_focus_lost"</span>: <span style="color:#3387cc">true</span>,
+  <span style="color:#65b042">"tab_size"</span>: <span style="color:#3387cc">2</span>,
+  <span style="color:#65b042">"translate_tabs_to_spaces"</span>: <span style="color:#3387cc">true</span>
+}
+</pre>
+
+    <p>This will default your code to 2 tabs and will convert those tabs to spaces. Additionally, anytime you move from your Sublime to something else, it will automatically save whatever you were working on. Cool beans!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Snippets</h4>
+    <p>Another great setting in Sublime is "Snippets". Is there some code that you're writing over and over again and wish to recall at any time? Such as your boilderplate HTML? Make a snippet! For that, go to <c>Tools - New Snippet</c>. This is what you will see by default:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">snippet</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">content</span>></span><span style="color:#89bdff">&lt;!<span style="color:#3387cc">[CDATA[
+Hello, ${1:this} is a ${2:snippet}.
+]]</span>></span><span style="color:#89bdff">&lt;/<span style="color:#89bdff">content</span>></span>
+  <span style="color:#aeaeae;font-style:italic">&lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --></span>
+  <span style="color:#aeaeae;font-style:italic">&lt;!-- &lt;tabTrigger>hello&lt;/tabTrigger> --></span>
+  <span style="color:#aeaeae;font-style:italic">&lt;!-- Optional: Set a scope to limit where the snippet will trigger --></span>
+  <span style="color:#aeaeae;font-style:italic">&lt;!-- &lt;scope>source.python&lt;/scope> --></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">snippet</span>></span>
+</pre>
+
+    <p>In place of <c>Hello, ${1:this} is a ${2:snippet}.</c> you will place the code you want to save and recall later. To create the "trigger word", uncomment the <c>tabTrigger</c> line and put what you want, like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">snippet</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">content</span>></span><span style="color:#89bdff">&lt;!<span style="color:#3387cc">[CDATA[
+Hello, ${1:this} is a ${2:snippet}.
+]]</span>></span><span style="color:#89bdff">&lt;/<span style="color:#89bdff">content</span>></span>
+  <span style="color:#aeaeae;font-style:italic">&lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">tabTrigger</span>></span>hello<span style="color:#89bdff">&lt;/<span style="color:#89bdff">tabTrigger</span>></span>
+  <span style="color:#aeaeae;font-style:italic">&lt;!-- Optional: Set a scope to limit where the snippet will trigger --></span>
+  <span style="color:#aeaeae;font-style:italic">&lt;!-- &lt;scope>source.python&lt;/scope> --></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">snippet</span>></span>
+</pre>
+
+    <p>Now if you save this file (it must have a <c>.sublime-snippet</c> extension) and go to any file in sublime you can recall this text. To recall this snippet you would type <c>hello</c> and press 'tab'. It should print <c>Hello, this is a snippet.</c>. If you press tab again, your cursor will stop on 'this', and if you press tab a second time your cursor will stop on 'snippet'. This is becasue we added this to it: <c>${1:this}</c> and <c>${2:snippet}</c>.</p>
+
+    <p>Now, practice this by adding your own snippet.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Keyboard Shortcuts</h4>
+    <p>Remember, our text editor is a power tool for writing code. The more you can keep from using the mouse, the faster and more efficient your code writing will be. For example, to comment out and entire line of code, you can just type <c>command + /</c> or <c>control + / </c>:</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-15-at-9.51.27-AM.png">
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-15-at-9.51.05-AM.png">
+
+    <p>To find an extensive list of possible keyboard shortcuts, head to these URLs:</p>
+
+    <a href="http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_win.html" target="_blank">For Windows</a>
+
+    <a href="http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_osx.html" target="_blank">For Mac</a>
+
+    <p>If you want to get really serious about practicing shortcuts, <a href="https://www.shortcutfoo.com/" target="_blank">Shortcut Foo</a> is a great way to learn Sublime, Command Line and other shortcuts/commands.</p>
+
+
+  </div>
+
+  <hr>
+  
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Great. Add some helpful snippets, customize your settings and start practicing those shortcuts!</p>
+  </div>
+</div>
