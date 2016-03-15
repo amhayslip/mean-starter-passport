@@ -94,11 +94,12 @@
     <div class="exercise">
       <% var num= '5-3'; %>
       <div class="answer" ng-class="{'show': questions[<%= num %>]}">
-<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> add <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> <span style="color:#89bdff">avg</span>(x, y){
-   <span style="color:#99cf50">var</span> sum <span style="color:#e28964">=</span> x<span style="color:#e28964">+</span>y;
-   <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(x<span style="color:#e28964">+</span>y/<span style="color:#3387cc">2</span>);
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> avg <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> <span style="color:#89bdff">avg</span> (x, y){
+   <span style="color:#99cf50">var</span> sum <span style="color:#e28964">=</span> x <span style="color:#e28964">+</span> y;
+   <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(sum/<span style="color:#3387cc">2</span>);
 }
 </pre>
+
       </div>
 
       <% include ../partials/answer-button %>
