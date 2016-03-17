@@ -1,34 +1,341 @@
 <div class="col-sm-8 col-sm-offset-2 lesson">
   <div class="page-header">
-    <h2>Into to the DOM</h2>
+    <h2>Into to the DOM / Vanilla JS </h2>
     <a href="/#/">Back Home</a>
   </div>
-
-  notes:
-  - whats the dom?
-  - jquery
-  - selectors
-  - jquery methods.. the same as object methods
-
-  "The DOM is a fully object-oriented representation of the web page, and it can be modified with a scripting language such as JavaScript"
-
+  <div class="topic">
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/gszaQN7zX3Q" frameborder="0" allowfullscreen></iframe>
+  </div>
 
   <div class="topic">
     <h3>Intro</h3>
-    <p>In this lesson we will go over:</p>
-
+    <p>In this lesson we will understand what is the DOM and how we can use it to make dynamic pages</p>
+    <p>By the of the lesson of this lesson you will be able to</p>
     <ul>
-      <li></li>
+      <li>Receive user clicks</li>
+      <li>Access element on the DOM</li>
+      <li>Update HTML elements in response to user click</li>
+      <li>Validate a simple form</li>
     </ul>
-
+    <p> Some places over the INTERNET refer using DOM as using <a herf='http://vanilla-js.com/'>vanilla-js</a>
     <p>Partner up for this one! There will be several exercises along the way, but all you'll need is a pen/paper and somewhere to write Javascript.</p>
   </div>
 
   <hr>
 
-  <div class="topic">
-    <h4>Done.</h4>
-    <p>Awesome! What a baller you are.</p>
-  </div>
+
+<div class="topic">
+    <h3>What is the DOM? </h3>
+    <p>DOM stands for <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel when the browser loads web page it creates a fully object-oriented representation of the web page, and it can be modified with a scripting language such as JavaScript   </p>
+    <p> Using the DOM programming interface you will be able to :</p>
+    <ul>
+     <li>Change HTML elements in the page</li>
+     <li>Change HTML attributes in the page</li>
+     <li>Change CSS styles in the page</li>
+     <li>Remove existing HTML elements and attributes</li>
+     <li>Add new HTML elements and attributes</li>
+     <li>React to existing HTML events in the page</li>
+     <li>Create new HTML events in the page</li>
+   </ul>
+
+   <p>Lets Look on the code below:</p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">html</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">head</span>></span>
+    <span style="color:#e0c589">&lt;<span style="color:#e0c589">title</span>></span> <span style="color:#e0c589">&lt;/<span style="color:#e0c589">title</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">head</span>></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">body</span>></span>
+    <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'outerdiv'</span> <span style="color:#89bdff">name</span>=<span style="color:#65b042">'div1'</span> <span style="color:#89bdff">data-info</span>=<span style="color:#65b042">'foo'</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">'box1'</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'innerdiv'</span> <span style="color:#89bdff">name</span>=<span style="color:#65b042">'div2'</span> <span style="color:#89bdff">data-info</span>=<span style="color:#65b042">'bar'</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">'box2'</span>></span>
+            <span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'t1'</span>></span>Welcome to our Book Store<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+            <span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'t2'</span>></span>Buy more books - Now<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+        <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">body</span>></span>
+</pre>
+
+<p>The DOM is an hierarchy of nodes. Each node represent an Element</p>
+<p>Example:</p>
+<p>Div with id 'outerdiv' is a child of &lt;BODY&gt;</p>
+<p>Div with id 'innerdiv' is a child of 'outerdiv'</p>
+<p>P with id 't1' is child of 'outerdiv' and sibling of 't2'.</p>
+<br>
+<p> Each node is an object and as an object it has properties and events.</p> 
+<P>Example:</P>
+<p> div with id 'outerdiv' has properties : name = div1 , data-info='foo' class='box1'.</p>
+<p>'Outerdiv' can also have events , like onClick that will cover later.</p>
+<p>P element with id = t1 <strong>innerHTML</strong> property is “Welcome to our Book Store!”</p>
+</div>
+
+
+<div class="topic">
+    <h3>Element access </h3>
+    <p>We have few ways to access an Element in the DOM.</p>
+    <p>Direct Access and Enumeration access.</p>
+    <h4>Direct Access</h4>
+    <p>In order to direct access an Element we will need to give it an identifier.</p>
+    <p>The easiest way to give identifier to element, is using the built-in attribute - ID.</p>
+    <p>We can give for each object different id and access it directly. The ID should be unique per page but our browser will not force it.</p>
+    <p>Another common way is to use the built-in attribute - Class.</p>
+    <p>Class VS Id - we will explain it later.</p>
+    <br>
+    <p>So for direct access using ID we will use this function : <strong>getElementById</strong>  </p>
+
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> elem <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(id);
+</pre>
+
+    <h4>Enumeration (Relation) Access</h4>
+    <p>We can access element using the hierarchy property <strong>.childNodes</strong></p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> elems <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'innerDiv'</span>).<span style="color:#cf6a4c">childNodes</span>;
+</pre>
+<p>We will cover it deeply later . </p>
+
+ <hr>
+
+ <div class="topic">
+    <h3>Events</h3>
+    <p>As we are building an app, our app will need to respond to the user behavior for example - mouse click, mouse double-click and more.</p>
+    <p>In order to "capture" an event and response to it we need connect our JS function to the HTML element.</p>
+    <p>We can do it in a few ways:<p>
+    <p>1. connect the event in the HTML code :<p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">button</span> <span style="color:#e0c589">onclick</span>=<span style="color:#65b042">"myFunction()"</span>></span>Click me<span style="color:#e0c589">&lt;/<span style="color:#e0c589">button</span>></span>
+</pre>
+    <p>2. In code file, connect the function to the event.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(‘btn’).<span style="color:#89bdff">onclick</span>=function(){myScript};
+</pre>
+    <p> There are more ways to respond to events and we will learn them later</p>
+    <p>Example 1:</p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">&lt;</span>button onclick<span style="color:#e28964">=</span><span style="color:#65b042">"alert('Thank you for clicking on me')"</span><span style="color:#e28964">></span>Click Me<span style="color:#e28964">&lt;</span>/button<span style="color:#e28964">></span>
+</pre>
+     <p> Will render into the button below:</p>
+    <button onclick="alert('Thank you for clicking on me - inline')">Click Me</button>
+<br>
+<br>
+<p>Example 2:</p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">&lt;</span>button id<span style="color:#e28964">=</span><span style="color:#65b042">'btnClick2'</span><span style="color:#e28964">></span>Click Me Too<span style="color:#e28964">&lt;</span>/button<span style="color:#e28964">></span>
+    <span style="color:#e28964">&lt;</span>script type<span style="color:#e28964">=</span><span style="color:#65b042">"text/javascript"</span><span style="color:#e28964">></span>
+    <span style="color:#99cf50">var</span> func1 <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> <span style="color:#89bdff">func1</span>(){
+       <span style="color:#dad085">alert</span>(<span style="color:#65b042">'Thank you for clicking on me - code'</span>);
+    }
+    <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'btnClick2'</span>).onclick <span style="color:#e28964">=</span> func1;
+    <span style="color:#e28964">&lt;</span>/script<span style="color:#e28964">></span>
+</pre>
+ <p> Will render into the button below:</p>
+    <button id='btnClick2'>Click Me Too</button>
+    <script type="text/javascript">
+    var func1 = function func1(){
+       alert('Thank you for clicking on me - code');
+    }
+    document.getElementById('btnClick2').onclick = func1;
+    </script>
+</div>
+
+ <hr>
+
+<div class="topic">
+    <h3>Exercise Setup</h3>
+    <p>We will continue on our BookKeeper App. so lets open the project.</p>
+    <p>First Please add the code below to the <strong>index.html</strong> body.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'outerdiv'</span> <span style="color:#89bdff">name</span>=<span style="color:#65b042">'div1'</span> <span style="color:#89bdff">data-info</span>=<span style="color:#65b042">'foo'</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">'box1'</span>></span>
+        <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'innerdiv'</span> <span style="color:#89bdff">name</span>=<span style="color:#65b042">'div2'</span> <span style="color:#89bdff">data-info</span>=<span style="color:#65b042">'bar'</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">'box2'</span>></span>
+            <span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'t1'</span>></span>Welcome to our Book Store<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+            <span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'t2'</span>></span>Buy more books - now!<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+        <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+    <span style="color:#89bdff">&lt;/<span style="color:#89bdff">div</span>></span>
+</pre>
+and in any time you see this icon:</p>
+    <i class="fa fa-github commit"></i>
+    <p>...do a git commit.</p>
+</div>
+
+<div class="topic">
+    <h3>Exercise 1</h3>
+    <p>Required behavior: when the user click's on "Welcome to our Book Store" show an alert - "Read More Books".</p>
+    <p>Hint : add onclick handler to the element</p>
+     <div class="exercise">
+      <% var num= '5-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+      <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'t1'</span> <span style="color:#89bdff">onclick</span>=<span style="color:#65b042">'alert("Read more books")'</span>></span>Welcome to Book Store<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+     </pre>
+
+        <p> Result: </p>
+        <div style="border-style:solid; border-radius: 4px;">
+          <p id='t1' onclick='alert("Read more books")'>Welcome to Book Store</p>
+        </div>
+        <i class="fa fa-github commit"></i>
+
+      </div>
+      <% include ../partials/answer-button %>
+    </div>
+</div>
+
+
+
+<div class="topic">
+    <h3>Elements Methods</h3>
+    <p>Now that we have an element and events, we can do some cool stuff around it.</p>
+    <p>We might want to read it’s content and we might want to change it.</p>
+    <p>We can change the text of the HTML using the property - <strong>innerHTML</strong></p>
+    <p>For example getting it's content:</p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> text <span style="color:#e28964">=</span>   <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(‘t1’).innerHTML.
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(text) <span style="color:#aeaeae;font-style:italic">//prints : Life’s Good!</span>
+</pre>
+
+<p>We also can change the content:</p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(‘t1’).innerHTML <span style="color:#e28964">=</span> “Read More Books”;
+</pre>
+</div>
+
+
+
+<div class="topic">
+    <h3>Exercise 2</h3>
+    <p>Required behavior: when the user click's on "Welcome to our Book Store" change the text to - "Read More Books".</p>
+     <div class="exercise">
+      <% var num= '5-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+    <pre style="background:#000;color:#f8f8f8"> <span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'t3'</span>></span>Welcome to Book Store<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+ &lt;<span style="color:#e0c589">script</span> <span style="color:#e0c589">type</span>=<span style="color:#65b042">"text/javascript"</span>>
+    <span style="color:#99cf50">var</span> func1 <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> <span style="color:#89bdff">func1</span>(){
+      <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"2"</span>);
+       <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'t3'</span>).innerHTML <span style="color:#e28964">=</span> <span style="color:#65b042">"Read More Books"</span>;
+    }
+    <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'t3'</span>).onclick <span style="color:#e28964">=</span> func1;
+ &lt;/<span style="color:#e0c589">script</span>>
+</pre>
+
+        <p> Result: </p>
+        <div style="border-style:solid; border-radius: 4px;">
+        <p id='t3'>Welcome to Book Store</p>
+    <script type="text/javascript">
+    var func1 = function func1(){
+      console.log("2");
+       document.getElementById('t3').innerHTML = "Read More Books";
+    }
+
+    document.getElementById('t3').onclick = func1;
+    </script>
+        </div>
+        <i class="fa fa-github commit"></i>
+
+      </div>
+      <% include ../partials/answer-button %>
+    </div>
+
+<br>
+<br>
+    <p>As elements have attributes we can also change them with them by calling their name:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> info <span style="color:#e28964">=</span>   <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'outerdiv'</span>).<span style="color:#cf6a4c">data</span><span style="color:#e28964">-</span>info.
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(info) <span style="color:#aeaeae;font-style:italic">//prints : foo</span>
+</pre>
+
+<p>We can also change the element style of via code also by modifying the style property:</p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'outerdiv'</span>).<span style="color:#cf6a4c">style</span>.<span style="color:#cf6a4c">background</span><span style="color:#e28964">-</span>color <span style="color:#e28964">=</span> aqua;
+</pre>
+</div>
+
+
+<div class="topic">
+    <h3>Exercise 3</h3>
+    <p>Required behavior: when the user click's on "Welcome to our Book Store" change the text to - "Read More Books". and the background of it to aqua</p>
+</div>
+
+
+<div class="topic">
+    <h3>Adding Dynamic HTML Elements</h3>
+    <p>We can create HTML markup a using code what we called dynamic HTML.</p>
+    <p>In order to do so we first need to create the element using the function <strong>document.createElement</strong> and <strong>document.createTextNode.</strong></p>
+
+    <p>After we create the element then we can use it to either replace exists HTML element or add as child of existing element. </p>
+    <p>For example the code below will create a button:</p>
+    <pre style="background:#000;color:#f8f8f8"> <span style="color:#99cf50">var</span> btn <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">createElement</span>(<span style="color:#65b042">"BUTTON"</span>);
+ <span style="color:#99cf50">var</span> t <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">createTextNode</span>(<span style="color:#65b042">"CLICK ME"</span>);
+ btn.<span style="color:#dad085">appendChild</span>(t);
+</pre>
+<p>The code below will add it to under the 'innerDiv'.</p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'innerDiv'</span>).<span style="color:#dad085">appendChild</span>(btn);
+</pre>
+
+ <button id='btnClick3'>Code Demo</button>
+ <div id='div4' style="margin:20px;">
+ </div>
+    <script type="text/javascript">
+    var func1 = function func1(){
+      var btn = document.createElement("BUTTON");
+      var t = document.createTextNode("CLICK ME");
+      btn.appendChild(t);
+      document.getElementById('div4').appendChild(btn);
+    }
+    document.getElementById('btnClick3').onclick = func1;
+    </script>
+</div>
+
+<div class="topic">
+    <h3>Input Validation</h3>
+    <p>Using the DOM we are able to validate user input's. We can hook to the click event of the submit button and check the value of the input file</p>
+    <p> For Example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">form</span>></span>
+  <span style="color:#89bdff">&lt;<span style="color:#89bdff">div</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">'msg'</span>>&lt;/<span style="color:#89bdff">div</span>></span>
+  Username:<span style="color:#e0c589">&lt;<span style="color:#e0c589">input</span> <span style="color:#e0c589">type</span>=<span style="color:#65b042">'text'</span> <span style="color:#e0c589">id</span>=<span style="color:#65b042">'my_username'</span> /></span>
+  <span style="color:#e0c589">&lt;<span style="color:#e0c589">button</span> <span style="color:#e0c589">onclick</span>=<span style="color:#65b042">"SubmitFrm()"</span> ></span>Submit<span style="color:#e0c589">&lt;/<span style="color:#e0c589">button</span>></span>
+  &lt;<span style="color:#e0c589">script</span> <span style="color:#e0c589">type</span>=<span style="color:#65b042">"text/javascript"</span>>
+  <span style="color:#99cf50">function</span> <span style="color:#89bdff">SubmitFrm</span>(){
+        <span style="color:#99cf50">var</span> usernameElement <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'my_username'</span>);
+        <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(usernameElement);
+        <span style="color:#99cf50">var</span> username <span style="color:#e28964">=</span> usernameElement.<span style="color:#cf6a4c">value</span>;
+        <span style="color:#e28964">if</span>(username.<span style="color:#cf6a4c">length</span><span style="color:#e28964">&lt;</span><span style="color:#3387cc">5</span>){
+            <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'msg'</span>).innerHTML <span style="color:#e28964">=</span> <span style="color:#65b042">"UserName is too short"</span>;
+        }<span style="color:#e28964">else</span>{
+            <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'msg'</span>).innerHTML <span style="color:#e28964">=</span> <span style="color:#65b042">"Your Username is "</span><span style="color:#e28964">+</span>username;
+        }
+  }
+  &lt;/<span style="color:#e0c589">script</span>>
+<span style="color:#89bdff">&lt;/<span style="color:#89bdff">form</span>></span>
+</pre>
+
+<form>
+  <div id='msg'></div>
+  Username:<input type='text' id='my_username' />
+  <button onclick="SubmitFrm()" >Submit</button>
+  <script type="text/javascript">
+  function SubmitFrm(){
+        var usernameElement = document.getElementById('my_username');
+        console.log(usernameElement);
+        var username = usernameElement.value;
+        if(username.length<5){
+            document.getElementById('msg').innerHTML = "UserName is too short";
+        }else{
+            document.getElementById('msg').innerHTML = "Your Username is "+username;
+        }
+  }
+  </script>
+</form>
+
+</div>
+
+<hr>
+
+ <div class="topic">
+    <h3>Exercises</h3>
+    <p> In this exercises will start validating our sign-up form. So open the form and lets start dig in:</p>
+    <ol>
+    <li>Add onclick event to the submit button to run a validation function. In the validation function pop-up an alert 'submit clicked' when clicked </li>
+    <li>Add a div with id 'msg' like in the example above. - A.K.A msg div</li>
+    <li>Change the onclick event to insert write "submit clicked' inside the msg div</li>
+    <li>Add code that check if the user password longer then 6 chars - if not write the error to the msg div</li>
+    <li>Add code to change the background of the msg to red when there is an error and green when there is not.</li>
+    <li>Add code to make sure both password are the same if not write the error to the msg div</li>
+    <li>Add code to valid country is either Israel or USA. if not write the right error to the msg div</li>
+    <li>Add code to valid that each part of the name include only one word. if not write the right error to the msg div </li>
+    <li>Add code to valid that phone number is not longer than 15 digits. if not write the right error to the msg div</li>
+    </ul>
+    <i class="fa fa-github commit"></i>
+</div>
+
+
+ <div class="topic">
+  <h4>Done.</h4>
+  <p>Awesome! Now we know how to validate a form using Vanilla JS. Go eat some ice-cream</p>
+</div>
 </div>
 
