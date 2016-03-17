@@ -253,6 +253,42 @@ shoutIt(narkis, revealSecret);
   <hr>
 
   <div class="topic">
+    <h4>Individual Exercise</h4>
+    <p>Once again for this lesson we will be forking and cloning. If you can't remember how, refer to yesterday's object lesson. Go ahead and fork <a href="https://github.com/Elevationacademy/coffee-shop" target="_blank">this repo</a> to your github, then clone it down locally.</p>
+
+    <p>Open the folder in sublime and look at <c>main.js</c>. This is the start of our coffee shop program. To finish it, complete the <c>makeDrink</c> method so that it:</p>
+
+    <ul>
+      <li>Only allows you make a drink if it's a drink in the <c>drinkRequirements</c> object. Otherwise alert, "Sorry, we don't make DRINKNAME".</li>
+      <li>If the drink is part of the <c>drinkRequirements</c> object, reduce the amount of <c>beans</c> by the number of beans required for that drink.</li>
+      <li>If there are not enough beans to make that drink, alert, "Sorry, we're all out of beans!".</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise (Extension 1)</h4>
+    <p>Don't use any <em>nested</em> if statements!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise (Extension 2)</h4>
+    <p>Now give the coffeeShop a <c>money</c> property and the ability to buy more supplies with a <c>buySupplies</c> method. It should reduce the amount of money depending on how many beans are purchased. You decide how much the beans cost ;)</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Exercise (Extension 3)</h4>
+    <p>This is a business! We need more money to buy more beans! Add properties to each drink object so they have a <c>price</c> and a <c>beanRequirement</c> property. Then, create a <c>buyDrink</c> method that increased the amount of money the coffeeShop has (depending on the drinks price) and invokes the <c>makeDrink</c> method.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
     <h4>Done.</h4>
     <p>Awesome! What a baller you are.</p>
   </div>
