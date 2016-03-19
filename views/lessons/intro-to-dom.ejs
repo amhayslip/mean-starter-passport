@@ -26,16 +26,16 @@
 
 <div class="topic">
     <h3>What is the DOM? </h3>
-    <p>DOM stands for <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel when the browser loads web page it creates a fully object-oriented representation of the web page, and it can be modified with a scripting language such as JavaScript   </p>
+    <p>DOM stands for <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel. When the browser loads web page it creates a fully object-oriented representation of the web page, and it can be modified with a scripting language such as JavaScript   </p>
     <p> Using the DOM programming interface you will be able to :</p>
     <ul>
-     <li>Change HTML elements in the page</li>
-     <li>Change HTML attributes in the page</li>
-     <li>Change CSS styles in the page</li>
-     <li>Remove existing HTML elements and attributes</li>
-     <li>Add new HTML elements and attributes</li>
-     <li>React to existing HTML events in the page</li>
-     <li>Create new HTML events in the page</li>
+     <li>Change HTML elements in the page.</li>
+     <li>Change HTML attributes in the page.</li>
+     <li>Change CSS styles in the page.</li>
+     <li>Remove existing HTML elements and attributes.</li>
+     <li>Add new HTML elements and attributes.</li>
+     <li>React to existing HTML events in the page.</li>
+     <li>Create new HTML events in the page.</li>
    </ul>
 
    <p>Lets Look on the code below:</p>
@@ -53,10 +53,10 @@
 <span style="color:#89bdff">&lt;/<span style="color:#89bdff">body</span>></span>
 </pre>
 
-<p>The DOM is an hierarchy of nodes. Each node represent an Element</p>
+<p>The DOM is an hierarchy of nodes. Each node represent an Element.</p>
 <p>Example:</p>
-<p>Div with id 'outerdiv' is a child of &lt;BODY&gt;</p>
-<p>Div with id 'innerdiv' is a child of 'outerdiv'</p>
+<p>Div with id 'outerdiv' is a child of &lt;BODY&gt;.</p>
+<p>Div with id 'innerdiv' is a child of 'outerdiv'.</p>
 <p>P with id 't1' is child of 'outerdiv' and sibling of 't2'.</p>
 <br>
 <p> Each node is an object and as an object it has properties and events.</p> 
@@ -78,7 +78,7 @@
     <p>Another common way is to use the built-in attribute - Class.</p>
     <p>Class VS Id - we will explain it later.</p>
     <br>
-    <p>So for direct access using ID we will use this function : <strong>getElementById</strong>  </p>
+    <p>So for direct access using ID we will use this function : <strong>getElementById</strong> .</p>
 
 <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> elem <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(id);
 </pre>
@@ -87,7 +87,7 @@
     <p>We can access element using the hierarchy property <strong>.childNodes</strong></p>
 <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> elems <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'innerDiv'</span>).<span style="color:#cf6a4c">childNodes</span>;
 </pre>
-<p>We will cover it deeply later . </p>
+<p>We will cover it deeply later.</p>
 
  <hr>
 
@@ -236,7 +236,7 @@ and in any time you see this icon:</p>
 
 <div class="topic">
     <h3>Exercise 3</h3>
-    <p>Required behavior: when the user click's on "Welcome to our Book Store" change the text to - "Read More Books". and the background of it to aqua</p>
+    <p>Required behavior: when the user click's on "Welcome to our Book Store" change the text to - "Read More Books" and the background of it to aqua</p>
 </div>
 
 
@@ -245,7 +245,7 @@ and in any time you see this icon:</p>
     <p>We can create HTML markup a using code what we called dynamic HTML.</p>
     <p>In order to do so we first need to create the element using the function <strong>document.createElement</strong> and <strong>document.createTextNode.</strong></p>
 
-    <p>After we create the element then we can use it to either replace exists HTML element or add as child of existing element. </p>
+    <p>After we create the element, then we can use it to either replace exists HTML element or add as child of existing element. </p>
     <p>For example the code below will create a button:</p>
     <pre style="background:#000;color:#f8f8f8"> <span style="color:#99cf50">var</span> btn <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">createElement</span>(<span style="color:#65b042">"BUTTON"</span>);
  <span style="color:#99cf50">var</span> t <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">createTextNode</span>(<span style="color:#65b042">"CLICK ME"</span>);
@@ -271,7 +271,7 @@ and in any time you see this icon:</p>
 
 <div class="topic">
     <h3>Input Validation</h3>
-    <p>Using the DOM we are able to validate user input's. We can hook to the click event of the submit button and check the value of the input file</p>
+    <p>Using the DOM we are able to validate user input's. We can hook to the click event of the submit button and check the value of the input file.</p>
     <p> For Example:</p>
 
     <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">form</span>></span>
@@ -319,15 +319,15 @@ and in any time you see this icon:</p>
     <h3>Exercises</h3>
     <p> In this exercises will start validating our sign-up form. So open the form and lets start dig in:</p>
     <ol>
-    <li>Add onclick event to the submit button to run a validation function. In the validation function pop-up an alert 'submit clicked' when clicked </li>
-    <li>Add a div with id 'msg' like in the example above. - A.K.A msg div</li>
-    <li>Change the onclick event to insert write "submit clicked' inside the msg div</li>
-    <li>Add code that check if the user password longer then 6 chars - if not write the error to the msg div</li>
+    <li>Add onclick event to the submit button to run a validation function. In the validation function pop-up an alert 'submit clicked' when clicked.</li>
+    <li>Add a div with id 'msg' like in the example above. - A.K.A msg div.</li>
+    <li>Change the onclick event to insert write "submit clicked' inside the msg div.</li>
+    <li>Add code that check if the user password longer then 6 chars - if not write the error to the msg div.</li>
     <li>Add code to change the background of the msg to red when there is an error and green when there is not.</li>
-    <li>Add code to make sure both password are the same if not write the error to the msg div</li>
-    <li>Add code to valid country is either Israel or USA. if not write the right error to the msg div</li>
-    <li>Add code to valid that each part of the name include only one word. if not write the right error to the msg div </li>
-    <li>Add code to valid that phone number is not longer than 15 digits. if not write the right error to the msg div</li>
+    <li>Add code to make sure both password are the same if not write the error to the msg div.</li>
+    <li>Add code to valid country is either Israel or USA. if not write the right error to the msg div.</li>
+    <li>Add code to valid that each part of the name include only one word. if not write the right error to the msg div.</li>
+    <li>Add code to valid that phone number is not longer than 15 digits. if not write the right error to the msg div.</li>
     </ul>
     <i class="fa fa-github commit"></i>
 </div>
@@ -335,7 +335,7 @@ and in any time you see this icon:</p>
 
  <div class="topic">
   <h4>Done.</h4>
-  <p>Awesome! Now we know how to validate a form using Vanilla JS. Go eat some ice-cream</p>
+  <p>Awesome! Now we know how to validate a form using Vanilla JS. Go get some ice-cream.</p>
 </div>
 </div>
 
