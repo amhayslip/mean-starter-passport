@@ -57,7 +57,7 @@
 <p>Example:</p>
 <p>Div with id 'outerdiv' is a child of &lt;BODY&gt;.</p>
 <p>Div with id 'innerdiv' is a child of 'outerdiv'.</p>
-<p>P with id 't1' is child of 'outerdiv' and sibling of 't2'.</p>
+<p>P with id 't1' is child of 'innerdiv' and sibling of 't2'.</p>
 <br>
 <p> Each node is an object and as an object it has properties and events.</p> 
 <P>Example:</P>
@@ -224,8 +224,8 @@ and in any time you see this icon:</p>
 <br>
 <br>
     <p>As elements have attributes we can also change them with them by calling their name:</p>
-    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> info <span style="color:#e28964">=</span>   <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'outerdiv'</span>).<span style="color:#cf6a4c">data</span><span style="color:#e28964">-</span>info.
-<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(info) <span style="color:#aeaeae;font-style:italic">//prints : foo</span>
+ <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> info <span style="color:#e28964">=</span>   <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(<span style="color:#65b042">'outerdiv'</span>).<span style="color:#cf6a4c">attributes</span>[<span style="color:#65b042">'data-info'</span>];
+<span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(info.<span style="color:#cf6a4c">value</span>); <span style="color:#aeaeae;font-style:italic">//prints : foo</span>
 </pre>
 
 <p>We can also change the element style of via code also by modifying the style property:</p>
