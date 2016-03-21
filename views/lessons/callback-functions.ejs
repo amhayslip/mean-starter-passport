@@ -1,0 +1,189 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>Callback Functions</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>As normal, partner up for this one. No set-up necessary, just a pen & paper along with your console. We will cover...</p>
+      <ul>
+        <li>What are callback functions</li>
+        <li>What are anonymous functions</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>A Definition</h4>
+    <p>So, what is a callback function? It's when we pass a function into another function to be invoked by that function. What in the what what?</p>
+
+    <iframe style="display: block; margin: 0 auto 0;" src="//giphy.com/embed/Zc74HFG3OZBLO" width="480" height="286" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+    <p>Here is an example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">sayHi</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'Hi'</span>);
+} 
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">greet</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (func) {
+  func();
+}
+
+greet(sayHi);
+</pre>
+
+    <p>Here we passed <c>sayHi</c> into <c>greet</c> and had greet call the function. Here is a more familiar example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>).on(<span style="color:#65b042">'click'</span>, <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"I got clicked!"</span>);
+});
+</pre>
+
+    <p>jQuery if FULL of callback functions. In fact, callback functions is on of the most powerful aspects of Javascript.</p>
+
+    <p>Here is another example of the above <c>click</c> but in a different way:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">alertClick</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"I got clicked!"</span>);
+}
+
+<span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>).on(<span style="color:#65b042">'click'</span>, alertClick);
+</pre>
+
+    <p>Same difference. Before, we also passed a function in as our second argument to <c>.on</c>, but now we don't have to give it a name (or assign it to a variable) because <c>.on</c> will reference it as an argument. You think of the <c>.on</c> function as looking like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>) <span style="color:#e28964">=</span> {
+  <span style="color:#89bdff">on</span>: <span style="color:#99cf50">function</span> (event, func) {
+    func();
+  }
+} 
+</pre>
+
+    <p>This is an oversimplification, but it's just to illustrate that <c>$('button')</c> is an object and <c>.on</c> is a method of that object.</p>
+
+    <p>Okay, let's back up and try to break it down by doing some partner exercises:</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 1</h4>
+    <p>Draw a diagram of the result of the following code:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">boom</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"boom!"</span>);
+}
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">bang</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"bang!"</span>);
+}
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">doubleWham</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (sound1, sound2) {
+  sound1();
+  sound2();
+}
+
+doubleWham(boom, bang);
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exericse 2</h4>
+    <p>Write a function <c>pushPull</c> that takes one argument and calls it as a function.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">push</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"pushing it!"</span>);
+}
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">pull</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"pulling it!"</span>);
+}
+
+pushPull(push);
+pushPull(pull);
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 3</h4>
+    <p>You can get the current date/time in Javascript by writing: <c>var time = new Date()</c>. Create a function called <c>getTime</c> that takes one paramater and calls it as a function.</p>
+  </div>
+
+  <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">returnTime</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (time) {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'The current time is: '</span> <span style="color:#e28964">+</span> time);
+};
+
+<span style="color:#dad085">getTime</span>(returnTime);
+</pre>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 4</h4>
+    <p>Copy/paste the following code in your dev console. What error do you get? Write the missing function to make the code work:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">displayData</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (alertDataFunc, logDataFunc, data) {
+  alertDataFunc(data);
+  logDataFunc(data);
+}
+
+displayData(alert, logData, <span style="color:#65b042">"I like to party"</span>);
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>More Callbacks in The Wild</h4>
+    <p>Another example of a callback function in real life is with the <c>setTimeout</c> function. It takes two arguments, the first is a function, and the second is miliseconds. Check out the following function:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">greet</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () { <span style="color:#dad085">alert</span>(<span style="color:#65b042">'hey there!'</span>); };
+<span style="color:#dad085">setTimeout</span>(greet, <span style="color:#3387cc">2000</span>);
+</pre>
+
+    <p>What is another way we can write this without having to declare the <c>greet</c> function?</p>
+
+    <div class="exercise">
+      <% var num= '8-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#dad085">setTimeout</span>(<span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'hey there!'</span>);
+}, <span style="color:#3387cc">2000</span>);
+</pre>
+      </div>
+    
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p>Here, we simply replaced where we would usually put the function reference with a function itself, just like what we do in jQuery with clicks. Since the function we pass in has no name or variable reference, we call it an <c>anonymous</c> function.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 5</h4>
+    <p>Change the following code to use an anonymous function:</p>
+  </div>
+
+  <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">saySomething</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"I'm saying stuff!"</span>);
+};
+
+<span style="color:#dad085">setTimeout</span>(saySomething, <span style="color:#3387cc">1000</span>);
+</pre>
+  
+  <hr>
+
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Great. BAM.</p>
+  </div>
+</div>
+
+
+
+
+
