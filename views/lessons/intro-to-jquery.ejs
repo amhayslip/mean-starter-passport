@@ -1,0 +1,220 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>jQuery!</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>In this lesson we will cover jQuery through:</p>
+      <ul>
+        <li>selecting elements</li>
+        <li>events</li>
+        <li>methods</li>
+        <li>add/removing from the DOM</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>What is jQuery?</h4>
+    <p>At it's core, just Javascript. In a similar way that Bootstrap is just some CSS that someone else wrote that we can use, jQuery is just some Javascript that will make our life easier.</p>
+
+    <p>jQuery specifically helps us to interact with the DOM by giving us a bunch of methods. <a href="http://codepen.io/amhayslip/pen/GZWmgQ?editors=1010" target="_blank">Go to this pen</a> and open up your dev console. One after the other we're console logging the DOM methods available to us with and without jQuery. As you can see, we have many more because of jQuery.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Selecting</h4>
+    <p>Let's jump right in. As we saw yesterday, the first order of business when working with the DOM is to select elements to manipulate.</p>
+
+    <p>Remember yesterday when we had to select an element like this?</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> elem <span style="color:#e28964">=</span> <span style="color:#9b859d">document</span>.<span style="color:#dad085">getElementById</span>(id);
+</pre>
+
+    <p>No more! Now we will write:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> elem <span style="color:#e28964">=</span> <span style="color:#e28964">$</span>(<span style="color:#65b042">'#id'</span>);
+</pre>
+
+
+    <p>Selecting with jQuery is much like selecting with CSS. To select classes we write <c>$('.class');</c> and select Id's we write <c>$('.id');</c> or we can select elements themselves by writing something like <c>$('div');</c></p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Methods</h4>
+    <p>As we saw earlier, selecting elements with jQuery makes some methods available to these elements. For example, to change the color of a div to 'red', we could use the <c>css</c> method and write:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">$</span>(<span style="color:#65b042">'div'</span>).css(<span style="color:#65b042">'color'</span>, <span style="color:#65b042">'red'</span>);
+</pre>
+
+    <p>The <c>css</c> method takes two arguments: the first is the css property and second is the value.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 1</h4>
+    <p>Go <a href="http://codepen.io/amhayslip/pen/mVKGwa" target="_blank">here</a> and change the appropriate elements' colors with jQuery.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Events</h4>
+    <p>Events in jQuery work similarly to the way events worked with the "vanilla DOM API" yesterday. We have all kinds of events: click, scroll, mouseenter, etc. For a full list of jQuery events <a href="https://api.jquery.com/category/events/" target="_blank">check out the docs</a>.</p>
+
+    <p>To listen for clicks we can use:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>).on(<span style="color:#65b042">'click'</span>, <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'clicked!'</span>);
+});
+</pre>
+
+    <p>or...</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>).<span style="color:#dad085">click</span>(<span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'clicked!'</span>);
+});
+</pre>
+
+    <p>These both do the same thing. Let's take note of what's exactly going on in both cases. Two things:</p>
+
+    <ol>
+      <li>They are each "binding" a click event to the <c>button</c> element. It could be said that once this code runs, the button will begin "listening" for clicks and respond accordingly.</li>
+      <li>They both take a function as an argument, and invoke it when a click event happens on the button. This is called  <c>callback</c> function.</li>
+    </ol>
+
+    <p>Each of these examples could also be written like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">clicked</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'clicked!'</span>);
+}
+
+<span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>).on(<span style="color:#65b042">'click'</span>, clicked);
+</pre>
+    
+    <p>or...</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">clicked</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">'clicked!'</span>);
+}
+
+<span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>).<span style="color:#dad085">click</span>(clicked);
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Getting User Input</h4>
+    <p>We can grab input from a user in similar ways to yesterday as well. For example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">input</span> <span style="color:#89bdff">type</span>=<span style="color:#65b042">"text"</span> <span style="color:#89bdff">id</span>=<span style="color:#65b042">"my-input"</span> <span style="color:#89bdff">placeholder</span>=<span style="color:#65b042">"Some Text!"</span>>&lt;/<span style="color:#89bdff">input</span>></span>
+</pre>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">$</span>(<span style="color:#65b042">'#my-input'</span>).val()
+</pre>
+
+    <p>This would return to us the value of input.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 2</h4>
+    <p>Let's practice this a bit. Head to <a href="http://codepen.io/amhayslip/pen/oxZGOd?editors=1010" target="_blank">this link</a> and create a click handler that alerts the value of the input when the user clicks the button. Take turns writing it in 3 different ways.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Adding/Removing</h4>
+    <p>There are several ways to add and remove items from the DOM with jQuery.</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">&lt;</span>div <span style="color:#99cf50">class</span><span style="color:#e28964">=</span><span style="color:#65b042">"candy"</span><span style="color:#e28964">></span><span style="color:#e28964">&lt;</span>/div<span style="color:#e28964">></span>
+
+<span style="color:#e28964">&lt;</span>script<span style="color:#e28964">></span>
+  <span style="color:#e28964">$</span>(<span style="color:#65b042">'.candy'</span>).append(<span style="color:#65b042">'Chocolate'</span>);
+<span style="color:#e28964">&lt;</span>/script<span style="color:#e28964">></span>
+</pre>
+
+    <p>The above would simply add the text 'Chocolate'. The following would add it inside of some HTML:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">&lt;</span>div <span style="color:#99cf50">class</span><span style="color:#e28964">=</span><span style="color:#65b042">"candy"</span><span style="color:#e28964">></span><span style="color:#e28964">&lt;</span>/div<span style="color:#e28964">></span>
+
+<span style="color:#e28964">&lt;</span>script<span style="color:#e28964">></span>
+  <span style="color:#e28964">$</span>(<span style="color:#65b042">'.candy'</span>).append(<span style="color:#65b042">'&lt;span>Chocolate&lt;/span>'</span>);
+<span style="color:#e28964">&lt;</span>/script<span style="color:#e28964">></span>
+</pre>
+    
+    <p>Finally, this would remove a <c>span</c> tag inside the <c>.candy</c> div. Here we're "chaining" two jQuery methods together (find and remove) to target the elements we want:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">$</span>(<span style="color:#65b042">'.candy'</span>).<span style="color:#dad085">find</span>(<span style="color:#65b042">'span'</span>).<span style="color:#dad085">remove</span>();
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 3</h4>
+    <p><a href="http://codepen.io/amhayslip/pen/ONpOPK" target="_blank">Head to this pen</a> and once again add a click handler that captures the value of the input. Then, create a new <c>li</c> and append it to the <c>.students</c> div. As a bonus (not required) try removing an <c>li</c> when it's clicked.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Project</h4>
+    <p>Time to start drinking and rating some beers!</p>
+
+    <p>On your own, fork <a href="https://github.com/Elevationacademy/beer-review.git" target="_blank">this repo</a> to your github, clone it down, and open it in sublime/your browser. You will notice 3 files, <c>index.html</c>, <c>style.css</c> and <c>script.js</c>. Read the code carefully in each.</p>
+
+    <p>In <c>index.html</c> notice that we're including bootstrap, jQuery, our own css file and at the bottom of our body, our <c>script.js</c> tag. Also, we have some bootstrap styles in there to make things look good along with a form for sumbitting beers to be added to our beers list.</p>
+
+    <p>Let's get started and take this one step at a time:</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Project Exercise 1</h4>
+    <p>Create an <c>addBeer</c> function that takes two argments, "name" and "category". Invoke this function when the <c>'.post-beer'</c> button get's clicked and pass in the "beer name" and "category" that the user entered.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Project Exercise 2</h4>
+    <p>Inside the <c>addBeer</c> function, create a new beer object with the new data and push it to a global array called <c>beers</c>.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Project Exercise 3</h4>
+    <p>Create another function called <c>updateBeers</c> that takes no arguments. Inside this function, empty the <c>'.beers'</c> div first, then loop through the <c>beers</c> array and append the beers to the <c>'.beers'</c> div. Invoke this function inside your <c>'.post-beer'</c> click handler just below where you're invoking the <c>addBeer</c> function. </p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Project Exercise 4 (Extension)</h4>
+    <p>Add another <c>select</c> to your form so that users can rate each beer from 0 to 5. Append the new information to the page.</p>
+  </div>
+
+  <hr>  
+
+  <div class="topic">
+    <h4>Project Exericse 5 (Extension)</h4>
+    <p>Add another button to your page that will sort the beers on the page by rating when clicked. If it get's clicked again, reverse the order (if they were sorted in ascending order, sort in descending and vice/versa).</p>
+  </div>
+
+  <hr>
+  
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Awesome!</p>
+  </div>
+</div>
