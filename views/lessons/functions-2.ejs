@@ -1,0 +1,96 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>Functions Revisited</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  notes:
+
+  - function declaration vs function expression
+  - hoisting
+  - anonomys functions
+  - self invoking functions
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>We've already spent some time on functions, but let's dive a bit deeper and look at the different ways to declare and invoke functions. We will look over:</p>
+      <ul>
+        <li>Function Declarations vs Function Expressions</li>
+        <li>Hoisting!</li>
+        <li>Anonoyms Functions</li>
+        <li>Self Invoking Functions</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Function Declarations vs Function Expressions</h4>
+    <p>Depending on your experience you're probably use to seeing functions written in one of these two ways:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">function</span> <span style="color:#89bdff">greet</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"hey!"</span>);
+};
+</pre>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">greet</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="color:#dad085">alert</span>(<span style="color:#65b042">"hey!"</span>);
+};
+</pre>
+
+    <p>The first is called a <strong>function declaration</strong> and the other is called a <strong>function expression</strong>. They're both invoked the same, <c>greet( )</c>, so what's the difference?</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Hoisting!</h4>
+    <p>The main difference between function declarations and function expressions is that function declarations are hoisted, and function expressions are not. So what is hoisting? Copy/paste this code into your console and run it:</p>
+
+    <pre style="background:#000;color:#f8f8f8">speak();
+
+<span style="color:#99cf50">function</span> <span style="color:#89bdff">speak</span> () {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"woof!"</span>);
+};
+</pre>
+    
+    <p>What happens? It works! This is because the speak function was 'hoisted'. Explanation in a moment. Now copy/paste this code into your console:</p>
+
+    <pre style="background:#000;color:#f8f8f8">meow();
+
+<span style="color:#99cf50">var</span> <span style="color:#89bdff">meow</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">"meow!"</span>);
+};
+</pre>
+
+    <p>What happened? We got an error: <c>Uncaught TypeError: meow is not a function(…)</c>. The interesting thing about this error though is that it was not an <c>undefined</c> error, but it instead told us that <c>meow</c> is not a function. In other words, it knew about <c>meow</c> it just didn't know that it was a function.</p>
+
+    <p>There are 2 things going on here:</p>
+
+    <p>1. Declarations are processed first before the code is executed. This means that function declarations are technically moved to the top of it's scope. This is what we refer to as hoisting.</p>
+
+    <p>2. Assignments are not hoisted. However, LHS look-ups (like <c>var</c> assignments) are processessed first. This is why our console knew about <c>meow</c> even if it didn't know it was a function.</p>  
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Self Invoking Functions</h4>
+    <p></p>
+
+    <pre style="background:#000;color:#f8f8f8">(<span style="color:#99cf50">function</span> () {
+ <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#65b042">'hey'</span>)
+})();
+</pre>
+
+    <p>Self invoking functions are functions that invoke themselves... yep, fairly straightforward.</p>
+
+  </div>
+
+  <hr>
+  
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Great.</p>
+  </div>
+</div>
