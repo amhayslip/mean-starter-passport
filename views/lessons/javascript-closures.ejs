@@ -1,4 +1,4 @@
-views/lessons/javascript-closures.ejs<div class="col-sm-8 col-sm-offset-2 lesson">
+<div class="col-sm-8 col-sm-offset-2 lesson">
   <div class="page-header">
     <h2>Javascript Closures</h2>
     <a href="/#/">Back Home</a>
@@ -204,12 +204,10 @@ listThemAll();
 
   <div class="topics">
     <h4>Modules: An Example of Closure in the Wild</h4>
-    <p>Where are we likely to encouter closures in the wild? Everywhere! There particular useful for creating modules.</p>
-
-    <p>Modularization is one of the most popular design patterns in Javascript. For now, it's not important for you to know (we'll go in depth with design patterns later), but let's look at some examples in as much as it helps us understand closures.</p>
+    <p>Where are we likely to encouter closures in the wild? Everywhere! They're particular useful for creating modules. Modularization is one of the most popular design patterns in Javascript and an excellent example of closure in action. Check out the following:</p>
 
     <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">UsersModule</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
-  <span style="color:#99cf50">var</span> users <span style="color:#e28964">=</span> [<span style="color:#65b042">'Aaron'</span>, <span style="color:#65b042">'Jona'</span>];
+  <span style="color:#99cf50">var</span> users <span style="color:#e28964">=</span> [<span style="color:#65b042">'Aaron'</span>, <span style="color:#65b042">'Avi'</span>];
 
   <span style="color:#99cf50">var</span> <span style="color:#89bdff">addUser</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (user) {
     users.<span style="color:#dad085">push</span>(user);
@@ -229,54 +227,64 @@ listThemAll();
 
 <span style="color:#99cf50">var</span> usersModule <span style="color:#e28964">=</span> UsersModule();
 
-usersModule.addUser(<span style="color:#65b042">'Sasha'</span>);
+usersModule.addUser(<span style="color:#65b042">'Narkis'</span>);
 usersModule.listUsers();
 </pre>
+
+    <p>Copy/paste this inside of your console.</p>
 
     <p>Here we've created a module called <strong>UsersModule</strong>. Inside this module we will keep all of our code related to users. We have two functions called inside (addUser and listUsers) and one private variable (users). We say it's private, becuase it's not accessible outside the module.</p>
 
     <p>When <strong>UsersModule</strong> is invoked, it returns an object with our two module functions. So now outside of our module we can interact with our "users", but only to the extent that we've allowed (with the addUser and listUsers) funciton. In other words, because of closure, we cannot directly interact with our "users".</p>
 
-    <p>Now, check out the following code:</p>
-    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">UsersModule</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
-  <span style="color:#99cf50">var</span> users <span style="color:#e28964">=</span> [<span style="color:#65b042">'Aaron'</span>, <span style="color:#65b042">'Jona'</span>];
-
-  <span style="color:#99cf50">var</span> <span style="color:#89bdff">addUser</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> (user) {
-    users.<span style="color:#dad085">push</span>(user);
-  }
-
-  <span style="color:#99cf50">var</span> <span style="color:#89bdff">listUsers</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
-    <span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">0</span>; i <span style="color:#e28964">&lt;</span> users.<span style="color:#cf6a4c">length</span>; i <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
-      <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(users[i]);
-    }
-  }
-
-  <span style="color:#e28964">return</span> {
-    addUser: addUser,
-    listUsers: listUsers
-  }
-}
-
-<span style="color:#99cf50">var</span> usersModule1 <span style="color:#e28964">=</span> UsersModule();
-<span style="color:#99cf50">var</span> usersModule2 <span style="color:#e28964">=</span> UsersModule();
-
-usersModule1.addUser(<span style="color:#65b042">'Sasha'</span>);
-usersModule2.addUser(<span style="color:#65b042">'John'</span>);
-
-usersModule1.listUsers();
-usersModule2.listUsers();
-</pre>
-
-    <p>Copy/paste it in your console. Notice that we now have 2 instances of our UsersModule and two different lists of "users". This is awesome. We can reuse all of this code!</p>
+    <p>This keeps ourr code clean and tidy, and our data safe!</p>
   </div>
 
   <hr>
 
-  Note: for a project, build a module!
+  <div class="topic">
+    <h4>Partner Exercise</h4>
+    <p>Okay, let's look at how we can use closures/modular design in our own apps! First, let's look at an example together and walk through how this thing works. For that, we need some more git commands.</p>
+
+    <p>Go ahead and <c>cd</c> into your <c>spacebook</c> directory. Once you're there, type in <c>git fetch</c>. This will be sure to fetch any branches that might have been created. A branch is basically a copy of a project that might contain a deviation of the code, for a feature or something.</p>
+
+    <p>Great. Now we want to check out the <c>modular</c> branch. To do this, type in <c>git checkout modular</c>. It should switch to the new branch. Now open it up in Sublime!</p>
+
+    <p>This code should look familiar, but different. Let's talk through what we did.</p>
+
+    <p>1. We created a function called <c>SpacebookApp</c> that wrapped the bulk of our code. We did this to create a function around our data and other functions that we don't want anyone else to access.</p>
+
+    <p>2. We returned a few of the functions in an object at the end of the <c>SpacebookApp</c> function. This is so our data can be interacted with outside of our <c>SpacebookApp</c>, but only by those functions.</p>
+
+    <p>3. To initialize our app we did this: <c>var app = SpacebookApp();</c>. From there, we could use the object <c>app</c> to interact with our methods.</p>
+
+    <p>4. Notice we put all our events at the bottom together. This just helps us organize them and keep everything clean and neat.</p>
+
+    <p>5. Check out what <a href="http://api.jquery.com/delegate/" target="_blank">.delegate</a> does. It fixes our binding problem ;)</p>
+
+    <p>6. Notice our function <c>_findPostById</c>. It has a little <c>_</c> in front of it because it's a "helper" function. In other words, it's only used by other functions inside module. By convention, you'll see people start these with an underscore.</p>
+
+    <p>Cool! Take some time to digest this and ask any questions you may have before moving on.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Beer Review, Modular - Individual</h4>
+    <p><c>cd</c> into your <c>beer-review</c> directory. Check out a new branch by typing <c>git checkout -b modular</c>. Our task here is simple. Let's use closure and modular design to reorganize our beer-review code. These are the requrements:</p>
+
+    <p>1. Create a function (module) called <c>BeerReviewApp</c> that returns an object with 2 methods: <c>createBeer</c> and <c>renderBeers</c>.</p>
+
+    <p>2. Outside of your module, create your click handler for posting new beers.</p>
+
+    <p>Slack Aaron when you're finished!</p>
+  </div>
+
+  <hr>
 
   <div class="topic">
       <h4>Done.</h4>
-      <p>Awesome! What a baller you are.</p>
+      <p>Awesome! What a baller you are. Move on to the next exercise!</p>
   </div>
 </div>
 
