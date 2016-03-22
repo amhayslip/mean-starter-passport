@@ -1,0 +1,218 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>More jQuery!</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>In this lesson we will cover...</p>
+      <ul>
+        <li>Data Attributes</li>
+        <li>this in jQuery</li>
+        <li>event binding</li>
+      </ul>
+
+      <p>Partner up per usual. No set up needed for this one!</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Data Attributes</h4>
+    <p>Sometimes we want to add some extra data to our elements in the DOM so we can identify them more easily later. For this we would use a <a href="https://developer.mozilla.org/en/docs/Web/Guide/HTML/Using_data_attributes" target="_blank">data attribute</a>. A data attribute is written by writing <c>data-</c> plus anything we want. For example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">li</span> <span style="color:#e0c589">data-name</span>=<span style="color:#65b042">"popcorn"</span>></span>popcorn<span style="color:#e0c589">&lt;/<span style="color:#e0c589">li</span>></span>
+</pre>
+
+    <p>Later on when we're writing our Javascript, it will be easier for us to identify this particular li becuase we gave it an identified with the data attribute. But like we said, we can add anything after the <c>-</c>. Here's another example:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span> <span style="color:#e0c589">data-id</span>=<span style="color:#65b042">"5"</span>></span>cigar<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span>
+</pre>
+
+    <p>In this case we have given the <c>span</c> an id. Perhaps this id correlates to it's id in our database. In that case, we would know how to update the DOM according to our data.</p>
+
+    <p>Cool, so we can put some data in, but how do we get it out? We can use jQuery's <c>.data</c> method. In first example we would write:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b859d">$</span>('<span style="color:#cda869">li</span>').<span style="color:#cf6a4c">data</span>().<span style="color:#cf6a4c">name</span>;
+</pre>
+
+    <p>Let's break it down. Since our <c>li</c> has a data attribute, calling the <c>.data</c> method on it returns an object that looks like this:</p>
+
+    <pre style="background:#000;color:#f8f8f8">{ name: <span style="color:#65b042">"popcorn"</span> }
+</pre>
+
+    <p>Then to get the name out of it, we just use dot notation and bam, we have it. With that in mind, how would we get the id of our cigar in the above example? Discuss with your partner before peeking the answer:</p>
+
+    <div class="exercise">
+      <% var num= '9-1'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <pre style="background:#000;color:#f8f8f8"><span style="color:#9b859d">$</span>('<span style="color:#cda869">span</span>').<span style="color:#cf6a4c">data</span>().<span style="color:#cf6a4c">id</span>;
+</pre>
+      </div>
+    
+      <% include ../partials/answer-button %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 1</h4>
+    <p>Let's practice a bit. Head to <a href="http://codepen.io/amhayslip/pen/RapdXN?editors=1010" target="_blank">this pen</a> and using jQuery, alert which sauce one would use for Brisket. Hint, you may need to make use of CSS psudeo selectors.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 2</h4>
+    <p>With the same pen, use jQuery to add another type of food that requires a unique sauce. It should also have a data attribute like the others.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>this!</h4>
+    <p><c>this</c> is back again! Afterall, jQuery is just fancy Javascript, and DOM elements are just fancy Javascript objects so <c>this</c> is totally useful when using jQuery. Remember our definiton for what <c>this</c> is?</p>
+
+    <div class="exercise">
+      <% var num= '9-2'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p><c>this</c> refers to the object that called the function.</p>
+      </div>
+    
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">With that definition in mind, what does <c>this</c> refer to in the following example?</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#9b859d">$</span>('<span style="color:#cda869">button</span>').on(<span style="color:#65b042">'click'</span>, <span style="color:#99cf50">function</span> () {
+  <span style="color:#9b859d">$</span>(<span style="color:#3e87e3">this</span>)<span style="color:#dad085">.html</span>(<span style="color:#65b042">'I got clicked!'</span>);
+});
+</pre>
+
+    <div class="exercise">
+      <% var num= '9-3'; %>
+      <div class="answer" ng-class="{'show': questions[<%= num %>]}">
+        <p>The button!</p>
+      </div>
+    
+      <% include ../partials/answer-button %>
+    </div>
+
+    <p class="ex">Copy and paste the following code in your console. What is the value of <c>this</c>? Why?</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#99cf50">var</span> <span style="color:#89bdff">callbackFunc</span> <span style="color:#e28964">=</span> <span style="color:#99cf50">function</span> () {
+  <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(<span style="color:#3e87e3">this</span>);
+}
+
+<span style="color:#99cf50">var</span> button <span style="color:#e28964">=</span> {
+  <span style="color:#89bdff">hey</span>: <span style="color:#99cf50">function</span> (event, func) {
+    <span style="color:#3e87e3">this</span>.func <span style="color:#e28964">=</span> func;
+    <span style="color:#3e87e3">this</span>.func();
+  }
+}
+
+button.hey(<span style="color:#65b042">'click'</span>, callbackFunc);
+</pre>
+
+    <p>The only difference in using <c>this</c> before and using it now is our syntax. jQuery objects get wrapped like <c>$(this)</c> (pun intended).</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Partner Exercise 3</h4>
+    <p>With that in mind, let's revisit an example similar to yesterday's. <a href="http://codepen.io/amhayslip/pen/NNpmPj" target="_blank">Go here</a> and add a jQuery click handler that removes an <c>li</c> when it's clicked.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Event Binding</h4>
+
+    <p>When we write this code:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>).on(<span style="color:#65b042">'click'</span>, <span style="color:#99cf50">function</span> () {
+  <span style="color:#aeaeae;font-style:italic">// do something</span>
+});
+</pre>
+
+    <p>It could be said that our <c>button</c> is "listening" for clicks.</p>
+
+    <iframe style="display: block; margin: 0 auto;" src="//giphy.com/embed/11ADidZLXV4DgQ" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+    <p class="ex">The technical phrase for this is <c>event binding</c>, because our button is now "bound" (binded) to a click event. We can just as well "unbind" it by writing:</p>
+
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">$</span>(<span style="color:#65b042">'button'</span>).off();
+</pre>
+
+    <p>Using <a href="http://api.jquery.com/off/" target="_blank">.off</a> removes all bindings from our button. Freedom! At this point, we won't need <c>off</c>, but it can be useful for reserving memory to unbind anything you're not using anymore.</p>
+
+    <p>Anyway, the timing of this binding is important, as we saw yesterday. Let's look <a href="http://codepen.io/amhayslip/pen/ONpOPK" target="_blank">at the solution here</a> to our adding/removing students.</p>
+
+    <p>Why did we wrap the <c>li</c> click listener in our bindEvents function? Notice where we're calling <c>bindEvents</c>. This is because when our page loads there is only one <c>li</c>. If want to listen to clicks on other <c>li</c> elements, we have to start listening <em>after</em> they've been added to the DOM.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Project - Spacebook!</h4>
+    <p>Cool! Let's practice some of this. Today we're going to be building Spacebook, which is just like Facebook, but not. Go ahead and fork then clone <a href="https://github.com/Elevationacademy/spacebook" target="_blank">this github repo</a>.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Project Exercise 1</h4>
+    <p>This is going to be a little less guided than yesterday's project, but it's really similar, so refer to our Beer Review for help. Create a function that creates a new "post" object and add it to a "posts" array. Each post object should have two properties: <c>text</c>(the users input, a string) and <c>id</c> (the value being a number). Each id should be unique to that post (no two post objects should have the same id).</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Project Exercise 2</h4>
+    <p>Create a second function that add's all the posts in the <c>posts</c> array to the <c>.posts</c> div. Wrap each post in any block level element you want (p tag, div, whatever). In addition, add the id to the element as well with our data attribute. Each post element should look something like this:</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"post"</span> <span style="color:#89bdff">data-id</span>=<span style="color:#65b042">"1"</span>></span>Hey man! I'm a post!<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+</pre>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Project Exercise 3</h4>
+    <p>Change your code so that each post element also has a "remove" button.</p>
+    <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">p</span> <span style="color:#89bdff">class</span>=<span style="color:#65b042">"post"</span> <span style="color:#89bdff">data-id</span>=<span style="color:#65b042">"1"</span>></span> <span style="color:#e0c589">&lt;<span style="color:#e0c589">a</span> <span style="color:#e0c589">href</span>=<span style="color:#65b042">"#"</span> <span style="color:#e0c589">class</span>=<span style="color:#65b042">"remove"</span>></span>remove<span style="color:#e0c589">&lt;/<span style="color:#e0c589">a</span>></span> Hey man! I'm a post!<span style="color:#89bdff">&lt;/<span style="color:#89bdff">p</span>></span>
+</pre>
+
+    <p>When the button get clicked, remove it from the page.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Project Extension 1 (optional!)</h4>
+    <p>When the post element get's removed from the page, also remove it from your <c>posts</c> div.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Project Extension 2 (optional!)</h4>
+    <p>Add a feature to where each post can recieve a comment. The comment should have a username and some text associated with it.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Individual Project Extension 3 (optional!)</h4>
+    <p>Add a "page" for viewing an individual post and all it's comments.</p>
+  </div>
+
+  <hr>
+
+  
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>BAM! Now we're building something.</p>
+  </div>
+</div>

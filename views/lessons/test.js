@@ -12,3 +12,8 @@ var doubleWham = function (sound1, sound2) {
 }
 
 doubleWham(boom, bang);
+
+
+$('button').on('click', function () {
+  $(this).html('I got clicked!');
+});
