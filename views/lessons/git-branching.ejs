@@ -1,0 +1,66 @@
+<div class="col-sm-8 col-sm-offset-2 lesson">
+  <div class="page-header">
+    <h2>More Git!</h2>
+    <a href="/#/">Back Home</a>
+  </div>
+
+  <div class="topic">
+    <h3>Lesson Overview</h3>
+      <p>A quick word on git!</p>
+      <ul>
+        <li>Branches</li>
+        <li>Pull Requets</li>
+        <li>Remotes</li>
+      </ul>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Branches</h4>
+    <p>"Branching" is basically a way to create a copy of your code, work on the copy and merge it back in with the "original" later. This enables us to work on features separately and to keep different versions of our code without affecting the "master" copy.</p>
+
+    <p>In a common work environment, it may be assumed that the "master" branch is the code that is live and deployed to the users. When we work on a feature, we create a new branch (a copy) of our master, make changes, test it, and when it's ready, we merge it back into master. Let's try it now.</p>
+
+    <p>First, <c>cd</c> into any project you have that is git enabled. To create a new branch, we write <c>git checkout -b your-new-branch-name</c>. If we don't have any outstanding changes in the master branch, this will create for us a new branch. Here we can make changes and commit as normal without affecting the master branch.</p>
+
+    <p>When we're ready to push, we can type <c>git push origin your-new-branch-name</c> and that will push your code to your repo, on the new branch.</p>
+
+    <p>To switch branches (back to your master, for example) type in <c>git checkout master</c>. You will see that it will automatically change your local files back to whatever the state of your master branch is.</p>
+
+    <p>Lastly, to check which branches you have available, type in <c>git remote -v</c>. This will list all your branches and indicate which one you're on.</p>
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Merging/Pull Requests</h4>
+    <p>When you're ready to merge your content into your master branch, you have several options. For now, let's just talk about pull-requets.</p>
+
+    <p>When you're ready to merge the code in from your branch, go to your github repo and find the button that says "New pull request" and click it.</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-23-at-7.07.27-PM.png">
+
+    <p>Then, you can find which branch you want to compare master to (the one you want to merge in) and click "Create pull request".</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-23-at-7.09.20-PM.png">
+
+    <p>Then, others (who have access) are able to make comments about your "pull request" (the code you wrote in your branch) and you can merge it when it's ready by clicking "Merge pull request".</p>
+
+    <img src="http://www.elevationacademy.co/wp-content/uploads/2016/03/Screen-Shot-2016-03-23-at-7.11.03-PM.png">
+  </div>
+
+  <hr>
+
+  <div class="topic">
+    <h4>Adding Remotes</h4>
+    <p>A <c>remote</c> is a github repo that you can push and pull from. Already you've added your own likely by typing <c>git remote add origin url_of_your_repo</c>. However, if you forked your repo from someone else, then cloned it down, you need to add their remote in order to get "fetch" any of their branches. You can add add more remotes in the same way and call them whatever you like. For example, from your own forked copy of beer-review, you can add the original elevation remote like this: <c>git remote add elevation https://github.com/Elevationacademy/beer-review.git</c>. Then, to "fetch" the lastest branches you can type, <c>git fetch elevation</c>.</p>
+  </div>
+
+  <hr>
+  
+  <div class="topic">
+    <h4>Done.</h4>
+    <p>Happy gitting! For more info on branching, <a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell" target="_blank">check this out</a>.</p>
+  </div>
+</div>
