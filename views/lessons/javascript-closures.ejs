@@ -10,7 +10,8 @@
     <p>In this lesson we will go over:</p>
 
     <ul>
-      <li></li>
+      <li>closures!</li>
+      <li>the module design pattern</li>
     </ul>
 
     <p>Partner up for this one! There will be several exercises along the way, but all you'll need is a pen/paper and somewhere to write Javascript.</p>
@@ -237,7 +238,7 @@ usersModule.listUsers();
 
     <p>When <strong>UsersModule</strong> is invoked, it returns an object with our two module functions. So now outside of our module we can interact with our "users", but only to the extent that we've allowed (with the addUser and listUsers) funciton. In other words, because of closure, we cannot directly interact with our "users".</p>
 
-    <p>This keeps ourr code clean and tidy, and our data safe!</p>
+    <p>This keeps our code clean and tidy, and our data safe! For more information on the Module Design Pattern, <a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript" target="_blank">check this out</a>.</p>
   </div>
 
   <hr>
@@ -281,6 +282,28 @@ usersModule.listUsers();
   </div>
 
   <hr>
+
+  <div class="topic">
+    <h4>Spacebook - with Comments! - Individual</h4>
+    <p>Perhaps some of you got to this yesterday or even nailed it down! Now, we're going to do it using our new modular design. First, <c>cd</c> into your <c>spacebook</c> directory. Then, do a <c>git fetch</c>. Lastly, check out the <c>modular-comments</c> branch by typing <c>git checkout modular-comments</c>. Open it in Sublime.</p>
+
+    <ol>
+      <li>Read through the code and make sure you understand what's going on. Notice that a bunch posts have been commented out. This is just to show you how your data should be structured... each post has an array of comment objects. Next, notice the commented out object properties/functions at the bottom of our SpacebookApp module. You will implement these in a moment. Lastly, notice <c>toggleComments</c> and understand how it works for hiding/showing the comments container. Look at the <c>style.css</c> to further digest this. Ask any questions you may have before moving on. </li>
+
+      <li>Start by uncommenting the <c>createComment</c> object that's being returned from <c>SpacebookApp</c>. Now create and implement this function.</li>
+
+      <li>Next do the same with <c>renderComments</c>.</li>
+
+      <li>Lastly, implement removing comments by finishing <c>removeComment</c>
+
+    </ol>
+  </div>
+
+  <hr>
+
+  <div></div>
+
+  </hr>
 
   <div class="topic">
       <h4>Done.</h4>
