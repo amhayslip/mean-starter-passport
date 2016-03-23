@@ -41,7 +41,7 @@ baz();
 
     <p>After compilation is done, the engine is ready to execute. It's starts by setting the variable <strong>baz</strong> to the result of calling the function <strong>foo</strong>. The function <strong>foo</strong> get's called, set's the variable <strong>x</strong> and the function <strong>bar</strong> (in it's scope) and then returns the function <strong>bar</strong> back to <strong>baz</strong>.</p>
 
-    <p>Now <strong>baz</strong> is referencing the function <strong>bar</strong>. When <strong>baz</strong> (bar) get's invoked, since it uses the variable <strong>x</strong>, <strong>foo</strong>'s scope sticks around even though normall it would disappear. Closure observed.</p>
+    <p>Now <strong>baz</strong> is referencing the function <strong>bar</strong>. When <strong>baz</strong> (bar) get's invoked, since it uses the variable <strong>x</strong>, <strong>foo</strong>'s scope sticks around even though normally it would disappear. Closure observed.</p>
 
     <p>Let's look at another. Copy/paste the following into your dev console.</p>
 
@@ -150,7 +150,7 @@ listThemAll();
 
   <div class="topic">
     <h4>Loops and Closure... crazy!</h4>
-    <p>To deepen our understands, let's observe a tricky example.</p>
+    <p>To deepen our understanding, let's observe a tricky example.</p>
     <pre style="background:#000;color:#f8f8f8"><span style="color:#e28964">for</span> (<span style="color:#99cf50">var</span> i <span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>; i <span style="color:#e28964">&lt;</span> <span style="color:#3387cc">5</span>; i <span style="color:#e28964">+</span><span style="color:#e28964">=</span> <span style="color:#3387cc">1</span>) {
   <span style="color:#dad085">setTimeout</span>(<span style="color:#99cf50">function</span> <span style="color:#89bdff">timer</span>(){
     <span style="text-decoration:underline">console</span><span style="color:#dad085">.log</span>(i);
@@ -251,19 +251,21 @@ usersModule.listUsers();
 
     <p>Great. Now we want to check out the <c>modular</c> branch. To do this, type in <c>git checkout modular</c>. It should switch to the new branch. Now open it up in Sublime!</p>
 
-    <p>This code should look familiar, but different. Let's talk through what we did.</p>
+    <p>This code should look familiar, but different. Let's talk through what we did:</p>
 
-    <p>1. We created a function called <c>SpacebookApp</c> that wrapped the bulk of our code. We did this to create a function around our data and other functions that we don't want anyone else to access.</p>
+    <ol>
+      <li>We created a function called <c>SpacebookApp</c> that wrapped the bulk of our code. We did this to create a function around our data and other functions that we don't want anyone else to access.</li> 
+      
+      <li>We returned a few of the functions in an object at the end of the <c>SpacebookApp</c> function. This is so our data can be interacted with outside of our <c>SpacebookApp</c>, but only by those functions.</li>
 
-    <p>2. We returned a few of the functions in an object at the end of the <c>SpacebookApp</c> function. This is so our data can be interacted with outside of our <c>SpacebookApp</c>, but only by those functions.</p>
+      <li>To initialize our app we did this: <c>var app = SpacebookApp();</c>. From there, we could use the object <c>app</c> to interact with our methods.</li>
 
-    <p>3. To initialize our app we did this: <c>var app = SpacebookApp();</c>. From there, we could use the object <c>app</c> to interact with our methods.</p>
+      <li>Notice we put all our events at the bottom together. This just helps us organize them and keep everything clean and neat.</li>
 
-    <p>4. Notice we put all our events at the bottom together. This just helps us organize them and keep everything clean and neat.</p>
+      <li>Check out what <a href="http://api.jquery.com/delegate/" target="_blank">.delegate</a> does. It fixes our binding problem ;)</li>
 
-    <p>5. Check out what <a href="http://api.jquery.com/delegate/" target="_blank">.delegate</a> does. It fixes our binding problem ;)</p>
-
-    <p>6. Notice our function <c>_findPostById</c>. It has a little <c>_</c> in front of it because it's a "helper" function. In other words, it's only used by other functions inside module. By convention, you'll see people start these with an underscore.</p>
+      <li>Notice our function <c>_findPostById</c>. It has a little <c>_</c> in front of it because it's a "helper" function. In other words, it's only used by other functions inside module. By convention, you'll see people start these with an underscore.</li>
+    </ol>
 
     <p>Cool! Take some time to digest this and ask any questions you may have before moving on.</p>
   </div>
@@ -274,11 +276,14 @@ usersModule.listUsers();
     <h4>Beer Review, Modular - Individual</h4>
     <p><c>cd</c> into your <c>beer-review</c> directory. Check out a new branch by typing <c>git checkout -b modular</c>. Our task here is simple. Let's use closure and modular design to reorganize our beer-review code. These are the requrements:</p>
 
-    <p>1. Create a function (module) called <c>BeerReviewApp</c> that returns an object with 2 methods: <c>createBeer</c> and <c>renderBeers</c>.</p>
+    <ol>
+      <li>Create a function (module) called <c>BeerReviewApp</c> that returns an object with 2 methods: <c>createBeer</c> and <c>renderBeers</c>.</li>
 
-    <p>2. Outside of your module, create your click handler for posting new beers.</p>
+      <li>Outside of your module, create your click handler for posting new beers.</li>
 
-    <p>Slack Aaron when you're finished!</p>
+      <li>Slack Aaron when you're finished!</li>
+    </ol>
+
   </div>
 
   <hr>
